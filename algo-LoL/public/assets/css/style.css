@@ -6,11 +6,14 @@
 *{
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 li{
     list-style: none;
 }
-
+a{
+    color: white;
+}
 
 
 
@@ -25,8 +28,19 @@ li{
     background-color:#222222;
     color: white;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nav-list{
     display: flex;
+    align-items: center;
+    margin-right: 5%;
+}
+.space-nav{
+    margin-right: 10%;
+}
+.item-nav li{
+    text-align: center;
 }

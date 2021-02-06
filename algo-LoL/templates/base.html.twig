@@ -2,12 +2,32 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        
+        <title>{% block title %}Algo'Mate{% endblock %}</title>
+        {% block stylesheets %}<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">{% endblock %}
 
         {% block javascripts %}{% endblock %}
     </head>
     <body>
+        <header>
+            <div class="nav-content">
+                <nav>
+                    <ul class="nav-list">
+                        <div class="space-nav">
+                                <div class="item-nav">
+                                    <li>Accueil</li>
+                                </div>
+                        </div>
+                        <div class="space-nav">
+                                <div class="item-nav">
+                                    <li>Liste des champions</li>
+                                </div>
+                        </div>
+
+                    </ul>
+                </nav>
+            </div>
+        </header>
         {% block body %}{% endblock %}
     </body>
 </html>

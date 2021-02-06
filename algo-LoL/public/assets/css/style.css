@@ -1,0 +1,32 @@
+                     /*                      */
+                    /* Configuration Global */
+                   /*                      */
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+
+
+
+
+                     /*            */
+                    /* Navigateur */
+                   /*            */
+
+
+.nav-content{
+    height: 50px;
+    width: 100%;
+    background-color:#222222;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-list{
+    display: flex;
+}

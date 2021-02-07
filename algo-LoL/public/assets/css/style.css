@@ -115,7 +115,8 @@ width: 100%;
 .right-section{
     width: 80%;
     height: 100%;
-    background-image: url(../images/fond/aatrox.jpg);
+    background-image: url(../images/fond/darius.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }

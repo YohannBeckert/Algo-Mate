@@ -1,46 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Algo'Mate{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-        {% block stylesheets %}{% endblock %}
-
-    </head>
-    <body>
-        <header>
-            <section id="navbar">
-                <div class="content-logo">
-                    <a href="">
-                        <p>Algo'Mate<p>
-                    </a>
-                </div>
-                <div class="content-nav">
-                    <nav>
-                        <ul class="content-item">
-                            <div class="nav-item">
-                                <a href="">
-                                    <li>Accueil</li>
-                                </a>
-                            </div>
-                            <div class="nav-item">
-                                <a href="">
-                                    <li>Connexion</li>
-                                </a>
-                            </div>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="content-disconnect">
-                    <div class="btn-disconnect">
-                        <a href="">
-                            <p>Déconnexion</p>
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </header>
+{{ include('partials/_doctype.html.twig') }}
+{{ include('partials/_navbar.html.twig') }}
         {% block body %}{% endblock %}
+{{ include('partials/_footer.html.twig') }}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

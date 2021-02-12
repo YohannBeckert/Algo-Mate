@@ -25,27 +25,5 @@
             <div>
         </div>
     </section>
-    <section class="right-section">
-        <div class="content-inscription">
-            <div class="title-inscription">
-                <h1> Inscrivez-vous ! <h1>
-            </div>
-             <div class="login-form">
-                <form class="all-login-items" method="" action="">
-                    <div class="login-item">
-                        <label for="email">E-mail</label>
-                        <input id="email" class="input-form" type="email" name="email" value="">
-                    </div>
-                    <div class="login-item">
-                        <label for="password">Mot de passe</label>
-                        <input id="password" class="input-form" type="password" name="password" value="">
-                    </div>
-                    <div class="login-item-btn">
-                        <button id="submit" type="submit" name="password" value="Se connecter">Connexion</button>
-                    </div>
-                </form>
-            <div>
-        </div>
-    </section> 
-</main>
+{{ include('login/_register.html.twig') }}
 {% endblock %}

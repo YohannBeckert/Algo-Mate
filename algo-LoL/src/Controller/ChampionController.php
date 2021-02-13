@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ChampionController extends AbstractController
 {
     /**
-     * @Route("/", name="champion_index", methods={"GET"})
+     * @Route("/", name="champion_list", methods={"GET"})
      */
     public function index(ChampionRepository $championRepository): Response
     {
@@ -39,7 +39,7 @@ class ChampionController extends AbstractController
             $entityManager->persist($champion);
             $entityManager->flush();
 
-            return $this->redirectToRoute('champion_index');
+            return $this->redirectToRoute('champion_list');
         }
 
         return $this->render('champion/new.html.twig', [
@@ -69,7 +69,7 @@ class ChampionController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('champion_index');
+            return $this->redirectToRoute('champion_list');
         }
 
         return $this->render('champion/edit.html.twig', [
@@ -89,6 +89,6 @@ class ChampionController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('champion_index');
+        return $this->redirectToRoute('champion_list');
     }
 }

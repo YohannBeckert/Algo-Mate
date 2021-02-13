@@ -1,0 +1,106 @@
+                     /*               */
+                    /* Configuration */
+                   /*               */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 94.11%;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+li{
+    list-style: none;
+}
+input{
+
+    height: 2rem;
+}
+.input-form{
+    width: 100%;
+    border-radius: 5px;
+    /* opacity: 0.8; */
+
+}
+
+                     /*                     */
+                    /* Background Champion */
+                   /*                     */
+
+
+.-Aatrox{
+    background-image: url(../images/background/aatrox.jpg);
+    background-size: cover;
+}
+.-Ahri{
+    background-image: url(../images/background/ahri.jpg);
+    background-size: cover;
+    background-position-y: 25%;
+}
+.-Akali{
+    background-image: url(../images/background/akali.jpg);
+    background-size: cover;
+    background-position-y: 20%;
+}
+.-Alistar{
+    background-image: url(../images/background/alistar.jpg);
+    background-size: cover;
+    background-position-y: 25%;
+}
+.-Amumu{
+    background-image: url(../images/background/amumu.jpg);
+    background-size: cover;
+    background-position-y: 25%;
+}
+.-Anivia{
+    background-image: url(../images/background/anivia.png);
+    background-size: cover;
+    background-position-y: 4%;
+}
+.-Annie{
+    background-image: url(../images/background/annie.jpg);
+    background-size: cover;
+    background-position-y: 15%;
+}
+.-Aphelios{
+    background-image: url(../images/background/aphelios.jpg);
+    background-size: cover;
+}
+.-Ashe{
+    background-image: url(../images/background/ashe.jpg);
+    background-size: cover;
+}
+.-Aurelion{
+    background-image: url(../images/background/aurelionsol.jpg);
+    background-size: 100% 115%;
+}
+.-Azir{
+    background-image: url(../images/background/azir.jpg);
+    background-size: cover;
+}
+.-Bard{
+    background-image: url(../images/background/bard.jpg);
+    background-size: cover;
+}
+.-Blitzcrank{
+    background-image: url(../images/background/blitzcrank.jpg);
+    background-size: cover;
+}
+.-Brand{
+    background-image: url(../images/background/brand.jpg);
+    background-size: cover;
+    background-position-y: 25%;
+}
+.-Braum{
+    background-image: url(../images/background/braum.png);
+    background-position: center;
+    background-size: cover;
+}

@@ -1,36 +1,3 @@
-                     /*               */
-                    /* Configuration */
-                   /*               */
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html, body{
-    width: 100%;
-    height: 94.11%;
-}
-a{
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-li{
-    list-style: none;
-}
-input{
-
-    height: 2rem;
-}
-.input-form{
-   width: 100%;
-   border-radius: 5px;
-   /* opacity: 0.8; */
-
-}
-
                      /*            */
                     /* Navigation */
                    /*            */
@@ -116,7 +83,7 @@ width: 100%;
     /* clip-path: polygon(0 0, 50% 0, 100% 100%, 0% 100%); */
     width: 100%;
     height: 100%;
-    background-image: url(../images/fond/pyke.jpg);
+    background-image: url(../images/background/pyke.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -169,7 +136,7 @@ width: 100%;
     /* clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%); */
     width: 100%;
     height: 100%;
-    background-image: url(../images/fond/darius.jpg);
+    background-image: url(../images/background/darius.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -199,7 +166,7 @@ width: 100%;
 .bg-home{
     width: 100%;
     height: 100%;
-    background-image: url(../images/fond/leona.jpg);
+    background-image: url(../images/background/leona.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -211,10 +178,12 @@ width: 100%;
 
 
 
-                      /*            */
-                     /* Background */
-                    /*            */
+                      /*                */
+                     /* Champions List */
+                    /*                */
 
+
+        /* Background */
 
 .top-content{
     width: 100%;
@@ -227,6 +196,14 @@ width: 100%;
     display: flex;
     justify-content: center;
 }
+.bg{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+}
+
 .content-item-div{
     width: 80%;
     height: 100%;
@@ -299,14 +276,13 @@ width: 100%;
 
 .all-champions-content{
     height: 100%;
-    display: flex;
-    justify-content: center;
 }
 .champions-content{
     width: 80%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-left: 10%;
 }
 
 .champion-card{
@@ -315,6 +291,7 @@ width: 100%;
     background-color: #202020;
     border: solid 1.5px #333333;
     border-radius: 10px;
+    margin-bottom: 1.5%;
 }
 .champion{
     width: 100%;
@@ -329,6 +306,7 @@ width: 100%;
 .param-img{
     width: 100%;
     height: 100%;
+    border-radius: 5px;
 }
 .champion-info{
     width: 68%;
@@ -351,4 +329,15 @@ width: 100%;
     color: white;
     font-weight: bold;
     font-size: 14px;
-} 
+}
+
+
+                      /*               */
+                     /* Champion Show */
+                    /*               */
+
+
+.bg-size-show{
+    width: 100%;
+    height: 95%;
+}

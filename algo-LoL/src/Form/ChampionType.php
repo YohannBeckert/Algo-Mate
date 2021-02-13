@@ -14,9 +14,7 @@ class ChampionType extends AbstractType
         $builder
             ->add('name')
             ->add('image')
-            ->add('users')
-            ->add('favorites')
-            ->add('prefers')
+            ->add('first_role')
         ;
     }
 

@@ -203,3 +203,152 @@ width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
+                      /*          */
+                     /* Champion */
+                    /*          */
+
+
+
+                      /*            */
+                     /* Background */
+                    /*            */
+
+
+.top-content{
+    width: 100%;
+    height: 40%;
+}
+.background-content{
+    width: 100%;
+    height: 100%;
+    background-color: #242424;
+    display: flex;
+    justify-content: center;
+}
+.content-item-div{
+    width: 80%;
+    height: 100%;
+    padding-bottom: 1%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.title-champion{
+    margin-bottom: 0.5%;
+}
+.search{
+    border-radius: 5px;
+    height: 2.3rem;
+    font-size: 14px;
+    padding-left: 2%;
+}
+
+
+                      /*               */
+                     /* Main Champion */
+                    /*               */
+
+
+.main-champion{
+    background-color: #171717;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Filtres */
+
+.filter-content{
+    margin: 2% 0 2% 0;
+    width: 100%;
+}
+.lane-selection{
+    display: flex;
+    justify-content: center;
+}
+
+.top{
+    padding: 1%;
+    border: 1px solid white;
+    border-top-left-radius: 15%;
+    border-bottom-left-radius: 15%;
+    opacity: 0.6;
+}
+.jungle,.mid,.bot,.support{
+    padding: 1%;
+    border: 1px solid white;
+    opacity: 0.6;
+}
+.all{
+    padding: 1%;
+    border: 1px solid white;
+    border-top-right-radius: 15%;
+    border-bottom-right-radius: 15%;
+    opacity: 0.6;
+}
+
+.lane-selection a:hover{
+    opacity: 1;
+}
+
+/* champions */
+
+.all-champions-content{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.champions-content{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.champion-card{
+    width: 16rem;
+    height: 6rem;
+    background-color: #202020;
+    border: solid 1.5px #333333;
+    border-radius: 10px;
+}
+.champion{
+    width: 100%;
+    height: 100%;
+    padding: 4%;
+    display: flex;
+}
+.champion-image{
+    width: 32%;
+    height: 100%;
+}
+.param-img{
+    width: 100%;
+    height: 100%;
+}
+.champion-info{
+    width: 68%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.champion-name{
+    margin-bottom: 5%;
+    color: #00e6ff;
+    font-size: 18px;
+    font-weight: bold;
+}
+.champion-roles{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+} 

@@ -44,6 +44,16 @@ class Champion
      */
     private $prefers;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $first_role;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $second_role;
+
 
 
     public function __construct()
@@ -163,4 +173,27 @@ class Champion
         return $this;
     }
 
+    public function getFirstRole(): ?string
+    {
+        return $this->first_role;
+    }
+
+    public function setFirstRole(string $first_role): self
+    {
+        $this->first_role = $first_role;
+
+        return $this;
+    }
+
+    public function getSecondRole(): ?string
+    {
+        return $this->second_role;
+    }
+
+    public function setSecondRole(?string $second_role): self
+    {
+        $this->second_role = $second_role;
+
+        return $this;
+    }
 }

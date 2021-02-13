@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Champion index{% endblock %}
+
+{% block body %}
+
+<section class="top-content">
+    <div class="background-content">
+        <div class="content-item-div">
+            <div class="title-champion">
+                <h1>Champions</h1>
+            </div>
+            <div class="content-search-bar">
+                <div class="search-bar">
+                    <input id="search" class="search" type="text" placeholder="Search" name="search" size="40" value="">
+                </div>
+            </div>
+            <a href="{{ path('champion_new') }}">Create new</a>
+        </div>
+    </div>
+</section>
+<main class="main-champion">
+
+    <div class="filter-content">
+        <div class="lane-selection">
+            <a class="top" href="">Top</a>
+            <a class="jungle" href="">Jungle</a>
+            <a class="mid" href="">Mid</a>
+            <a class="bot" href="">Bot</a>
+            <a class="support" href="">Support</a>
+            <a class="all" href="">All</a>
+        </div>
+    </div>
+
+    <div class="all-champions-content">
+        <ul class="champions-content">
+            {% for champion in champions %}           
+                <li class="champion-card">
+                <a href="{{ path('champion_show', {'id': champion.id}) }}">
+                    <div class="champion">
+                        <div class="champion-image">
+                            <img class="param-img" src="/assets/images/champions/{{ champion.name }}.png">
+                        </div>
+                        <div class="champion-info">
+                            <div class="champion-name">
+                                {{ champion.name }}
+                            </div>
+                            <div class="champion-roles">
+                                <div class="first-role">
+                                    {{ champion.firstrole }}
+                                </div>
+
+                                <div class="second-role">
+                                    {{ champion.secondrole }}
+                                </div>                               
+                            </div>
+                            
+                        </div>
+                    </div>  
+                </a>                             
+                </li>                         
+            {% endfor %}           
+        </ul>
+    <div>
+</main>
+
+{% endblock %}

@@ -12,9 +12,18 @@ class ChampionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('image')
-            ->add('first_role')
+            ->add('name', null, [
+                'label' => 'Nom du champion',
+            ])
+            ->add('image', null, [
+                'label' => 'Image du champion',
+            ])
+            ->add('first_role', null, [
+                'label' => 'Lane principale',
+            ])
+            ->add('second_role', null, [
+                'label' => 'Lane secondaire',
+            ])
         ;
     }
 

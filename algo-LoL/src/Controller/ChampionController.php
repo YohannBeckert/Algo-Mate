@@ -26,29 +26,6 @@ class ChampionController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="champion_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
-    {
-        $champion = new Champion();
-        $form = $this->createForm(ChampionType::class, $champion);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($champion);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('champion_list');
-        }
-
-        return $this->render('champion/new.html.twig', [
-            'champion' => $champion,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
      * @Route("/{id}", name="champion_show", methods={"GET"})
      */
     public function show(Champion $champion): Response

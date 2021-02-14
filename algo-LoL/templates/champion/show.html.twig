@@ -10,6 +10,7 @@
                 <h1>{{ champion.name }}</h1>
             </div>
             <a href="{{ path('champion_edit', {'id': champion.id}) }}">Editer</a>
+            <a href="{{ path('champion_show', {'id':(champion.id + 1)}) }}">Next</a>
         </div>
     </div>
 </section>

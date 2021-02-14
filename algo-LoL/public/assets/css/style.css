@@ -67,11 +67,7 @@ nav{
                    /*            */
 
 
-main{
-display: flex;
-height: 100%;
-width: 100%;
-}
+
 
 
                      /*              */
@@ -187,7 +183,7 @@ width: 100%;
 
 .top-content{
     width: 100%;
-    height: 40%;
+    height: 23rem;
 }
 .background-content{
     width: 100%;
@@ -240,7 +236,7 @@ width: 100%;
 /* Filtres */
 
 .filter-content{
-    margin: 2% 0 2% 0;
+    margin: 3% 0 5% 0;
     width: 100%;
 }
 .lane-selection{
@@ -339,5 +335,127 @@ width: 100%;
 
 .bg-size-show{
     width: 100%;
-    height: 95%;
+    height: 85vh;
+}
+
+                      /*       */
+                     /* ADMIN */
+                    /*       */
+
+
+.admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title-admin{
+    margin: 3% 0 3% 0;
+}
+.board{
+    width: 80%;
+    height: 100%;
+}
+.table-board{
+    width: 25%;
+    height: 30%;
+    font-size: 18px;
+    color: white;
+    background-color: #719398;
+    border-radius: 10px;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+.title-table{
+    width: 100%;
+    border-bottom: black 1px solid;
+    text-align: center;
+    padding: 2%;
+    margin-bottom: 5%;
+}
+.selection-table{
+    margin-left: 10%;    
+}
+.item-selection{
+    padding: 1.5%;
+}
+.title-admin .title-page{
+    margin-bottom: 0;
+}
+.add{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+                      /*      */
+                     /* Form */
+                    /*      */
+
+
+.title-page{
+    margin-top: 4%;
+}
+.content-form{
+    height: 50vh;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+}
+.content-form form{
+    width: 100%;
+    height: 100%;
+}
+#champion{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#champion div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+div label{
+    margin-bottom: 2.5%;
+}
+#champion_name,#champion_image,#champion_first_role,#champion_second_role{
+    margin-bottom: 5%;
+    width: 80%;
+    height: 2.5rem;
+    padding: 0 3% 0 3%;
+    border: solid 1.5px gray;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color:#e8e8e8;
+}
+.button{
+    display: flex;
+    justify-content: center;
+} 
+.btn-submit{
+    width: 8rem;
+    height: 3rem;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #333333;
+    
+}
+.return{
+    color:#0060f5;
+    font-size: 14px;
+}
+.return:hover{
+    color:#0060f5;
+    text-decoration :underline ;
 }

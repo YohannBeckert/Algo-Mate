@@ -8,9 +8,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-html, body{
+html{
     width: 100%;
-    height: 94.11%;
+    height: auto;
 }
 a{
     text-decoration: none;
@@ -28,7 +28,10 @@ input{
     width: 100%;
     border-radius: 5px;
     /* opacity: 0.8; */
-
+}
+.main{
+    display: flex;
+    height: 88.576vh;
 }
 
                      /*                     */
@@ -102,5 +105,608 @@ input{
 .-Braum{
     background-image: url(../images/background/braum.png);
     background-position: center;
+    background-size: cover;
+}
+.-Caitlyn{
+    background-image: url(../images/background/caitlyn.jpg);
+    background-size: cover;
+}
+.-Camille{
+    background-image: url(../images/background/camille.jpg);
+    background-size: cover;
+}
+.-Cassiopeia{
+    background-image: url(../images/background/cassiopeia.jpg);
+    background-size: cover;
+    background-position-y: 20%;
+}
+.-Cho{
+    background-image: url(../images/background/chogath.jpg);
+    background-size: cover;
+    background-position-y: 20%;
+}
+.-Corki{
+    background-image: url(../images/background/corki.jpg);
+    background-size: cover;
+    background-position-y: 20%;
+}
+.-Darius{
+    background-image: url(../images/background/darius.jpg);
+    background-size: cover;
+}
+.-Diana{
+    background-image: url(../images/background/diana.png);
+    background-size: cover;
+}
+.-Dr{
+    background-image: url(../images/background/drmundo.jpg);
+    background-size: cover;
+    background-position-y: 20%;
+}
+.-Draven{
+    background-image: url(../images/background/draven.jpg);
+    background-size: cover;
+    background-position-y: 20%;
+}
+.-Ekko{
+    background-image: url(../images/background/ekko.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Elise{
+    background-image: url(../images/background/elise.jpg);
+    background-size: cover;
+}
+.-Evelynn{
+    background-image: url(../images/background/evelynn.jpg);
+    background-size: cover;
+}
+.-Ezreal{
+    background-image: url(../images/background/ezreal.png);
+    background-size: cover;
+    background-position-y: 25%;
+}
+.-Fiddlesticks{
+    background-image: url(../images/background/fiddlesticks.jpg);
+    background-size: cover;
+    background-position-y: 12%;
+}
+.-Fiora{
+    background-image: url(../images/background/fiora.jpg);
+    background-size: cover;
+}
+.-Fizz{
+    background-image: url(../images/background/fizz.jpeg);
+    background-size: cover;
+    background-position-y: 12%;
+}
+.-Gankplank{
+    background-image: url(../images/background/gankplank.jpg);
+    background-size: cover;
+}
+.-Garen{
+    background-image: url(../images/background/garen.jpg);
+    background-size: cover;
+}
+.-Gragas{
+    background-image: url(../images/background/gragas.jpg);
+    background-size: cover;
+    background-position-y: 25%;
+}
+.-Graves{
+    background-image: url(../images/background/graves.png);
+    background-size: cover;
+}
+.-Hecarim{
+    background-image: url(../images/background/hecarim.jpg);
+    background-size: cover;
+}
+.-Heimerdinger{
+    background-image: url(../images/background/heimerdinger.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Illaoi{
+    background-image: url(../images/background/illaoi.jpg);
+    background-size: cover;
+}
+.-Irelia{
+    background-image: url(../images/background/irelia.jpg);
+    background-size: cover;
+}
+.-Ivern{
+    background-image: url(../images/background/ivern.jpg);
+    background-size: cover;
+}
+.-Janna{
+    background-image: url(../images/background/janna.jpg);
+    background-size: cover;
+}
+.-Jarvan{
+    background-image: url(../images/background/jarvan.jpg);
+    background-size: cover;
+}
+.-Jax{
+    background-image: url(../images/background/jax.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Jayce{
+    background-image: url(../images/background/jayce.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Jhin{
+    background-image: url(../images/background/jhin.jpg);
+    background-size: cover;
+}
+.-Jinx{
+    background-image: url(../images/background/jinx.jpg);
+    background-size: cover;
+}
+.-Janna{
+    background-image: url(../images/background/janna.jpg);
+    background-size: cover;
+    background-position-y: 12%;
+}
+.-Kai{
+    background-image: url(../images/background/kaisa.jpg);
+    background-size: cover;
+    background-position-y: 12%;
+}
+.-Kalista{
+    background-image: url(../images/background/kalista.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Karma{
+    background-image: url(../images/background/karma.jpg);
+    background-size: cover;
+}
+.-Karthus{
+    background-image: url(../images/background/karthus.jpg);
+    background-size: cover;
+}
+.-Kassadin{
+    background-image: url(../images/background/kassadin.jpg);
+    background-size: cover;
+    background-position-y: 15%;
+}
+.-Katarina{
+    background-image: url(../images/background/katarina.jpg);
+    background-size: cover;
+}
+.-Kayle{
+    background-image: url(../images/background/kayle.jpg);
+    background-size: cover;
+}
+.-Kayn{
+    background-image: url(../images/background/kayn.jpg);
+    background-size: cover;
+    background-position-y: 40%;
+}
+.-Kennen{
+    background-image: url(../images/background/kennen.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Kha{
+    background-image: url(../images/background/khazix.jpg);
+    background-size: cover;
+    background-position-y: 15%;
+}
+.-Kindred{
+    background-image: url(../images/background/kindred.jpg);
+    background-size: cover;
+}
+.-Kled{
+    background-image: url(../images/background/kled.jpg);
+    background-size: cover;
+}
+.-Kog{
+    background-image: url(../images/background/kogmaw.jpg);
+    background-size: cover;
+    background-position-y: 15%;
+}
+.-LeBlanc{
+    background-image: url(../images/background/leblanc.jpg);
+    background-size: cover;
+}
+.-Lee{
+    background-image: url(../images/background/leesin.png);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Leona{
+    background-image: url(../images/background/leona.jpg);
+    background-size: cover;
+}
+.-Lillia{
+    background-image: url(../images/background/lillia.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Lissandra{
+    background-image: url(../images/background/lissandra.jpg);
+    background-size: cover;
+}
+.-Lucian{
+    background-image: url(../images/background/lucian.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Lulu{
+    background-image: url(../images/background/lulu.jpg);
+    background-size: cover;
+}
+.-Lux{
+    background-image: url(../images/background/lux.jpg);
+    background-size: cover;
+    background-position-y: 15%;
+}
+.-Malphite{
+    background-image: url(../images/background/malphite.jpg);
+    background-size: cover;
+    background-position-y: 15%;
+}
+.-Malzahar{
+    background-image: url(../images/background/malzahar.jpg);
+    background-size: cover;
+}
+.-Maokai{
+    background-image: url(../images/background/maokai.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Maître{
+    background-image: url(../images/background/yi.png);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Miss{
+    background-image: url(../images/background/missfortune.png);
+    background-size: cover;
+}
+.-Mordekaiser{
+    background-image: url(../images/background/mordekaiser.jpg);
+    background-size: cover;
+}
+.-Morgana{
+    background-image: url(../images/background/morgana.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Nami{
+    background-image: url(../images/background/nami.jpg);
+    background-size: cover;
+}
+.-Nasus{
+    background-image: url(../images/background/nasus.jpg);
+    background-size: cover;
+}
+.-Nautilus{
+    background-image: url(../images/background/nautilus.jpg);
+    background-size: cover;
+}
+.-Neeko{
+    background-image: url(../images/background/neeko.jpg);
+    background-size: cover;
+}
+.-Nidalee{
+    background-image: url(../images/background/nidalee.jpg);
+    background-size: cover;
+}
+.-Nocturne{
+    background-image: url(../images/background/nocturne.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Nunu{
+    background-image: url(../images/background/nunu.jpg);
+    background-size: cover;
+}
+.-Olaf{
+    background-image: url(../images/background/olaf.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Orianna{
+    background-image: url(../images/background/orianna.jpg);
+    background-size: cover;
+}
+.-Ornn{
+    background-image: url(../images/background/ornn.jpg);
+    background-size: cover;
+    background-position-y: 15%;
+}
+.-Pantheon{
+    background-image: url(../images/background/pantheon.jpg);
+    background-size: cover;
+}
+.-Poppy{
+    background-image: url(../images/background/poppy.jpg);
+    background-size: cover;
+}
+.-Pyke{
+    background-image: url(../images/background/pyke.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Qiyana{
+    background-image: url(../images/background/qiyana.jpg);
+    background-size: cover;
+}
+.-Quinn{
+    background-image: url(../images/background/quinn.jpg);
+    background-size: cover;
+}
+.-Rakan{
+    background-image: url(../images/background/rakan.png);
+    background-size: cover;
+}
+.-Rammus{
+    background-image: url(../images/background/rammus.jpg);
+    background-size: cover;
+}
+.-Rek{
+    background-image: url(../images/background/reksai.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Rell{
+    background-image: url(../images/background/rell.jpg);
+    background-size: cover;
+}
+.-Renekton{
+    background-image: url(../images/background/renekton.jpg);
+    background-size: cover;
+}
+.-Rengar{
+    background-image: url(../images/background/rengar.jpg);
+    background-size: cover;
+}
+.-Riven{
+    background-image: url(../images/background/riven.jpg);
+    background-size: cover;
+}
+.-Rumble{
+    background-image: url(../images/background/rumble.jpg);
+    background-size: cover;
+}
+.-Ryze{
+    background-image: url(../images/background/ryze.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Samira{
+    background-image: url(../images/background/samira.jpg);
+    background-size: cover;
+}
+.-Sejuani{
+    background-image: url(../images/background/sejuani.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Sett{
+    background-image: url(../images/background/sett.jpg);
+    background-size: cover;
+}
+.-Shaco{
+    background-image: url(../images/background/shaco.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Shen{
+    background-image: url(../images/background/shen.jpg);
+    background-size: cover;
+}
+.-Singed{
+    background-image: url(../images/background/singed.jpg);
+    background-size: cover;
+}
+.-Sion{
+    background-image: url(../images/background/sion.jpg);
+    background-size: cover;
+}
+.-Sivir{
+    background-image: url(../images/background/sivir.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Skarner{
+    background-image: url(../images/background/skarner.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Sona{
+    background-image: url(../images/background/sona.jpg);
+    background-size: cover;
+}
+.-Soraka{
+    background-image: url(../images/background/soraka.jpg);
+    background-size: cover;
+}
+.-Swain{
+    background-image: url(../images/background/swain.jpg);
+    background-size: cover;
+}
+.-Sylas{
+    background-image: url(../images/background/sylas.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Syndra{
+    background-image: url(../images/background/syndra.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Séraphine{
+    background-image: url(../images/background/seraphine.jpg);
+    background-size: cover;
+}
+.-Tahm{
+    background-image: url(../images/background/tahmkench.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Taliyah{
+    background-image: url(../images/background/taliyah.png);
+    background-size: cover;
+    background-position-y: 15%;
+}
+.-Talon{
+    background-image: url(../images/background/talon.png);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Taric{
+    background-image: url(../images/background/taric.jpg);
+    background-size: cover;
+}
+.-Teemo{
+    background-image: url(../images/background/teemo.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Thresh{
+    background-image: url(../images/background/thresh.png);
+    background-size: cover;
+}
+.-Tristana{
+    background-image: url(../images/background/tristana.png);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Trundle{
+    background-image: url(../images/background/trundle.jpg);
+    background-size: cover;
+}
+.-Tryndamere{
+    background-image: url(../images/background/tryndamere.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Twisted{
+    background-image: url(../images/background/twistedfate.jpg);
+    background-size: cover;
+}
+.-Twitch{
+    background-image: url(../images/background/twitch.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+}
+.-Udyr{
+    background-image: url(../images/background/udyr.jpg);
+    background-size: cover;
+    background-position-y: 50%;
+}
+.-Urgot{
+    background-image: url(../images/background/urgot.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Varus{
+    background-image: url(../images/background/varus.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Vayne{
+    background-image: url(../images/background/vayne.jpg);
+    background-size: cover;
+}
+.-Veigar{
+    background-image: url(../images/background/veigar.jpg);
+    background-size: cover;
+    background-position-y: 15%;
+}
+.-Vel{
+    background-image: url(../images/background/velkoz.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Vi{
+    background-image: url(../images/background/vi.jpg);
+    background-size: cover;
+}
+.-Viego{
+    background-image: url(../images/background/viego.jpg);
+    background-size: cover;
+    background-position-y: 8%;
+}
+.-Viktor{
+    background-image: url(../images/background/viktor.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Vladimir{
+    background-image: url(../images/background/vladimir.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Volibear{
+    background-image: url(../images/background/volibear.jpg);
+    background-size: cover;
+}
+.-Warwick{
+    background-image: url(../images/background/warwick.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Wukong{
+    background-image: url(../images/background/wukong.jpg);
+    background-size: cover;
+}
+.-Xayah{
+    background-image: url(../images/background/xayah.jpg);
+    background-size: cover;
+}
+.-Xerath{
+    background-image: url(../images/background/xerath.jpg);
+    background-size: cover;
+}
+.-Xin{
+    background-image: url(../images/background/xinzhao.jpg);
+    background-size: cover;
+}
+.-Yasuo{
+    background-image: url(../images/background/yasuo.jpg);
+    background-size: cover;
+}
+.-Yone{
+    background-image: url(../images/background/yone.jpg);
+    background-size: cover;
+}
+.-Yorick{
+    background-image: url(../images/background/yorick.jpg);
+    background-size: cover;
+}
+.-Yuumi{
+    background-image: url(../images/background/yuumi.jpg);
+    background-size: cover;
+}
+.-Zac{
+    background-image: url(../images/background/zac.jpg);
+    background-size: cover;
+    background-position-y: 25%;
+}
+.-Zed{
+    background-image: url(../images/background/zed.jpg);
+    background-size: cover;
+}
+.-Ziggs{
+    background-image: url(../images/background/ziggs.jpg);
+    background-size: cover;
+    background-position-y: 5%;
+}
+.-Zilean{
+    background-image: url(../images/background/zilean.jpg);
+    background-size: cover;
+}
+.-Zoé{
+    background-image: url(../images/background/zoe.jpg);
+    background-size: cover;
+}
+.-Zyra{
+    background-image: url(../images/background/zyra.jpg);
     background-size: cover;
 }

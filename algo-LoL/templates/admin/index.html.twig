@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<main class="admin main">
+
+    <div class="title-admin">
+        <h1>Tableau Admin</h1>
+    </div>
+
+    <section class="board">
+        <div class="table-board">
+            <div class="title-table">
+                <h2>Champion</h2>
+            </div>
+            <div class="selection-table">
+                <div class="item-selection">
+                    <a href="{{ path('admin_add_champ') }}">
+                        <p>- Ajouter un champion</p>
+                    </a>
+                </div>
+                <div class="item-selection">
+                    <a href="{{ path('admin_edit_champ') }}">
+                        <p>- Modifier un champion</p>
+                    </a>
+                </div>
+                <div class="item-selection">
+                    <a href="{{ path('admin_delete_champ') }}">
+                        <p>- Supprimer un champion</p>
+                    <a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

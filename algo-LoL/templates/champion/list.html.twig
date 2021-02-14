@@ -37,7 +37,7 @@
         <ul class="champions-content">
             {% for champion in champions %}           
                 <li class="champion-card">
-                <a href="{{ path('champion_show', {'id': champion.id}) }}">
+                <a href="{{ path('champion_show', {'id':champion.id}) }}">
                     <div class="champion">
                         <div class="champion-image">
                             <img class="param-img" src="/assets/images/champions/{{ champion.name }}.png">

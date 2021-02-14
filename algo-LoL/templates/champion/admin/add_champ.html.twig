@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<main class="admin main">
+
+    <div class="title-page">
+        <h1>Ajouter un champion</h1>
+    </div>
+<a class="return" href="{{ path('admin') }}">Retournez au tableau Administrateur</a> 
+    <section class="board add">
+        <div class="content-form">
+            {{ form_start(form) }}
+            {{ form_widget(form) }} 
+            <div class="button">
+                <button class="btn-submit">{{ button_label|default('Ajouter') }}</button>
+            </div>          
+            {{ form_end(form) }}
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}

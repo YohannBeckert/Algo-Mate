@@ -120,7 +120,7 @@ input{
     background-size: cover;
     background-position-y: 20%;
 }
-.-Cho{
+.-Cho\'Gath{
     background-image: url(../images/background/chogath.jpg);
     background-size: cover;
     background-position-y: 20%;
@@ -180,12 +180,20 @@ input{
     background-size: cover;
     background-position-y: 12%;
 }
-.-Gankplank{
-    background-image: url(../images/background/gankplank.jpg);
+.-Galio{
+    background-image: url(../images/background/galio.jpg);
+    background-size: cover;
+}
+.-Gangplank{
+    background-image: url(../images/background/gangplank.jpg);
     background-size: cover;
 }
 .-Garen{
     background-image: url(../images/background/garen.jpg);
+    background-size: cover;
+}
+.-Gnar{
+    background-image: url(../images/background/gnar.jpg);
     background-size: cover;
 }
 .-Gragas{
@@ -249,10 +257,9 @@ input{
     background-size: cover;
     background-position-y: 12%;
 }
-.-Kai{
+.-Kai\'Sa{
     background-image: url(../images/background/kaisa.jpg);
     background-size: cover;
-    background-position-y: 12%;
 }
 .-Kalista{
     background-image: url(../images/background/kalista.jpg);
@@ -290,10 +297,9 @@ input{
     background-size: cover;
     background-position-y: 10%;
 }
-.-Kha{
+.-Kha\'Zix{
     background-image: url(../images/background/khazix.jpg);
     background-size: cover;
-    background-position-y: 15%;
 }
 .-Kindred{
     background-image: url(../images/background/kindred.jpg);
@@ -303,10 +309,9 @@ input{
     background-image: url(../images/background/kled.jpg);
     background-size: cover;
 }
-.-Kog{
+.-Kog\'Maw{
     background-image: url(../images/background/kogmaw.jpg);
     background-size: cover;
-    background-position-y: 15%;
 }
 .-LeBlanc{
     background-image: url(../images/background/leblanc.jpg);
@@ -448,10 +453,9 @@ input{
     background-image: url(../images/background/rammus.jpg);
     background-size: cover;
 }
-.-Rek{
+.-Rek\'Sai{
     background-image: url(../images/background/reksai.jpg);
     background-size: cover;
-    background-position-y: 5%;
 }
 .-Rell{
     background-image: url(../images/background/rell.jpg);
@@ -487,6 +491,10 @@ input{
     background-size: cover;
     background-position-y: 5%;
 }
+.-Senna{
+    background-image: url(../images/background/senna.jpg);
+    background-size: cover;
+}
 .-Sett{
     background-image: url(../images/background/sett.jpg);
     background-size: cover;
@@ -498,6 +506,10 @@ input{
 }
 .-Shen{
     background-image: url(../images/background/shen.jpg);
+    background-size: cover;
+}
+.-Shyvana{
+    background-image: url(../images/background/shyvana.jpg);
     background-size: cover;
 }
 .-Singed{
@@ -619,10 +631,9 @@ input{
     background-size: cover;
     background-position-y: 15%;
 }
-.-Vel{
+.-Vel\'Koz{
     background-image: url(../images/background/velkoz.jpg);
     background-size: cover;
-    background-position-y: 5%;
 }
 .-Vi{
     background-image: url(../images/background/vi.jpg);

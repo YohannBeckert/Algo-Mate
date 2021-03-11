@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
 class RegisterType extends AbstractType
@@ -17,13 +18,20 @@ class RegisterType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
+                'label' => 'E-mail',
                 'constraints' => [
-                    new Email,
-                    new NotBlank
+                    new Email(['message' => 'Veuillez entrer un e-mail valide']),
+                    new NotBlank(['message' => 'Ce champs ne peut pas être vide'])
                 ]
             ])
             ->add('password', PasswordType::class, [
-                'constraints' => new NotBlank
+                'constraints' =>[
+                    new NotBlank(['message'=> 'Ce champs ne peut pas être vide']),
+                    new Length([
+                        'min' => '8',
+                        'minMessage'=> "Le mot de passe doit contenir au moins 8 caractères",                   
+                    ])
+                ]
             ])
         ;
     }

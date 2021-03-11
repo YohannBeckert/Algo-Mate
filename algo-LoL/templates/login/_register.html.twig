@@ -1,23 +1,25 @@
     <section class="right-section">
-        <div class="content-inscription">
-            <div class="title-inscription">
-                <h1> Inscrivez-vous ! <h1>
+        <div class="form-width">
+            <div class="content-inscription">
+                <div class="title-inscription">
+                    <h1> Inscrivez-vous ! <h1>
+                </div>
+                <div class="login-form">
+                    {{ form_start(form) }}
+                        <div class="login-item">
+                            {{ form_label(form.email) }}
+                            {{ form_widget(form.email) }}
+                        </div>
+                        <div class="login-item">
+                            {{ form_label(form.password) }}
+                            {{ form_widget(form.password) }}
+                        </div>
+                        <div class="login-item-btn">
+                            <button id="submit" class="btn-submit" type="submit" name="password" value="Se connecter">Connexion</button>
+                        </div>
+                    {{ form_end(form) }}
+                <div>
             </div>
-             <div class="login-form">
-                {{ form_start(form) }}
-                    <div class="login-item">
-                        {{ form_label(form.email) }}
-                        {{ form_widget(form.email) }}
-                    </div>
-                    <div class="login-item">
-                        {{ form_label(form.password) }}
-                        {{ form_widget(form.password) }}
-                    </div>
-                    <div class="login-item-btn">
-                        <button id="submit" type="submit" name="password" value="Se connecter">Connexion</button>
-                    </div>
-                {{ form_end(form) }}
-            <div>
         </div>
     </section> 
 </main>

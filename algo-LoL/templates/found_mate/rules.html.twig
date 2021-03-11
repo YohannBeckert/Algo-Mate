@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<main class="main-found">
+    <section class="rules-found">
+        <div class="title-rules-found">
+            <h1>trouve ton mate !</h1>
+        </div>
+        <div class="text-rules-found">
+            <div class="explain-text">
+                <p>
+                    Grace à l'algorithme, vous pourrez enfin trouver le mate qui te correspond le plus.
+                </p>
+                <p>
+                    Pour cela, rien de plus simple, il te suffit de remplir ce formulaire en suivant ces quelques règles: 
+                </p>
+            </div>
+            <div class="rules-text">
+                <ul>
+                    <li>
+                        Veillez à bien remplir <span>toutes</span> les cases.
+                    </li>
+                    <li>
+                        Vérifiez bien la véracité de vos informations. Plus vos informations seront juste, plus l'algorithme sera précis dans sa recherche.
+                    </li>
+                    <li>
+                        Un résumé de vos informations vous seront indiqués avant l'envoie complet du formulaire.
+                    </li>
+                    <li>
+                        Le formulaire est divisé en plusieurs étapes. Lors de sa rédaction, si vous vous rendez compte que vous vous êtes trompé à l'une des étapes précédente, vous pourrez à tout moment retourner en arrière ou attendre le résumé pour faire des modifications.
+                    </li>
+                </ul>
+            </div>
+            <div class="explain-text-end">
+                <p>
+                    Maintenant que vous êtes informé, vous pouvez commencer à remplir le formulaire en cliquant sur le bouton ci-dessous
+                </p>
+            </div>
+        </div>
+        <div class="content-btn-start-found">
+            <a href="{{ path('step_one') }}">
+                <div class="btn-start-found">
+                    <p>Commencer</p>
+                </div>
+            </a>
+        </div>
+    </section>
+</main>
+{% endblock %}

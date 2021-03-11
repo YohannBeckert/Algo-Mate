@@ -33,6 +33,10 @@ input{
     display: flex;
     height: 88.576vh;
 }
+body{
+    height: 100vh;
+    width: 100%;
+}
 
                      /*                     */
                     /* Background Champion */

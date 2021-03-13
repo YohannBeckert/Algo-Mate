@@ -3,14 +3,13 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id
@@ -18,6 +17,22 @@ class User
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private $email;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
+    /**
+     * @var string The hashed password
+     * @ORM\Column(type="string")
+     */
+    private $password;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -30,16 +45,6 @@ class User
     private $lastname;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $email;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $password;
-
-    /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $age;
@@ -47,75 +52,67 @@ class User
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $pseudo;
+    private $country;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $solo_rank;
+    private $city;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $flex_rank;
+    private $username;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $first_lane;
+    private $countryInGame;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $second_lane;
+    private $soloRank;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $description;
+    private $flexRank;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Champion::class, inversedBy="users")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $champion;
+    private $firstRole;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Champion::class, inversedBy="users")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $champions;
+    private $secondRole;
 
-    public function __construct()
-    {
-        $this->champions = new ArrayCollection();
-    }
+    /**
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $favoriteChampion = [];
+
+    /**
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $hatedChampion = [];
+
+    /**
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $goal = [];
+
+    /**
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $availability = [];
+
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getFirstname(): ?string
-    {
-        return $this->firstname;
-    }
-
-    public function setFirstname(string $firstname): self
-    {
-        $this->firstname = $firstname;
-
-        return $this;
-    }
-
-    public function getLastname(): ?string
-    {
-        return $this->lastname;
-    }
-
-    public function setLastname(string $lastname): self
-    {
-        $this->lastname = $lastname;
-
-        return $this;
     }
 
     public function getEmail(): ?string
@@ -130,14 +127,90 @@ class User
         return $this;
     }
 
-    public function getPassword(): ?string
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
     {
-        return $this->password;
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): string
+    {
+        return (string) $this->password;
     }
 
     public function setPassword(string $password): self
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Returning a salt is only needed, if you are not using a modern
+     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *
+     * @see UserInterface
+     */
+    public function getSalt(): ?string
+    {
+        return null;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
+    }
+
+    public function getFirstname(): ?string
+    {
+        return $this->firstname;
+    }
+
+    public function setFirstname(?string $firstname): self
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname(?string $lastname): self
+    {
+        $this->lastname = $lastname;
 
         return $this;
     }
@@ -154,98 +227,141 @@ class User
         return $this;
     }
 
-    public function getPseudo(): ?string
+    public function getCountry(): ?string
     {
-        return $this->pseudo;
+        return $this->country;
     }
 
-    public function setPseudo(?string $pseudo): self
+    public function setCountry(?string $country): self
     {
-        $this->pseudo = $pseudo;
+        $this->country = $country;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(?string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function setUsername(?string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    public function getCountryInGame(): ?string
+    {
+        return $this->countryInGame;
+    }
+
+    public function setCountryInGame(?string $countryInGame): self
+    {
+        $this->countryInGame = $countryInGame;
 
         return $this;
     }
 
     public function getSoloRank(): ?string
     {
-        return $this->solo_rank;
+        return $this->soloRank;
     }
 
-    public function setSoloRank(?string $solo_rank): self
+    public function setSoloRank(?string $soloRank): self
     {
-        $this->solo_rank = $solo_rank;
+        $this->soloRank = $soloRank;
 
         return $this;
     }
 
     public function getFlexRank(): ?string
     {
-        return $this->flex_rank;
+        return $this->flexRank;
     }
 
-    public function setFlexRank(?string $flex_rank): self
+    public function setFlexRank(?string $flexRank): self
     {
-        $this->flex_rank = $flex_rank;
+        $this->flexRank = $flexRank;
 
         return $this;
     }
 
-    public function getFirstLane(): ?string
+    public function getFirstRole(): ?string
     {
-        return $this->first_lane;
+        return $this->firstRole;
     }
 
-    public function setFirstLane(?string $first_lane): self
+    public function setFirstRole(?string $firstRole): self
     {
-        $this->first_lane = $first_lane;
+        $this->firstRole = $firstRole;
 
         return $this;
     }
 
-    public function getSecondLane(): ?string
+    public function getSecondRole(): ?string
     {
-        return $this->second_lane;
+        return $this->secondRole;
     }
 
-    public function setSecondLane(?string $second_lane): self
+    public function setSecondRole(?string $secondRole): self
     {
-        $this->second_lane = $second_lane;
+        $this->secondRole = $secondRole;
 
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getFavoriteChampion(): ?array
     {
-        return $this->description;
+        return $this->favoriteChampion;
     }
 
-    public function setDescription(?string $description): self
+    public function setFavoriteChampion(?array $favoriteChampion): self
     {
-        $this->description = $description;
+        $this->favoriteChampion = $favoriteChampion;
 
         return $this;
     }
 
-    /**
-     * @return Collection|Champion[]
-     */
-    public function getChampions(): Collection
+    public function getHatedChampion(): ?array
     {
-        return $this->champions;
+        return $this->hatedChampion;
     }
 
-    public function addChampion(Champion $champion): self
+    public function setHatedChampion(?array $hatedChampion): self
     {
-        if (!$this->champions->contains($champion)) {
-            $this->champions[] = $champion;
-        }
+        $this->hatedChampion = $hatedChampion;
 
         return $this;
     }
 
-    public function removeChampion(Champion $champion): self
+    public function getGoal(): ?array
     {
-        $this->champions->removeElement($champion);
+        return $this->goal;
+    }
+
+    public function setGoal(?array $goal): self
+    {
+        $this->goal = $goal;
+
+        return $this;
+    }
+
+    public function getAvailability(): ?array
+    {
+        return $this->availability;
+    }
+
+    public function setAvailability(?array $availability): self
+    {
+        $this->availability = $availability;
 
         return $this;
     }

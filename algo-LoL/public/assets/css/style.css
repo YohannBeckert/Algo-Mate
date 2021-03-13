@@ -511,8 +511,8 @@ div label{
                     /*            */
 
 
-
-.main-found{
+        /* Rules */
+.main-rules{
 width: 100%;
 height: 86.1vh;
 background-color: #171717;
@@ -521,7 +521,7 @@ align-items: center;
 justify-content: center;
 font-family: 'Yantramanav', sans-serif;
 }
-.rules-found{
+.content-step{
     width: 48rem;
     height: 44rem;
     color: white;
@@ -536,14 +536,14 @@ font-family: 'Yantramanav', sans-serif;
 
     /* Title rules */
 
-.title-rules-found{
+.title-form{
     width: 100%;
     height: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.title-rules-found h1{
+.title-form h1{
     text-transform: uppercase;
     font-size: 1.9rem;
     margin-top: 5%;
@@ -551,7 +551,7 @@ font-family: 'Yantramanav', sans-serif;
 
     /* Text rules */
 
-.text-rules-found{
+.text-form{
     width: 100%;
     height: 70%;
     margin: 8% 0 5% 0;
@@ -591,4 +591,24 @@ li span{
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
+}
+
+                 /*      */
+                /* Step */
+               /*      */
+
+
+.bg-main-step{
+    background-color: #b97d3f;
+}
+.bg-step{
+    background-color: white;
+    color: black;
+    box-shadow: 2px 2px 6px black;
+    text-shadow: none;
+    height: auto;
+}
+.under-title{
+    margin: 0;
+    height: auto;
 }

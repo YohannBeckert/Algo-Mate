@@ -2,11 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Algo'Mate{% block title %}{% endblock %}</title>
+        {% block title %}<title>Algo'Mate</title>{% endblock %}
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('assets/css/config.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
         {% block stylesheets %}{% endblock %}
 
     </head>

@@ -1,4 +1,5 @@
-    <body>
+ {% set route_name = app.request.attributes.get('_route') %}
+   <body>
         <header>
             <section id="navbar">
                 <div class="content-logo">
@@ -8,45 +9,43 @@
                 </div>
                 <div class="content-nav">
                     <nav>
-                        <ul class="content-item">
+                        <ul class="content-item central-nav">
                             <div class="nav-item">
-                                <a href="{{ path('homepage') }}">
-                                    <li>Accueil</li>
-                                </a>
+                                <li {% if route_name == "homepage" %}class="central-nav-item active" {% else %} class="central-nav-item" {% endif %}>
+                                    <a href="{{ path('homepage') }}">Accueil</a>
+                                </li>                        
                             </div>
                             <div class="nav-item">
-                                <a href="{{ path('champion_list') }}">
-                                    <li>Champions</li>
-                                </a>
+                                <li {% if route_name == "champion_list" %}class="central-nav-item active" {% else %} class="central-nav-item" {% endif %}>
+                                    <a href="{{ path('champion_list') }}">Champions</a>
+                                </li>
+                                
+                                
                             </div>
                             <div class="nav-item">
-                                <a href="{{ path('found_mate') }}">
-                                    <li>Trouvez un Mate</li>
-                                </a>
+                                <li {% if route_name == "found_mate" %}class="central-nav-item active" {% else %} class="central-nav-item" {% endif %}>
+                                    <a href="{{ path('found_mate') }}">Trouvez un Mate</a>
+                                </li>                              
                             </div>
                         </ul>
                     </nav>
                 </div>
+
+
+
                 <div class="content-disconnect">
-                    <nav>
-                        <ul class="content-item">
-                            <div class="nav-item">
-                                <a href="{{ path('app_login') }}">
-                                    <li>Connexion</li>
-                                </a>
-                            </div>
-                            <div class="nav-item">
-                                <a href="{# {{ path('register') }} #}">
-                                    <li>S'enregistrer</li>
-                                </a>
-                            </div>
-                            <div class="nav-item">
-                                <a href="{{ path('admin') }}">
-                                    <li>ADMIN</li>
-                                </a>
-                            </div>
-                        </ul>
-                    </nav>
+                        <div class="nav-item connection">
+                            <a href="{{ path('app_login') }}">
+                                <div>Connexion / Inscription</div>
+                            </a>
+                        </div>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <div class="nav-item">
+                            <a href="{{ path('admin') }}">
+                                <div>ADMIN</div>
+                            </a>
+                        </div>
+                    {% endif %}
                 </div>
             </section>
         </header>

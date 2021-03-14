@@ -5,7 +5,7 @@
 {% block body %}
 <main class="main-rules bg-main-step">
     <section class="content-step bg-step">
-        <div class="title-form">
+        <div class="title-step">
             <h1>Étape 1</h1>
         </div>
         <div class="text-form under-title">
@@ -14,17 +14,73 @@
                     Informations personnelles
                 </p>
             </div>
-            <div class="content-algo-form">
+        </div>
+        <div class="content-step-form">
+            {{ form_start(form) }}
 
-            </div>
-        </div>
-        <div class="content-btn-start-found">
-            <a href="{{ path('step_one') }}">
-                <div class="btn-start-found">
-                    <p>Commencer</p>
+                <div class="item-form-step">
+                    <div class="label-item-step">
+                        {{ form_label(form.lastname) }}
+                    </div>
+                    <div class="input-item-step">
+                        {{ form_widget(form.lastname) }}
+                    </div>
+                    <div class="error-item-step">
+                        {{ form_errors(form.lastname) }}
+                    </div>
                 </div>
-            </a>
+                <div class="item-form-step">
+                    <div class="label-item-step">
+                        {{ form_label(form.firstname) }}
+                    </div>
+                    <div class="input-item-step">
+                        {{ form_widget(form.firstname) }}
+                    </div>
+                    <div class="error-item-step">
+                        {{ form_errors(form.firstname) }}
+                    </div>
+                </div>
+                <div class="item-form-step">
+                    <div class="label-item-step">
+                        {{ form_label(form.age) }}
+                    </div>
+                    <div class="input-item-step">
+                        {{ form_widget(form.age) }}
+                    </div>
+                    <div class="error-item-step">
+                        {{ form_errors(form.age) }}
+                    </div>
+                </div>
+                <div class="item-form-step">
+                    <div class="label-item-step">
+                        {{ form_label(form.country) }}
+                    </div>
+                    <div class="input-item-step">
+                        {{ form_widget(form.country) }}
+                    </div>
+                    <div class="error-item-step">
+                        {{ form_errors(form.country) }}
+                    </div>
+                </div>
+                <div class="item-form-step">
+                    <div class="label-item-step">
+                        {{ form_label(form.city) }}
+                    </div>
+                    <div class="input-item-step">
+                        {{ form_widget(form.city) }}
+                    </div>
+                    <div class="error-item-step">
+                        {{ form_errors(form.city) }}
+                    </div>
+                </div>
+
+        <div class="content-btn-found btn-step">
+                <button type="submit" class="btn-found next-step">
+                    <p>Étape suivante</p>
+                </button>
         </div>
+            {{ form_end(form) }}
+        </div>     
     </section>
 </main>
 {% endblock %}

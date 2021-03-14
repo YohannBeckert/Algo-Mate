@@ -1,0 +1,32 @@
+
+.all-content-profile{
+    display: flex;
+    height: 86vh;
+}
+.all-personal-info{
+    width: 25%;
+
+}
+.game-info{
+    width: 75%;
+    background-color: gray;
+}
+
+.personal-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.personal-img img{
+    width: 15rem;
+    height: 18rem;
+    background-color: black;
+}
+
+
+.personal-info{
+    width: 75%;
+}
+.personal-info-container{
+    display: flex;
+}

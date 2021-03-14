@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<main class="main-rules bg-main-step">
+    <section class="content-step bg-step">
+        <div class="title-form">
+            <h1>Étape 1</h1>
+        </div>
+        <div class="text-form under-title">
+            <div class="explain-text">
+                <p>
+                    Informations personnelles
+                </p>
+            </div>
+            <div class="content-algo-form">
+                {{ form_start(form) }}
+                    <div class="my-custom-class-for-errors">
+                        {{ form_errors(form) }}
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            {{ form_label(form.task) }}
+                        </div>
+                        <div class="col" id="some-custom-id">
+                            {{ form_widget(form.dueDate) }}
+                        </div>
+                    </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+        <div class="content-btn-start-found">
+            <a href="{{ path('step_one') }}">
+                <div class="btn-start-found">
+                    <p>Commencer</p>
+                </div>
+            </a>
+        </div>
+    </section>
+</main>
+{% endblock %}

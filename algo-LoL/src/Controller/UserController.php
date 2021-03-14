@@ -14,28 +14,13 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class UserController extends AbstractController
 {
 
-/*     public function login(Request $request, UserPasswordEncoderInterface $encoder, UserInterface $userInterface): Response
-    {   
-        $user = new User();
-        $form = $this->createForm(RegisterType::class, $user);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            // Encodage du mot de passe
-            $user->setPassword($encoder->encodePassword($user, $user->getPassword()));
-
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
-
-            $this->addFlash('success', 'Vous êtes enregistré. Vous pouvez maintenant vous connecter.');
-
-            return $this->redirectToRoute('login');
-        }
-        return $this->render('login/login.html.twig',[
-            'form' => $form->createView(),
-        ]);
-    } */
+    /**
+     * @Route("/profile", name="profile")
+     */
+    public function profile(): Response
+    {
+        return $this->render('user/profile.html.twig');
+    }
 
     /**
      * @Route("/register", name="register")
@@ -66,19 +51,5 @@ class UserController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-    /**
-     * @Route("/found", name="found_mate")
-     */
-    public function rules(): Response
-    {
-        return $this->render('found_mate/rules.html.twig');
-    }
 
-    /**
-     * @Route("/found/step_1", name="step_one")
-     */
-    public function stepOne(): Response
-    {
-        return $this->render('found_mate/step_one.html.twig');
-    }
 }

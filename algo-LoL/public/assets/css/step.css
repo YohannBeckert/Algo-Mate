@@ -1,0 +1,74 @@
+
+                 /*      */
+                /* Step */
+               /*      */
+
+
+.bg-main-step{
+    background-color: #171717;
+}
+.bg-step{
+    background-color: #242424;
+    color: white;
+    box-shadow: 2px 2px 6px #00e6ff;
+    text-shadow: none;
+    height: auto;
+}
+.title-step h1{
+    text-align: center;
+    font-size: 2rem;
+}
+.under-title{
+    margin: 0;
+    height: auto;
+}
+
+.content-step-form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4%;
+}
+.item-form-step{
+    margin-bottom: 2%;
+}
+.label-item-step{
+    display: flex;
+    justify-content: center;
+}
+.error-item-step{
+    display: flex;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: #ff5400;
+    text-shadow: black 1px 1px 1px;
+}
+.label-item-step label{
+    margin-bottom: 1%;
+}
+.input-item-step input{
+    width: 18rem;
+    font-size: 1rem;
+    padding-left: 2%;
+    height: 2.1rem;
+    border-radius: 5px;
+    border: rgb(0 0 0 / 50%) 1px solid;
+    box-shadow: 0 2px 4px rgba(0,0,0,.25);
+}
+#step_one_lastname, #step_one_firstname, #step_one_age, #step_one_country,#step_one_city{
+    text-align: center;
+    padding: 0;
+}
+#step_one_age{
+    padding-left: 4%;
+}
+.btn-step{
+    margin: 4% 0 2% 0;
+}
+.next-step{
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 0px 0px 2px black;
+    cursor: pointer;
+}

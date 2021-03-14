@@ -27,6 +27,13 @@
                                     <a href="{{ path('found_mate') }}">Trouvez un Mate</a>
                                 </li>                              
                             </div>
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <div class="nav-item">
+                                <li {% if route_name == "admin" %}class="central-nav-item active" {% else %} class="central-nav-item" {% endif %}>
+                                    <a href="{{ path('admin') }}">Administration</a>
+                                </li>                              
+                            </div>
+                            {% endif %}
                         </ul>
                     </nav>
                 </div>
@@ -34,17 +41,23 @@
 
 
                 <div class="content-disconnect">
-                        <div class="nav-item connection">
-                            <a href="{{ path('app_login') }}">
-                                <div>Connexion / Inscription</div>
-                            </a>
-                        </div>
-                    {% if is_granted('ROLE_ADMIN') %}
+                    {% if app.user %}
                         <div class="nav-item">
-                            <a href="{{ path('admin') }}">
-                                <div>ADMIN</div>
+                            <a href="{{ path('app_login') }}">
+                                {{ app.user.username }} 
                             </a>
                         </div>
+                        <div class="nav-item disconnect">
+                            <a href="{{ path('app_logout') }}">
+                                Déconnexion
+                            </a>
+                        </div>
+                    {% else %}
+                    <div class="nav-item connection">
+                        <a href="{{ path('app_login') }}">
+                            <div>Connexion / Inscription</div>
+                        </a>
+                    </div>
                     {% endif %}
                 </div>
             </section>

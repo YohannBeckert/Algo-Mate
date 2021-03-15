@@ -44,7 +44,11 @@
                     {% if app.user %}
                         <div class="nav-item">
                             <a href="{{ path('profile') }}">
-                                {{ app.user.username }} 
+                                {% if app.user.username == NULL %}
+                                    {{ app.user.email }}
+                                {% else %}
+                                    {{ app.user.username }}
+                                {% endif %}
                             </a>
                         </div>
                         <div class="nav-item disconnect">

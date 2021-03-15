@@ -20,43 +20,38 @@ class StepOneType extends AbstractType
             'label' => 'Nom',
             'attr' => [
                 'placeholder' => 'Votre nom...'
-            ],
-            'constraints' => [
-                new NotBlank([
-                    'message'=> 'Ce champs ne peut pas être vide'
-                ]),
             ]
         ])
             ->add('firstname', null, [
-                'label' => 'Prénom',
+                'label' => 'Prénom *',
                 'attr' => [
                     'placeholder' => 'Votre prénom...'
                 ],
                 'constraints' => [
                     new NotBlank([
-                        'message'=> 'Ce champs ne peut pas être vide'
+                        'message'=> 'Ce champs ne peut pas être vide.'
                     ]),
                 ]
             ])
             ->add('age', IntegerType::class,[
-                'label' => 'Âge',
+                'label' => 'Âge *',
                 'attr' => [
                     'placeholder' => 'Votre âge...',
                 ],
                 'constraints' => [
                     new NotBlank([
-                        'message'=> 'Ce champs ne peut pas être vide'
+                        'message'=> 'Ce champs ne peut pas être vide.'
                     ]),
                 ]
             ])
             ->add('country', null, [
-                'label' => 'Pays',
+                'label' => 'Pays *',
                 'attr' => [
                     'placeholder' => 'Votre pays...'
                 ],
                 'constraints' => [
                     new NotBlank([
-                        'message'=> 'Ce champs ne peut pas être vide'
+                        'message'=> 'Ce champs ne peut pas être vide.'
                     ]),
                 ]
             ])
@@ -64,11 +59,6 @@ class StepOneType extends AbstractType
                 'label' => 'Ville',
                 'attr' => [
                     'placeholder' => 'Votre ville...'
-                ],
-                'constraints' => [
-                    new NotBlank([
-                        'message'=> 'Ce champs ne peut pas être vide'
-                    ]),
                 ]
             ])
         ;

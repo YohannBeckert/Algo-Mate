@@ -13,11 +13,8 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="homepage")
      */
-    public function index(UserRepository $userRepository): Response
+    public function index(): Response
     {
-/*         $users = $userRepository->findById(); */
-        return $this->render('home/home.html.twig',[
-            /* 'users' => $users */
-        ]);
+        return $this->render('home/home.html.twig');
     }
 }

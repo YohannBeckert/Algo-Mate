@@ -22,7 +22,10 @@
     margin: 0;
     height: auto;
 }
-
+.complementary-info{
+    font-size: 0.8rem;
+    font-style: italic;
+}
 .content-step-form form{
     display: flex;
     flex-direction: column;

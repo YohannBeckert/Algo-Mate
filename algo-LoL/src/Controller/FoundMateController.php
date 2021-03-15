@@ -25,7 +25,7 @@ class FoundMateController extends AbstractController
     }
 
     /**
-     * @Route("/found/step_1", name="step_one", methods={"GET","PUT"})
+     * @Route("/found/step_1", name="step_one", methods={"GET","POST"})
      */
     public function stepOne(Request $request, EntityManagerInterface $em): Response
     {

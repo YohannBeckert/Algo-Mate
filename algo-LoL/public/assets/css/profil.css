@@ -1,18 +1,23 @@
 
 .all-content-profile{
     display: flex;
-    height: 86vh;
+    height: 85.576vh;
 }
 .all-personal-info{
-    width: 25%;
-
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #242424;
+    color: white;
 }
 .game-info{
-    width: 75%;
-    background-color: gray;
+    width: 80%;
 }
 
 .personal-img{
+    width: 100%;
+    height: 35%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,13 +25,192 @@
 .personal-img img{
     width: 15rem;
     height: 18rem;
-    background-color: black;
+    
 }
 
 
 .personal-info{
-    width: 75%;
+    width: 15rem;
+    height: 55%;
+    align-self: center;
 }
 .personal-info-container{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20%;
+}
+.country-firstname{
+    display: flex;
+}
+.personal-firstname{
+    margin-left: 3%;
+    font-weight: bold;
+}
+
+        /* Availability */
+
+.content-all-availability{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 6px #bbbbbb;
+    padding: 6% 0;
+}
+.content-all-day{
+    margin-top: 5%;
+}
+.item-day{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2%;
+}
+.label-day{
+    font-weight: bold;
+}
+
+        /* Button modify */
+.btn-modify-profile{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-modify{
+    display: flex;
+    width: 10rem;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #00e6ff;
+    text-shadow: 0px 0px 2px black;
+}
+
+                 /*           */
+                /* Game info */
+               /*           */
+
+
+    /* Background */
+
+.bg-favorite-champ{
+    width: 100%;
+    height: 35%;
+    background-image: url(../images/background/tristana.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-position-y: -175px;
+}
+.all-game-info{
+    display: flex;
+    width: 100%;
+    height: 65%;
+}
+
+        /* Left section */
+
+.all-game-info .left-game-section{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: gray;
+}
+.content-all-rank{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+.content-rank{
+    width: 150px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+.flex{
+    width: 80px;
+    height: 130px;
+}
+.flex img{
+    width: 90%;
+}
+
+.content-table-champ{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.content-three-champ{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3% 0;
+    border-radius: 5px;
+}
+.favorite{
+    background-color: rgba(115,255,80,.5);
+    margin-bottom: 3%;
+}
+.hated{
+    background-color: rgba(255,80,80,.5);
+}
+.content-card-champ{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+.champ-card{
+    width: 30%;
+}
+.champ-card img{
+    width: 100%;
+}
+
+        /* Right section */
+
+.all-game-info .right-game-section{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.username-game{
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.username-game h1{
+    font-size: 2.5rem;
+}
+.game-region{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    width: 8.5rem;
+}
+.flag{
+    display: flex;
+    align-items: center;
+}
+.flag img, .country-firstname img{
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-right: 3px;
 }

@@ -7,53 +7,165 @@
     <div class="all-content-profile">
         <section class="all-personal-info">
             <div class="personal-img">
-                <img src="" alt="">
+                <img src="/assets/images/pinguin.jpg" alt="">
             </div>
             <div class="personal-info">
                 <div class="personal-info-container">
-                    <div class="label-info">
-                        <h5>Nom :</h5>
+                    <div class="country-firstname">
+                        <img src="/assets/images/flags/France.png" alt="">
+                        <p class="personal-firstname">{{ user.firstname }}</p>
                     </div>
-                    <div class="response-info">
-                        <p>Beckert</p>
-                    </div>
-                </div>
-                <div class="personal-info-container">
-                    <div class="label-info">
-                        <h5>Préom :</h5>
-                    </div>
-                    <div class="response-info">
-                        <p>Yohann</p>
+                    <div class="personal-age">
+                        <p><span>26</span> ans</p>
                     </div>
                 </div>
-                <div class="personal-info-container">
-                    <div class="label-info">
-                        <h5>Âge :</h5>
+                <div class="content-all-availability">
+                    <div class="title-availability">
+                        <h3>Disponibilités</h3>
                     </div>
-                    <div class="response-info">
-                        <p>26 ans</p>
+                    <div class="content-all-day">
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Lundi</p>
+                            </div>
+                            <div class="result-day">
+                                <p>8h00/10h00</p>
+                            </div>
+                        </div>
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Mardi : </p>
+                            </div>
+                            <div class="result-day">
+                                <p>Pas disponible</p>
+                            </div>
+                        </div>
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Mercredi : </p>
+                            </div>
+                            <div class="result-day">
+                                <p>8h00/10h00 - 19h00/23h00</p>
+                            </div>
+                        </div>
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Jeudi : </p>
+                            </div>
+                            <div class="result-day">
+                                <p>Pas disponible</p>
+                            </div>
+                        </div>
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Vendredi : </p>
+                            </div>
+                            <div class="result-day">
+                                <p>20h00/00h00</p>
+                            </div>
+                        </div>
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Samedi : </p>
+                            </div>
+                            <div class="result-day">
+                                <p>Toute la journée</p>
+                            </div>
+                        </div>
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Dimanche : </p>
+                            </div>
+                            <div class="result-day">
+                                <p>Pas disponible</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="personal-info-container">
-                    <div class="label-info">
-                        <h5>Pays :</h5>
+                </div> 
+            </div>
+            <div class="btn-modify-profile">
+                <a href="">
+                    <div class="btn-modify">
+                        <p>Modifier mon profil</p>
                     </div>
-                    <div class="response-info">
-                        <p>France</p>
-                    </div>
-                </div>
-                <div class="personal-info-container">
-                    <div class="label-info">
-                        <h5>Ville :</h5>
-                    </div>
-                    <div class="response-info">
-                        <p>Wittenheim</p>
-                    </div>
-                </div>
+                </a>
             </div>
         </section>
         <section class="game-info">
-        
+
+            <div class="bg-favorite-champ"></div>
+
+            <div class="all-game-info">
+                <section class="left-game-section">
+                    <div class="content-all-rank">
+                        <div class="content-rank solo">
+                            <h5>Solo rank</h5>
+                            <img src="/assets/images/rank/gold.png" alt="">
+                            <p>Gold IV</p>
+                        </div>
+                        <div class="content-rank flex">
+                            <h5>Flex rank</h5>
+                            <img src="/assets/images/rank/silver.png" alt="">
+                            <p>Silver II</p>
+                        </div>
+                    </div>
+                    <div class="content-table-champ">
+                        <div class="content-three-champ favorite">
+                            <div class="title-three-champ">
+                                <h5>Champions favoris</h5>
+                            </div>
+                            <div class="content-card-champ">
+                                <div class="champ-card">
+                                    <img src="/assets/images/champions/Tristana.png" alt="">
+                                </div>
+                                <div class="champ-card">
+                                    <img src="/assets/images/champions/Miss Fortune.png" alt="">
+                                </div>
+                                <div class="champ-card">
+                                    <img src="/assets/images/champions/Caitlyn.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-three-champ hated">
+                            <div class="title-three-champ">
+                                <h5>Champions non apprécié</h5>
+                            </div>
+                            <div class="content-card-champ">
+                                <div class="champ-card">
+                                    <img src="/assets/images/champions/Samira.png" alt="">
+                                </div>
+                                <div class="champ-card">
+                                    <img src="/assets/images/champions/Senna.png" alt="">
+                                </div>
+                                <div class="champ-card">
+                                    <img src="/assets/images/champions/Lucian.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="right-game-section">
+                    <div class="content-gamer-info">
+                        <div class="username-game">
+                            <h1>Arkhaden</h1>
+                            <div class="game-region">
+                                <div class="flag -player">
+                                    <img src="/assets/images/flags/France.png" alt="">
+                                    <p>France</p>
+                                </div>
+                                <p class="space"> - </p>
+                                <div class="flag -game">
+                                    <img src="/assets/images/flags/euw.png" alt="">
+                                    <p>EUW</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>ADC</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </section>
     </div>
 </main>

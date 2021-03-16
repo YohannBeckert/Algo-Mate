@@ -24,14 +24,14 @@ input{
 
     height: 2rem;
 }
-.input-form{
+.input-form, .input-login-item, #register_email, #register_password_first, #register_password_second{
     width: 100%;
     border-radius: 5px;
     /* opacity: 0.8; */
 }
 .log-main{
     display: flex;
-    height: 94.43vh;
+    height: 85.66vh;
     flex-direction: column;
 }
 .home-main{
@@ -46,8 +46,7 @@ body{
 .valid{
     border: 2px solid #00b706;
   }
-  
-.invalid {
+.invalid{
     border: 2px solid red;
 }
                      /*        */

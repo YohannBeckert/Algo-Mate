@@ -5,30 +5,29 @@
 {% block body %}
 <main class="log-main">
     <section class="login-section">
-    <div class="form-width">
-        <div class="content-connection">
-            <div class="title-connection">
-                <h1> Connectez-vous ! <h1>
-            </div>
-            <div class="content-login-form">
-                <form method="post" id="login-form" class="all-login-items">
-                    {% if error %}
-                        <div class="alert-login">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                    {% endif %}
-                    <div class="login-item">
-                        <label for="inputEmail">E-mail</label>
-                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control input-form" required autofocus>
-                        <p class="input-info">Votre e-mail doit contenir au moins 6 caractères</p>
-                    </div>
-                    <div class="login-item">
-                        <label for="inputPassword">Mot de passe</label>
-                        <input type="password" name="password" id="inputPassword" class="form-control input-form" required>
-                        <p class="input-info">Votre mot de passe doit contenir au moins 6 caractères</p>
-                    </div>
-
-                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-                    {#
+    <div class="height-part">
+        <div class="form-width">
+            <div class="content-connection">
+                <div class="title-connection">
+                    <h1> Connectez-vous ! <h1>
+                </div>
+                <div class="content-login-form">
+                    <form method="post" id="login-form" class="all-login-items">
+                        {% if error %}
+                            <div class="alert-login">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                        <div class="login-item">
+                            <label for="inputEmail">E-mail</label>
+                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control input-form" required autofocus> 
+                            <p class="input-info">Votre e-mail doit contenir au moins 6 caractères</p>
+                        </div>
+                        <div class="login-item">
+                            <label for="inputPassword">Mot de passe</label>
+                            <input type="password" name="password" id="inputPassword" class="form-control input-form" required>
+                            <p class="input-info">Votre mot de passe doit contenir au moins 6 caractères</p>
+                        </div>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        {#
                         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
                         See https://symfony.com/doc/current/security/remember_me.html
 
@@ -37,12 +36,28 @@
                                 <input type="checkbox" name="_remember_me"> Remember me
                             </label>
                         </div>
-                    #}
-                    <button class="btn-submit" type="submit">Connexion</button>
-                </form>
-            <div>
+                        #}
+                        <button class="btn-submit" type="submit">Connexion</button>
+                    </form>
+                <div>
+            </div>
         </div>
-    </div>
+        </div>
+        </div>
+        </div>
+    <div class="content-return-register">
+        <div class="title-return-register">
+            <h2>Pas encore inscrit?</h2>
+        </div>
+        <div class="content-btn-register">
+            <a href="{{ path('register') }}">
+                <div class="btn-register">
+                    <p>Inscription</p>
+                </div>
+            </a>
+        </div>
+    </div>   
     </section>
-    <script src="/assets/js/app.js"></script> 
+</main>
+
 {% endblock %}

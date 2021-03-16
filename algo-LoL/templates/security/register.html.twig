@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<main class="log-main">
+    <section class="login-section">
+    <div class="height-part">
+        <div class="form-width">
+            <div class="content-connection">
+                <div class="title-connection">
+                    <h1> Inscription <h1>
+                </div>
+                <div class="content-login-form">
+                               {{ form_start(form) }}
+                <div class="login-item mail">
+                    <div class="label-login-item">
+                        {{ form_label(form.email) }}
+                    </div>
+                    <div class="input-login-item">
+                        {{ form_widget(form.email) }}                       
+                    </div>
+                    <div class="error-login-item">
+                        {{ form_errors(form.email) }}
+                    </div>
+                </div>
+                <div class="login-item repeat-password">
+                    <div class="input-login-item">
+                        {{ form_widget(form.password) }}       
+                                         
+                    </div>
+                    <div class="error-login-item">
+                        {{ form_errors(form.password) }}
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit">M'inscrire</button>
+            {{ form_end(form) }}
+                <div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    <div class="content-return-register">
+        <div class="title-return-register">
+            <h2>Déjà inscrit?</h2>
+        </div>
+        <div class="content-btn-register">
+            <a href="{{ path('app_login') }}">
+                <div class="btn-register">
+                    <p>Connexion</p>
+                </div>
+            </a>
+        </div>
+    </div>   
+    </section>
+</main>
+    <script src="/assets/js/validationForm/appRegister.js"></script> 
+{% endblock %}

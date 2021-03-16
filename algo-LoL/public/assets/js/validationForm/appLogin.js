@@ -16,8 +16,6 @@ const app = {
         app.fieldUsername.addEventListener('blur', app.handleBlur);
         app.fieldPassword.addEventListener('blur', app.handleBlur);
 
-        // On place un écouteur d'événement submit sur le formulaire.
-        form.addEventListener('submit', app.handleSubmitForm);
     },
     handleBlur: function(event){
         

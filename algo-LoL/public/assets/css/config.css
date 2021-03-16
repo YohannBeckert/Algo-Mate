@@ -29,15 +29,37 @@ input{
     border-radius: 5px;
     /* opacity: 0.8; */
 }
-.main{
+.log-main{
     display: flex;
-    height: 85.576vh;
+    height: 94.43vh;
+    flex-direction: column;
+}
+.home-main{
+    display: flex;
+    height: 85.663vh;
+    flex-direction: column;
 }
 body{
     height: 100vh;
     width: 100%;
 }
+.valid{
+    border: 2px solid #00b706;
+  }
+  
+.invalid {
+    border: 2px solid red;
+}
+                     /*        */
+                    /* Footer */
+                   /*        */
 
+
+.content-footer{
+    height: 50px;
+    background-color: #2d3535;
+    display: flex;
+}
                      /*                     */
                     /* Background Champion */
                    /*                     */

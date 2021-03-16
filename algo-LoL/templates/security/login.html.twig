@@ -3,26 +3,27 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<main class="log main">
-    <section class="left-section">
+<main class="log-main">
+    <section class="login-section">
     <div class="form-width">
-        <div class="content-inscription">
-            <div class="title-inscription">
+        <div class="content-connection">
+            <div class="title-connection">
                 <h1> Connectez-vous ! <h1>
             </div>
-            <div class="login-form">
-                <form method="post" class="all-login-items">
+            <div class="content-login-form">
+                <form method="post" id="login-form" class="all-login-items">
                     {% if error %}
-                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        <div class="alert-login">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                     {% endif %}
-
                     <div class="login-item">
                         <label for="inputEmail">E-mail</label>
                         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control input-form" required autofocus>
+                        <p class="input-info">Votre e-mail doit contenir au moins 6 caractères</p>
                     </div>
                     <div class="login-item">
                         <label for="inputPassword">Mot de passe</label>
                         <input type="password" name="password" id="inputPassword" class="form-control input-form" required>
+                        <p class="input-info">Votre mot de passe doit contenir au moins 6 caractères</p>
                     </div>
 
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
@@ -37,10 +38,11 @@
                             </label>
                         </div>
                     #}
-                    <button class="btn btn-success" type="submit">Connexion</button>
+                    <button class="btn-submit" type="submit">Connexion</button>
                 </form>
             <div>
         </div>
     </div>
     </section>
+    <script src="/assets/js/app.js"></script> 
 {% endblock %}

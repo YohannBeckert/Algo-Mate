@@ -2,6 +2,6 @@
 {{ include('partials/_navbar.html.twig') }}
         {% block body %}{% endblock %}
 {{ include('partials/_footer.html.twig') }}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %} <script src="/assets/js/app.js"></script> {% endblock %}
     </body>
 </html>

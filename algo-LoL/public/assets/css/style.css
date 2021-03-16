@@ -1,94 +1,6 @@
 
-                     /*            */
-                    /* Login page */
-                   /*            */
 
 
-
-
-
-                     /*              */
-                    /* left section */
-                   /*              */
-
-
-.left-section{
-    /* clip-path: polygon(0 0, 50% 0, 100% 100%, 0% 100%); */
-    width: 100%;
-    height: 100%;
-    background-image: url(../images/background/pyke.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.title-connection, .title-inscription{
-    width: 100%;
-    text-align: center;
-}
-.content-connection, .content-inscription{
-    width: 40%;
-    height: 50%;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.login-form{
-    width: 100%;
-    height: 80%;
-}
-.all-login-items{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-.login-item{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.login-item label{
-    align-self: center;
-    margin-bottom: 2%;
-    font-weight: bold;
-}
-
-                     /*               */
-                    /* right section */
-                   /*               */
-
-
-.right-section{
-    /* clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%); */
-    width: 100%;
-    height: 100%;
-    background-image: url(../images/background/darius.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-                     /*        */
-                    /* Footer */
-                   /*        */
-
-
-.content-footer{
-    height: 50px;
-    background-color: #2d3535;
-    display: flex;
-}
 
 
                      /*        */
@@ -399,48 +311,7 @@ div label{
     text-decoration :underline ;
 }
 
-        /* S'enregistrer */
 
-.form-width{
-    width: 50%;
-    height: 50%;
-}
-
-.content-inscription{
-    width: 100%;
-    height: 100%;
-}
-.login-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-form form{
-    width: 100%;
-    height: 100%;
-    /* padding: 0 5% 0 5%; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.login-item label{
-     margin-bottom: 4%;
-     font-size: 18px;
-}
-
-#register_email, #register_password, #email, #password{
-    margin-bottom: 5%;
-    width: 100%;
-    height: 2.5rem;
-    padding: 0 3% 0 3%;
-    border: solid 1.5px #00e6ff;
-    border-radius: 10px;
-    font-size: 16px;
-    background-color:#e8e8e8;
-}
 
 
                       /*            */

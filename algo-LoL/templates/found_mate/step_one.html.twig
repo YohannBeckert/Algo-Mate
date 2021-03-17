@@ -4,6 +4,11 @@
 
 {% block body %}
 <main class="main-rules bg-main-step">
+    {% for message in app.flashes('warning') %}
+        <div class="flash-warning">
+            {{ message }}
+        </div>
+    {% endfor %}
     <section class="content-step bg-step">
         <div class="title-step">
             <h1>Étape 1</h1>

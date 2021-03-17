@@ -6,6 +6,11 @@
 <main class="log-main">
     <section class="login-section">
     <div class="height-part">
+    {% for message in app.flashes('success') %}
+        <div class="flash-success">
+            {{ message }}
+        </div>
+    {% endfor %}
         <div class="form-width">
             <div class="content-connection">
                 <div class="title-connection">

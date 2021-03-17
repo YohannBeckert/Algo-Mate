@@ -12,11 +12,11 @@
             <div class="personal-info">
                 <div class="personal-info-container">
                     <div class="country-firstname">
-                        <img src="/assets/images/flags/France.png" alt="">
+                        <img src="/assets/images/flags/{{ user.country }}.png" alt="">
                         <p class="personal-firstname">{{ user.firstname }}</p>
                     </div>
                     <div class="personal-age">
-                        <p><span>26</span> ans</p>
+                        <p><span>{{ user.age }}</span> ans</p>
                     </div>
                 </div>
                 <div class="content-all-availability">
@@ -84,7 +84,7 @@
                 </div> 
             </div>
             <div class="btn-modify-profile">
-                <a href="">
+                <a href="{{ path('step_one') }}">
                     <div class="btn-modify">
                         <p>Modifier mon profil</p>
                     </div>
@@ -92,7 +92,11 @@
             </div>
         </section>
         <section class="game-info">
-
+            {% if user.favoriteChampion is empty() %}
+                <style>.bg-favorite-champ{background-image: url(../assets/images/background/teemo.jpg);}</style>
+            {% else %}
+                <style>.bg-favorite-champ{background-image: url(../assets/images/background/{{user.favoriteChampion[0]}}.jpg);}</style>
+            {% endif %}
             <div class="bg-favorite-champ"></div>
 
             <div class="all-game-info">
@@ -100,13 +104,13 @@
                     <div class="content-all-rank">
                         <div class="content-rank solo">
                             <h5>Solo rank</h5>
-                            <img src="/assets/images/rank/gold.png" alt="">
-                            <p>Gold IV</p>
+                            <img src="/assets/images/rank/{{ user.soloRank }}.png" alt="">
+                            <p>{{ user.soloRank }} {{ user.soloDivision }}</p>
                         </div>
                         <div class="content-rank flex">
                             <h5>Flex rank</h5>
-                            <img src="/assets/images/rank/silver.png" alt="">
-                            <p>Silver II</p>
+                            <img src="/assets/images/rank/{{ user.flexRank }}.png" alt="">
+                            <p>{{ user.flexRank }} {{ user.flexDivision }}</p>
                         </div>
                     </div>
                     <div class="content-table-champ">
@@ -114,54 +118,114 @@
                             <div class="title-three-champ">
                                 <h5>Champions favoris</h5>
                             </div>
-                            <div class="content-card-champ">
-                                <div class="champ-card">
-                                    <img src="/assets/images/champions/Tristana.png" alt="">
+                            {% if user.favoriteChampion is empty() %}
+                                <div class="content-card-champ">
+                                    <div class="champ-card">
+                                        <a href="{{ path('champion_show', {'name':'teemo'}) }}">
+                                            <img src="/assets/images/champions/teemo.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="champ-card">
+                                            <a href="{{ path('champion_show', {'name':'teemo'}) }}">
+                                                <img src="/assets/images/champions/teemo.png" alt="">
+                                            </a>
+                                    </div>
+                                    <div class="champ-card">
+                                        <a href="{{ path('champion_show', {'name':'teemo'}) }}">
+                                            <img src="/assets/images/champions/teemo.png" alt="">
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="champ-card">
-                                    <img src="/assets/images/champions/Miss Fortune.png" alt="">
+                            {% else %}
+                                <div class="content-card-champ">
+                                    <div class="champ-card">
+                                        <a href="{{ path('champion_show', {'name':'tristana'}) }}">
+                                            <img src="/assets/images/champions/tristana.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="champ-card">
+                                            <a href="{{ path('champion_show', {'name':'miss fortune'}) }}">
+                                                <img src="/assets/images/champions/miss fortune.png" alt="">
+                                            </a>
+                                    </div>
+                                    <div class="champ-card">
+                                        <a href="{{ path('champion_show', {'name':user.favoriteChampion[0]}) }}">
+                                            <img src="/assets/images/champions/{{ user.favoriteChampion[0] }}.png" alt="">
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="champ-card">
-                                    <img src="/assets/images/champions/Caitlyn.png" alt="">
-                                </div>
-                            </div>
+                            {% endif %}
                         </div>
                         <div class="content-three-champ hated">
                             <div class="title-three-champ">
                                 <h5>Champions non apprécié</h5>
                             </div>
-                            <div class="content-card-champ">
-                                <div class="champ-card">
-                                    <img src="/assets/images/champions/Samira.png" alt="">
+                            {% if user.hatedChampion is empty() %}
+                                <div class="content-card-champ">                               
+                                    <div class="champ-card">
+                                        <a href="{{ path('champion_show', {'name':'teemo'}) }}">
+                                            <img src="/assets/images/champions/teemo.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="champ-card">
+                                        <a href="{{ path('champion_show', {'name':'teemo'}) }}">
+                                            <img src="/assets/images/champions/teemo.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="champ-card">
+                                        <a href="{{ path('champion_show', {'name':'teemo'}) }}">
+                                            <img src="/assets/images/champions/teemo.png" alt="">
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="champ-card">
-                                    <img src="/assets/images/champions/Senna.png" alt="">
+                            {% else %}
+                                <div class="content-card-champ">                               
+                                    <div class="champ-card">
+                                        <a href="{{ path('champion_show', {'name':user.hatedChampion[0]}) }}">
+                                            <img src="/assets/images/champions/{{ user.hatedChampion[0] }}.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="champ-card">
+                                        <a href="{{ path('champion_show', {'name':'senna'}) }}">
+                                            <img src="/assets/images/champions/senna.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="champ-card">
+                                        <a href="{{ path('champion_show', {'name':'lucian'}) }}">
+                                            <img src="/assets/images/champions/lucian.png" alt="">
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="champ-card">
-                                    <img src="/assets/images/champions/Lucian.png" alt="">
-                                </div>
-                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </section>
                 <section class="right-game-section">
                     <div class="content-gamer-info">
                         <div class="username-game">
-                            <h1>Arkhaden</h1>
+                        {% if user.username is empty() %}
+                            <h1>{{ user.email }}</h1>
+                        {% else %}
+                            <h1>{{ user.username }}</h1>
+                        {% endif %}
                             <div class="game-region">
                                 <div class="flag -player">
-                                    <img src="/assets/images/flags/France.png" alt="">
-                                    <p>France</p>
+                                    <img src="/assets/images/flags/{{ user.country }}.png" alt="">
+                                    <p>{{ user.country }}</p>
                                 </div>
+                                {% if user.username is empty() %}
+
+                                {% else %}
                                 <p class="space"> - </p>
                                 <div class="flag -game">
-                                    <img src="/assets/images/flags/euw.png" alt="">
-                                    <p>EUW</p>
+                                    <img src="/assets/images/flags/{{ user.countryInGame }}.png" alt="">
+                                    <p>{{ user.countryInGame }}</p>
                                 </div>
+                                {% endif %}
                             </div>
                         </div>
                         <div>
-                            <p>ADC</p>
+                            <p>{{ user.firstRole }}</p>
                         </div>
                     </div>
                 </section>

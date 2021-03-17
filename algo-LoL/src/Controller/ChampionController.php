@@ -26,7 +26,7 @@ class ChampionController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="champion_show", methods={"GET"})
+     * @Route("/{name}", name="champion_show", methods={"GET"})
      */
     public function show(Champion $champion): Response
     {
@@ -36,7 +36,7 @@ class ChampionController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="champion_edit", methods={"GET","POST"})
+     * @Route("/{name}/edit", name="champion_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Champion $champion): Response
     {
@@ -56,7 +56,7 @@ class ChampionController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="champion_delete", methods={"DELETE"})
+     * @Route("/{name}", name="champion_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Champion $champion): Response
     {

@@ -9,8 +9,7 @@
             <div class="title-champion">
                 <h1>{{ champion.name }}</h1>
             </div>
-            <a href="{{ path('champion_edit', {'id': champion.id}) }}">Editer</a>
-            <a href="{{ path('champion_show', {'id':(champion.id + 1)}) }}">Next</a>
+            <a href="{{ path('champion_edit', {'name': champion.name}) }}">Editer</a>
         </div>
     </div>
 </section>
@@ -34,7 +33,7 @@
 
     <a href="{{ path('champion_list') }}">back to list</a>
 
-    <a href="{{ path('champion_edit', {'id': champion.id}) }}">edit</a>
+    <a href="{{ path('champion_edit', {'name': champion.name}) }}">edit</a>
 
     {{ include('champion/_delete_form.html.twig') }}
 {% endblock %}

@@ -166,6 +166,7 @@
     color: #00e6ff;
     font-size: 18px;
     font-weight: bold;
+    text-transform: capitalize;
 }
 .champion-roles{ 
     display: flex;

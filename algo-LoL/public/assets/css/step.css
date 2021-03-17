@@ -6,6 +6,7 @@
 
 .bg-main-step{
     background-color: #171717;
+    flex-direction: column;
 }
 .bg-step{
     background-color: #242424;
@@ -25,6 +26,7 @@
 .complementary-info{
     font-size: 0.8rem;
     font-style: italic;
+    color: #00e6ff;;
 }
 .content-step-form form{
     display: flex;
@@ -74,4 +76,107 @@
     font-size: 1.2rem;
     text-shadow: 0px 0px 2px black;
     cursor: pointer;
+}
+
+
+                 /*        */
+                /* Step 2 */
+               /*        */
+
+
+.main-step-2{
+    width: 100%;
+    background-color: #171717;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Yantramanav', sans-serif;
+    padding: 5% 0;
+}
+.input-item-step select{
+    height: 1.8rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+.step-2{
+    margin-bottom: 5%;
+}
+.label-step-2{
+    margin-bottom: 1%;
+}
+.input-step-2 input{
+    text-align: center;
+}
+#step_two_countryInGame{
+    display: flex;
+}
+#step_two_countryInGame_0{
+    margin-left: 4.5%;
+}
+#step_two_countryInGame input{
+    width: 18px;
+    height: 18px;
+    box-shadow: none;
+    margin-right: 0.5%;
+}
+#step_two_countryInGame label{
+    margin-right: 4.5%;
+}
+.width-100{
+    width: 100%;
+}
+
+.personal-solo-rank, .personal-flex-rank{
+    display: flex;
+    justify-content: space-around;
+    width: 38%;
+}
+.aligner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title-personal{
+    text-align: center;
+    margin-bottom: 3%;
+}
+.all-personal{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6%;
+    border: 1px solid white;
+    padding: 3% 0;
+}
+.content-personal{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.role{
+    width: 50%;
+}
+#step_two_favoriteChampion input{
+    width: 18px;
+    height: 18px;
+    box-shadow: none;
+    margin-right: 0.5%;
+}
+#step_two_favoriteChampion label{
+    font-size: 1.5rem;
+}
+#step_two_favoriteChampion,#step_two_hatedChampion{
+    width: 9rem;
+    height: 8rem;
+}
+#step_two_favoriteChampion option,#step_two_hatedChampion option{
+    width: 8rem;
+    height: 4rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
 }

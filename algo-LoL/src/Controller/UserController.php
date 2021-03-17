@@ -20,6 +20,14 @@ class UserController extends AbstractController
     public function profile(): Response
     {
         $user = $this->getUser();
+
+        if(empty($user->getFirstname() || $user->getAge() || $user->getCountry())){
+
+            $this->addFlash('warning', 'Vous devez au minimum remplir votre Prénom, âge et Pays pour accéder à votre profil.');
+
+            return $this->redirectToRoute('step_one');
+        };
+
         return $this->render('user/profile.html.twig',[
             'user' => $user
         ]);
@@ -35,6 +43,10 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
 
+        function test(){
+
+        };
+
         if ($form->isSubmitted() && $form->isValid()) { 
             $user = $form->getData();
             // récupérer le mot de passe en clair
@@ -48,7 +60,7 @@ class UserController extends AbstractController
             $em->persist($user);
             $em->flush();
 
-            $this->addFlash('success', 'Vous êtes enregistré. Vous pouvez maintenant vous connecter.');
+            $this->addFlash('success', 'Vous êtes enregistré. Vous pouvez désormais vous connecter.');
 
             return $this->redirectToRoute('app_login');
         } 

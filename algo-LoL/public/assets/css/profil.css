@@ -42,6 +42,8 @@
 }
 .country-firstname{
     display: flex;
+    justify-content: center;
+    width: 100%;
 }
 .personal-firstname{
     margin-left: 3%;
@@ -96,15 +98,14 @@
 
     /* Background */
 
-.bg-favorite-champ{
+    .bg-favorite-champ{
     width: 100%;
-    height: 35%;
-    background-image: url(../images/background/tristana.png);
+    height: 35%; 
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover; 
     background-position-y: -175px;
-}
+} 
 .all-game-info{
     display: flex;
     width: 100%;

@@ -89,12 +89,12 @@ class User implements UserInterface
     private $secondRole;
 
     /**
-     * @ORM\Column(type="array", nullable=true)
+     * @ORM\Column(type="simple_array", nullable=true)
      */
     private $favoriteChampion = [];
 
     /**
-     * @ORM\Column(type="array", nullable=true)
+     * @ORM\Column(type="simple_array", nullable=true)
      */
     private $hatedChampion = [];
 
@@ -108,7 +108,26 @@ class User implements UserInterface
      */
     private $availability = [];
 
+    /**
+     * @ORM\Column(type="string", length=3, nullable=true)
+     */
+    private $soloDivision;
 
+    /**
+     * @ORM\Column(type="string", length=3, nullable=true)
+     */
+    private $flexDivision;
+
+    public function __construct()
+    {  
+        $this->favoriteChampion = [];
+        $this->hatedChampion = [];
+    }
+
+    public function __toString()
+    {
+        return $this->favoriteChampion;
+    } 
     public function getId(): ?int
     {
         return $this->id;
@@ -359,6 +378,30 @@ class User implements UserInterface
     public function setAvailability(?array $availability): self
     {
         $this->availability = $availability;
+
+        return $this;
+    }
+
+    public function getSoloDivision(): ?string
+    {
+        return $this->soloDivision;
+    }
+
+    public function setSoloDivision(?string $soloDivision): self
+    {
+        $this->soloDivision = $soloDivision;
+
+        return $this;
+    }
+
+    public function getFlexDivision(): ?string
+    {
+        return $this->flexDivision;
+    }
+
+    public function setFlexDivision(?string $flexDivision): self
+    {
+        $this->flexDivision = $flexDivision;
 
         return $this;
     }

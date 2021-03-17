@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Champion;
 use App\Entity\User;
 use App\Form\Step\StepOneType;
+use App\Form\Step\StepTwoType;
 use App\Form\UserType;
+use App\Repository\ChampionRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,21 +32,16 @@ class FoundMateController extends AbstractController
      */
     public function stepOne(Request $request, EntityManagerInterface $em): Response
     {
-        $user = new User();
-
+        $user = $this->getUser();
         $form = $this->createForm(StepOneType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            $user->setEmail($this->getEmail());
-
+            $user = $form->getData();
             $em->persist($user);
             $em->flush();
 
-            $this->addFlash('success', 'trololol');
-
-            return $this->redirectToRoute('found_mate/step_two.html.twig');
+            return $this->redirectToRoute('step_two');
         }
 
         return $this->render('found_mate/step_one.html.twig',[
@@ -51,13 +49,25 @@ class FoundMateController extends AbstractController
         ]);
     }
 
-        /**
-     * @Route("/found/step_2", name="step_two", methods="GET")
+    /**
+     * @Route("/found/step_2", name="step_two", methods={"GET","POST"})
      */
-    public function stepTwo(): Response
+    public function stepTwo(Request $request, EntityManagerInterface $em): Response
     {
+        $user = $this->getUser();
+        $form = $this->createForm(StepTwoType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $em->persist($user);
+            $em->flush();
+
+            return $this->redirectToRoute('homepage');
+        }
+
         return $this->render('found_mate/step_two.html.twig',[
-            /* 'user' => $user */
+            'form' => $form->createView(),
         ]);
     }
 }

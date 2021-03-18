@@ -109,12 +109,12 @@ class User implements UserInterface
     private $availability = [];
 
     /**
-     * @ORM\Column(type="string", length=3, nullable=true)
+     * @ORM\Column(type="string", length=5, nullable=true)
      */
     private $soloDivision;
 
     /**
-     * @ORM\Column(type="string", length=3, nullable=true)
+     * @ORM\Column(type="string", length=5, nullable=true)
      */
     private $flexDivision;
 

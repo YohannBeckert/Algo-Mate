@@ -93,12 +93,10 @@
         </section>
         <section class="game-info">
             {% if user.favoriteChampion is empty() %}
-                <style>.bg-favorite-champ{background-image: url(../assets/images/background/teemo.jpg);}</style>
+                <div class="bg-favorite-champ -teemo"></div>
             {% else %}
-                <style>.bg-favorite-champ{background-image: url(../assets/images/background/{{user.favoriteChampion[0]}}.jpg);}</style>
+                <div class="bg-favorite-champ -{{ user.favoriteChampion[0] }}"></div>
             {% endif %}
-            <div class="bg-favorite-champ"></div>
-
             <div class="all-game-info">
                 <div class="username-game">
                     {% if user.username is empty() %}
@@ -126,24 +124,32 @@
                     </div>
                 </div>
                     <div class="content-all-rank">
-                        <div class="content-rank solo">
-                            <h5>Solo rank</h5>
-                            <img src="/assets/images/rank/{{ user.soloRank }}.png" alt="">
-                            {% if user.soloRank == "Unranked" %}
-                                <p>{{ user.soloRank }}</p>
-                            {% else %}
-                                <p>{{ user.soloRank }} {{ user.soloDivision }}</p>
-                            {% endif %}
-                        </div>
-                        <div class="content-rank flex">
-                            <h5>Flex rank</h5>
-                            <img src="/assets/images/rank/{{ user.flexRank }}.png" alt="">
-                            {% if user.flexRank == "Unranked" %}
-                                <p>{{ user.flexRank }}</p>
-                            {% else %}
-                                <p>{{ user.flexRank }} {{ user.flexDivision }}</p>
-                            {% endif %}
-                        </div>
+                        {% if user.soloRank is empty() %}
+
+                        {% else %}
+                            <div class="content-rank solo">
+                                <h5>Solo rank</h5>
+                                <img src="/assets/images/rank/{{ user.soloRank }}.png" alt="">
+                                {% if user.soloRank == "Unranked" %}
+                                    <p>{{ user.soloRank }}</p>
+                                {% else %}
+                                    <p>{{ user.soloRank }} {{ user.soloDivision }}</p>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                        {% if user.flexRank is empty() %}
+
+                        {% else %}
+                            <div class="content-rank flex">
+                                <h5>Flex rank</h5>
+                                <img src="/assets/images/rank/{{ user.flexRank }}.png" alt="">
+                                {% if user.flexRank == "Unranked" %}
+                                    <p>{{ user.flexRank }}</p>
+                                {% else %}
+                                    <p>{{ user.flexRank }} {{ user.flexDivision }}</p>
+                                {% endif %}
+                            </div>
+                        {% endif %}
                     </div>
                     <div class="content-table-champ">
                         {% if user.favoriteChampion is empty() %}

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -99,14 +101,9 @@ class User implements UserInterface
     private $hatedChampion = [];
 
     /**
-     * @ORM\Column(type="array", nullable=true)
+     * @ORM\Column(type="simple_array", nullable=true)
      */
     private $goal = [];
-
-    /**
-     * @ORM\Column(type="array", nullable=true)
-     */
-    private $availability = [];
 
     /**
      * @ORM\Column(type="string", length=5, nullable=true)
@@ -118,15 +115,21 @@ class User implements UserInterface
      */
     private $flexDivision;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Availability::class, mappedBy="user")
+     */
+    private $availabilities;
+
     public function __construct()
     {  
         $this->favoriteChampion = [];
         $this->hatedChampion = [];
+        $this->availabilities = new ArrayCollection();
     }
 
     public function __toString()
     {
-        return $this->favoriteChampion;
+        return $this->availabilities;
     } 
     public function getId(): ?int
     {
@@ -370,18 +373,6 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getAvailability(): ?array
-    {
-        return $this->availability;
-    }
-
-    public function setAvailability(?array $availability): self
-    {
-        $this->availability = $availability;
-
-        return $this;
-    }
-
     public function getSoloDivision(): ?string
     {
         return $this->soloDivision;
@@ -402,6 +393,36 @@ class User implements UserInterface
     public function setFlexDivision(?string $flexDivision): self
     {
         $this->flexDivision = $flexDivision;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Availability[]
+     */
+    public function getAvailabilities(): Collection
+    {
+        return $this->availabilities;
+    }
+
+    public function addAvailability(Availability $availability): self
+    {
+        if (!$this->availabilities->contains($availability)) {
+            $this->availabilities[] = $availability;
+            $availability->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAvailability(Availability $availability): self
+    {
+        if ($this->availabilities->removeElement($availability)) {
+            // set the owning side to null (unless already changed)
+            if ($availability->getUser() === $this) {
+                $availability->setUser(null);
+            }
+        }
 
         return $this;
     }

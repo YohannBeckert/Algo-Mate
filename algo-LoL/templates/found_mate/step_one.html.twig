@@ -79,13 +79,15 @@
                         {{ form_errors(form.city) }}
                     </div>
                 </div>
-
-        <div class="content-btn-found btn-step">
-                <button type="submit" class="btn-found next-step">
-                    <p>Étape suivante</p>
-                </button>
-        </div>
+            <div class="content-btn-found btn-step">
+                    <button type="submit" class="btn-found next-step">
+                        <p>Étape suivante</p>
+                    </button>
+            </div>
             {{ form_end(form) }}
+        </div>
+        <div class="return-rules">
+            <a href="{{ path('found_mate') }}"><span>&larr;</span> Retourner à la liste des règles</a>
         </div>     
     </section>
 </main>

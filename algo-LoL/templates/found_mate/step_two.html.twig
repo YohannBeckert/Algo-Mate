@@ -13,7 +13,7 @@
                 <p>
                     Informations personnelles en jeu
                 </p>
-                <p class="complementary-info">(Toutes les informations doivent être rempli et seront affichées sur votre profil)</p>
+                <p class="complementary-info">(Toutes les informations doivent être rempli et seront (par défaut) affichées sur votre profil)</p>
             </div>
         </div>
         <div class="content-step-form">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="all-personal">
                     <div class="title-personal">
-                        <h3>Vos Ranks</h3>
+                        <h3>Vos Ranks *</h3>
                         <p class="complementary-info">(Si vous êtes unranked, veuillez choisir la division "N/A")</p>
                     </div>
                     <div class="content-personal">
@@ -99,7 +99,7 @@
                 </div>
                 <div class="all-personal">
                     <div class="title-personal">
-                        <h3>Vos Rôles</h3>
+                        <h3>Vos Rôles *</h3>
                         <p class="complementary-info">(Vous devez sélectionner au minimum votre rôle principal.)</p>
                     </div>
                     <div class="content-personal role">
@@ -129,29 +129,34 @@
                 </div>
                 <div class="all-personal">
                     <div class="title-personal">
-                        <h3>Vos Champions</h3>
-                        <p class="complementary-info">(Vous devez sélectionner au minimum 1 champion et au maximum 3 champions.)</p>
+                        <h3>Pourquoi cherchez-vous un Mate? *</h3>
+                        <p class="complementary-info">(Vous devez sélectionner au minimum 1 raison.)</p>
                     </div>
-                    <div class="content-personal">
-                        <div class="item-form-step aligner">
-                            <div class="label-item-step">
-                                {{ form_label(form.hatedChampion) }}
-                            </div>
+                    <div class="content-personal goal">
+                        <div class="item-form-step goal-width">
                             <div class="input-item-step">
-                                {{ form_widget(form.hatedChampion) }}
+                                {{ form_widget(form.goal) }}
                             </div>
                             <div class="error-item-step">
-                                {{ form_errors(form.hatedChampion) }}
+                                {{ form_errors(form.goal) }}
                             </div>
                         </div>
                     </div>
-                </div>
-        <div class="content-btn-found btn-step">
-                <button type="submit" class="btn-found next-step">
-                    <p>Étape suivante</p>
-                </button>
-        </div>
-            {{ form_end(form) }}
+                </div>                            
+            <div class="content-btn-found btn-step">
+                    <a href="{{ path('step_one') }}">
+                        <div class="btn-preview next-step">
+                            <p>Étape précédente</p>
+                        </div>
+                    </a>
+                    <button type="submit" class="btn-found next-step">
+                        <p>Étape suivante</p>
+                    </button>
+                {{ form_end(form) }}
+            </div>
+        <div class="return-rules rules-step">
+            <a href="{{ path('found_mate') }}"><span>&larr;</span> Retourner à la liste des règles</a>
+        </div>    
         </div>     
     </section>
 </main>

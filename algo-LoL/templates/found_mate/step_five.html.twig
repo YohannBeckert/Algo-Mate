@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<main class="main-step-2 bg-main-step">
+    <section class="content-step bg-step">
+        <div class="title-step">
+            <h1>Étape 5</h1>
+        </div>
+        <div class="text-form under-title">
+            <div class="explain-text">
+                <div class="content-rules-availability">
+                    <h3 class="title-availability">Merci de bien vouloir respecter les paterns suivant :</h3>
+                    <p class="rules-availability">Si vous êtes disponible toute la journée : <span class="span-rules">Toute la journée</span></p>
+                    <p class="rules-availability">Si vous êtes disponible à certaines heures : <span class="span-rules">14h30/16h00 - 19h00/22h45</span></p>
+                    <p class="rules-availability">Si vous n'êtes pas disponible : <span class="span-rules">Vous pouvez laisser le champ vide</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="content-step-form aligner">
+            <div class="all-personal personal-5">
+                <div class="title-availab">
+                        <h3>Vos Disponibilités de jeu *</h3>
+                        <p class="complementary-info">(Si vous laissez un champ vide, la valeur enregistré sera "Pas disponible")</p>
+                    </div>
+            {{ form_start(form) }}
+            <div class="item-form-step aligner">
+                <div class="label-item-step">
+                    {{ form_label(form.monday) }}
+                </div>
+                <div class="input-item-step aligner wrap-3">
+                    {{ form_widget(form.monday) }}
+                    
+                </div>
+                <div class="error-item-step">
+                    {{ form_errors(form.monday) }}
+                </div>
+            </div>
+            <div class="item-form-step aligner">
+                <div class="label-item-step">
+                    {{ form_label(form.tuesday) }}
+                </div>
+                <div class="input-item-step aligner wrap-3">
+                    {{ form_widget(form.tuesday) }}
+                    
+                </div>
+                <div class="error-item-step">
+                    {{ form_errors(form.tuesday) }}
+                </div>
+            </div>
+            <div class="item-form-step aligner">
+                <div class="label-item-step">
+                    {{ form_label(form.wednesday) }}
+                </div>
+                <div class="input-item-step aligner wrap-3">
+                    {{ form_widget(form.wednesday) }}
+                    
+                </div>
+                <div class="error-item-step">
+                    {{ form_errors(form.wednesday) }}
+                </div>
+            </div>
+            <div class="item-form-step aligner">
+                <div class="label-item-step">
+                    {{ form_label(form.thursday) }}
+                </div>
+                <div class="input-item-step aligner wrap-3">
+                    {{ form_widget(form.thursday) }}
+                    
+                </div>
+                <div class="error-item-step">
+                    {{ form_errors(form.thursday) }}
+                </div>
+            </div>
+            <div class="item-form-step aligner">
+                <div class="label-item-step">
+                    {{ form_label(form.friday) }}
+                </div>
+                <div class="input-item-step aligner wrap-3">
+                    {{ form_widget(form.friday) }}
+                    
+                </div>
+                <div class="error-item-step">
+                    {{ form_errors(form.friday) }}
+                </div>
+            </div>
+            <div class="item-form-step aligner">
+                <div class="label-item-step">
+                    {{ form_label(form.saturday) }}
+                </div>
+                <div class="input-item-step aligner wrap-3">
+                    {{ form_widget(form.saturday) }}
+                    
+                </div>
+                <div class="error-item-step">
+                    {{ form_errors(form.saturday) }}
+                </div>
+            </div>
+            <div class="item-form-step aligner">
+                <div class="label-item-step">
+                    {{ form_label(form.sunday) }}
+                </div>
+                <div class="input-item-step aligner wrap-3">
+                    {{ form_widget(form.sunday) }}
+                    
+                </div>
+                <div class="error-item-step">
+                    {{ form_errors(form.sunday) }}
+                </div>
+            </div>
+        </div>
+        <div class="content-btn-found btn-step"id="bottom">
+                <a href="{{ path('step_four') }}">
+                    <div class="btn-preview next-step">
+                        <p>Étape précédente</p>
+                    </div>
+                </a>
+                <button type="submit" class="btn-found next-step">
+                    <p>Étape suivante</p>
+                </button>
+            {{ form_end(form) }}     
+        </div>
+        <div class="return-rules rules-step">
+            <a href="{{ path('found_mate') }}"><span>&larr;</span> Retourner à la liste des règles</a>
+        </div> 
+        </div>     
+    </section>    
+</main>
+{% endblock %}

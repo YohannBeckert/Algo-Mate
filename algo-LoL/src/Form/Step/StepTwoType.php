@@ -49,7 +49,7 @@ class StepTwoType extends AbstractType
                 ]
             ])
             ->add('soloRank',ChoiceType::class,[
-                'label' => 'Votre rank en solo *',
+                'label' => 'Votre rank en solo',
                 'constraints' => [
                     new NotBlank([
                         'message'=> 'Vous devez indiquer quel est votre rank en solo.'
@@ -71,7 +71,7 @@ class StepTwoType extends AbstractType
                 ]
             ])
             ->add('soloDivision',ChoiceType::class,[
-                'label' => 'Votre division *',
+                'label' => 'Votre division',
                 'constraints' => [
                     new NotBlank([
                         'message'=> 'Vous devez indiquer quel est votre division en ranked solo.'
@@ -89,7 +89,7 @@ class StepTwoType extends AbstractType
                 ]
             ])
             ->add('flexRank',ChoiceType::class,[
-                'label' => 'Votre rank en flex *',
+                'label' => 'Votre rank en flex',
                 'constraints' => [
                     new NotBlank([
                         'message'=> 'Vous devez indiquer quel est votre rank en flex.'
@@ -111,7 +111,7 @@ class StepTwoType extends AbstractType
                 ]
             ])
             ->add('flexDivision',ChoiceType::class,[
-                'label' => 'Votre division *',
+                'label' => 'Votre division',
                 'constraints' => [
                     new NotBlank([
                         'message'=> 'Vous devez indiquer quel est votre division en ranked flex.'
@@ -129,7 +129,7 @@ class StepTwoType extends AbstractType
                 ]
             ])
             ->add('firstRole',ChoiceType::class,[
-                'label' => 'Rôle principal *',
+                'label' => 'Rôle principal',
                 'constraints' => [
                     new NotBlank([
                         'message'=> 'Vous devez indiquer quel est votre rôle.'
@@ -146,7 +146,7 @@ class StepTwoType extends AbstractType
                 ]
             ])
             ->add('secondRole',ChoiceType::class,[
-                'label' => 'Rôle secondaire *',
+                'label' => 'Rôle secondaire',
                 'constraints' => [
                     new NotBlank([
                         'message'=> 'Vous devez indiquer quel est votre second rôle.'
@@ -163,77 +163,29 @@ class StepTwoType extends AbstractType
                     'Support' => "Support",
                 ]
             ])
+            ->add('goal', ChoiceType::class,[
+                'label' => 'Pourquoi cherchez vous un mate?',
+                'constraints' => [
+                    new NotBlank([
+                        'message'=> 'Vous devez indiquer au moins 1 raison.'
+                    ]),
+                ],
+                'multiple' => true,
+                'expanded' => true,
+                'choices' => [
+                    'Rank up' => "Rank up",
+                    'Lan' => "Lan",
+                    'Consolider mon équipe' => "Consolider mon équipe",
+                    'S\'amuser à 2' => "S'amuser à 2",
+                    'Autre' => "Autre",
+                ]
+            ])
             /* ->add('favoriteChampion', EntityType::class, [
                 'class'=> Champion::class,
                 'choice_label'=> 'Champions',
                 'constraints' => [new NotBlank(['message'=> 'Ce champs ne peut pas être vide'])]
             ]) */
 
-
-            ->add('hatedChampion',ChoiceType::class,[
-                'label' => 'Vos champions non-favoris *',
-                'constraints' => [
-                    new NotBlank([
-                        'message'=> 'Vous devez indiquer quel sont les champions que vous ne jouez pas ou peu.'
-                    ]),
-                ],
-                'multiple' => true,
-                'expanded' => false,
-                'choices' => [
-                    'aatrox'=>"aatrox",'ahri'=>"ahri",'akali'=>"akali",'alistar' =>"alistar",'amumus'=>"amumu",'anivia'=>"anivia",'annie'=>"annie",'aphelios'=>"aphelios",'ashe'=>"ashe",'aurelion Sol'=>"aurelion Sol",'azir'=>"azir",
-
-                    'bard'=>"bard",'blitzcrank'=>"blitzcrank",'brand'=>"brand",'braum'=>"braum",
-
-                    'caitlyn'=>"caitlyn",'camille'=>"camille",'cassiopeia'=>"cassiopeia",'cho\'Gath'=>"cho'Gath",'corki'=>"corki",
-                    
-                    'darius'=>"darius",'diana'=>"diana",'dr mundo'=>"dr mundo",'draven'=>"draven",
-
-                    'ekko'=>"ekko",'elise'=>"elise",'evelynn'=>"evelynn",'ezreal'=>"ezreal",
-
-                    'fiddlesticks'=>"fiddlesticks",'fiora'=>"fiora",'fizz'=>"fizz",
-
-                    'galio'=>"galio",'gangplank'=>"gangplank",'garen'=>"garen",'gnar'=>"gnar",'gragas'=>"gragas",'graves'=>"graves",
-
-                    'hecarim'=>"hecarim",'heimerdinger'=>"heimerdinger",
-
-                    'illaoi'=>"illaoi",'irelia'=>"irelia",'ivern'=>"ivern",
-
-                    'janna'=>"janna",'jarvan iV'=>"jarvan iV",'jax'=>"jax",'jayce'=>"jayce",'jhin'=>"jhin",'jinx'=>"jinx",
-
-                    'kai\'Sa'=>"kai'Sa",'kalista'=>"kalista",'karma'=>"karma",'karthus'=>"karthus",'kassadin'=>"kassadin",'katarina'=>"katarina",'kayle'=>"kayle",'kayn'=>"kayn",'kennen'=>"kennen",'kha\'Zix'=>"kha'Zix",'kindred'=>"kindred",'kled'=>"kled",'kog\'Maw'=>"kog'Maw",
-
-                    'leBlanc'=>"leBlanc",'lee Sin'=>"lee Sin",'leona'=>"leona",'lillia'=>"lillia",'lissandra'=>"lissandra",'lucian'=>"lucian",'lulu'=>"lulu",'lux'=>"lux",
-
-                    'malphite'=>"malphite",'malzahar'=>"malzahar",'maokai'=>"maokai",'maître yi'=>"maître yi",'miss fortune'=>"miss fortune",'mordekaiser'=>"mordekaiser",'morgana'=>"morgana",
-
-                    'nami'=>"nami",'nasus'=>"nasus",'nautilus'=>"nautilus",'neeko'=>"neeko",'nidalee'=>"nidalee",'nocturne'=>"nocturne",'nunu & willump'=>'nunu & willump',
-
-                    'olaf'=>"olaf",'orianna'=>"orianna",'ornn'=>"ornn",
-
-                    'pantheon'=>"pantheon",'poppy'=>"poppy",'pyke'=>"pyke",
-
-                    'qiyana'=>"qiyana",'quinn'=>"quinn",
-
-                    'rakan'=>"rakan",'rammus'=>"rammus",'rek\'Sai'=>"rek'Sai",'rell'=>"rell",'renekton'=>"renekton",'rengar'=>"rengar",'riven'=>"riven",'rumble'=>"rumble",'ryze'=>"ryze",
-
-                    'samira'=>"samira",'sejuani'=>"sejuani",'senna'=>"senna",'sett'=>"sett",'shaco'=>"shaco",'shen'=>"shen",'shyvana'=>"shyvana",'singed'=>"singed",'sion'=>"sion",'sivir'=>"sivir",'skarner'=>"skarner",'sona'=>"sona",'soraka'=>"soraka",'swain'=>"swain",'sylas'=>"sylas",'syndra'=>"syndra",'séraphine'=>"séraphine",
-
-                    'tahm kench'=>"tahm kench",'taliyah'=>"taliyah",'talon'=>"talon",'taric'=>"taric",'teemo'=>"teemo",'thresh'=>"thresh",'tristana'=>"tristana",'trundle'=>"trundle",'tryndamere'=>"tryndamere",'twisted fate'=>"twisted fate",'twitch'=>"twitch",
-
-                    'udyr'=>"udyr",'urgot'=>"urgot",
-
-                    'varus'=>"varus",'vayne'=>"vayne",'veigar'=>"veigar",'vel\'Koz'=>"vel'Koz",'vi'=>"vi",'viego'=>"viego",'viktor'=>"viktor",'vladimir'=>"vladimir",'volibear'=>"volibear",
-
-                    'warwick'=>"warwick",'wukong'=>"wukong",
-
-                    'xayah'=>"xayah",'xerath'=>"xerath",'xin zhao'=>"xin zhao",
-
-                    'yasuo'=>"yasuo",'yone'=>"yone",'yorick'=>"yorick",'yuumi'=>"yuumi",
-
-                    'zac'=>"zac",'zed'=>"zed",'ziggs'=>"ziggs",'zilean'=>"zilean",'zoé'=>"zoé",'zyra'=>"zyra"
-
-                ]
-             ])
             
         ;
     }

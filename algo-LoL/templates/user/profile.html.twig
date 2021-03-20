@@ -29,7 +29,7 @@
                                 <p>Lundi</p>
                             </div>
                             <div class="result-day">
-                                <p>8h00/10h00</p>
+                                <p>{{ availabilityUser[0].monday }}</p>
                             </div>
                         </div>
                         <div class="item-day">
@@ -37,7 +37,7 @@
                                 <p>Mardi : </p>
                             </div>
                             <div class="result-day">
-                                <p>Pas disponible</p>
+                                <p>{{ availabilityUser[0].tuesday }}</p>
                             </div>
                         </div>
                         <div class="item-day">
@@ -45,7 +45,7 @@
                                 <p>Mercredi : </p>
                             </div>
                             <div class="result-day">
-                                <p>8h00/10h00 - 19h00/23h00</p>
+                                <p>{{ availabilityUser[0].wednesday }}</p>
                             </div>
                         </div>
                         <div class="item-day">
@@ -53,7 +53,7 @@
                                 <p>Jeudi : </p>
                             </div>
                             <div class="result-day">
-                                <p>Pas disponible</p>
+                                <p>{{ availabilityUser[0].thursday }}</p>
                             </div>
                         </div>
                         <div class="item-day">
@@ -61,7 +61,7 @@
                                 <p>Vendredi : </p>
                             </div>
                             <div class="result-day">
-                                <p>20h00/00h00</p>
+                                <p>{{ availabilityUser[0].friday }}</p>
                             </div>
                         </div>
                         <div class="item-day">
@@ -69,7 +69,7 @@
                                 <p>Samedi : </p>
                             </div>
                             <div class="result-day">
-                                <p>Toute la journée</p>
+                                <p>{{ availabilityUser[0].saturday }}</p>
                             </div>
                         </div>
                         <div class="item-day">
@@ -77,7 +77,7 @@
                                 <p>Dimanche : </p>
                             </div>
                             <div class="result-day">
-                                <p>Pas disponible</p>
+                                <p>{{ availabilityUser[0].sunday }}</p>
                             </div>
                         </div>
                     </div>
@@ -189,12 +189,10 @@
                         </div>
                         {% endif %}  
                     </div>
-                   {#  <div class="content-gamer-info">
+                    <div class="content-gamer-info">
                        
-                        <div>
-                            <p>{{ dump(user.favoriteChampion[0]) }}</p>
-                        </div>
-                    </div> #}
+                        
+                    </div>
             </div>
         </section>
     </div>

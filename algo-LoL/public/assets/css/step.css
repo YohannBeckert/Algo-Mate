@@ -1,3 +1,78 @@
+                 /*               */
+                /* Configuration */
+               /*               */
+
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.return-rules{
+    font-size: 0.8rem;
+}
+.return-rules span{
+    font-size: 1.2rem;
+}
+.rules-step{
+    display: flex;
+    justify-content: center;
+}
+.return-rules a:hover{
+    text-decoration: underline;
+    color: #00e6ff;
+}
+.btn-found,.btn-preview{
+    width: 11rem;
+    height: 3.5rem;
+    background-color: #00e6ff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+.btn-preview{
+    border-width: 2px;
+    border-style: outset;
+    border-color: gray;
+    border-image: initial;
+}
+.next-step{
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 0px 0px 2px black;
+    cursor: pointer;
+}
+
+        /* scroll form */
+
+.scroll-form{
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 50%;
+    left: 25%;
+}
+.scroll-cube{
+    width: 3rem;
+    height: 3rem;
+    background-color: #00e6ff;
+    border-radius: 5px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: gray;
+    border-image: initial;   
+}
+.scroll-cube img{
+    width: 70%;
+    height: 70%;
+}
 
                  /*      */
                 /* Step */
@@ -26,7 +101,7 @@
 .complementary-info{
     font-size: 0.8rem;
     font-style: italic;
-    color: #00e6ff;;
+    color: #00e6ff;
 }
 .content-step-form form{
     display: flex;
@@ -60,7 +135,8 @@
     border: rgb(0 0 0 / 50%) 1px solid;
     box-shadow: 0 2px 4px rgba(0,0,0,.25);
 }
-#step_one_lastname, #step_one_firstname, #step_one_age, #step_one_country,#step_one_city{
+#step_one_lastname, #step_one_firstname, #step_one_age, #step_one_country,#step_one_city,
+#step_five_monday,#step_five_tuesday,#step_five_wednesday,#step_five_thursday,#step_five_friday,#step_five_saturday,#step_five_sunday{
     text-align: center;
     padding: 0;
 }
@@ -70,13 +146,7 @@
 .btn-step{
     margin: 4% 0 2% 0;
 }
-.next-step{
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-shadow: 0px 0px 2px black;
-    cursor: pointer;
-}
+
 
 
                  /*        */
@@ -124,6 +194,7 @@
 }
 .width-100{
     width: 100%;
+    
 }
 
 .personal-solo-rank, .personal-flex-rank{
@@ -157,49 +228,45 @@
 .role{
     width: 50%;
 }
-#step_two_favoriteChampion input{
-    width: 18px;
-    height: 18px;
-    box-shadow: none;
-    margin-right: 0.5%;
+.goal-width{
+    width: 100%;
+    margin: 0;
 }
-#step_two_favoriteChampion label{
-    font-size: 1.5rem;
-}
-#step_two_favoriteChampion,#step_two_hatedChampion{
-    width: 9rem;
-    height: 8rem;
-}
-#step_two_favoriteChampion option,#step_two_hatedChampion option{
-    width: 8rem;
-    height: 4rem;
-    font-weight: bold;
-    font-size: 1.1rem;
+#step_two_goal{
+    width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-transform: capitalize;
+}
+#step_two_goal input{
+    width: 15px;
+    height: 15px;
+    margin: 2px 5px 0 0;
+}
+#step_two_goal label{
+    margin-right: 5%;
 }
 
-                 /*        */
-                /* Step 3 */
-               /*        */
+
+                 /*            */
+                /* Step 3 & 4 */
+               /*            */
 
 
 
-#step_three_favoriteChampion{
+#step_three_favoriteChampion, #step_four_hatedChampion{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
-#step_three_favoriteChampion input{
+#step_three_favoriteChampion input,#step_four_hatedChampion input{
     width: 2rem;
     height: 2rem;
     cursor: pointer;
     margin: 0 4% 5% 40%;
 
 }
-#step_three_favoriteChampion label{
+#step_three_favoriteChampion label, #step_four_hatedChampion label{
     height: 2rem;
     text-align: center;
     font-weight: bold;
@@ -208,7 +275,40 @@
     align-items: center;
     justify-content: center;
     margin: 0 0 5% 0;
+    text-transform: capitalize;
 }
 .wrap-3{
     width: 48%;
+}
+
+                 /*        */
+                /* Step 5 */
+               /*        */
+
+
+
+.content-rules-availability{
+    margin: 2% 0 5% 0;
+}
+.content-rules-availability h3{
+    text-align: center;
+}
+.rules-availability{
+    font-size: 0.9rem;
+}
+.span-rules{
+    font-style: italic;
+    color: #00e6ff;
+}
+.title-availab{
+    text-align: center;
+}
+.personal-5{
+    width: 70%;
+    padding: 5% 0;
+}
+.personal-5 input{
+    margin-bottom: 8%;
+    font-size: 0.9rem;
+    width: 22rem;
 }

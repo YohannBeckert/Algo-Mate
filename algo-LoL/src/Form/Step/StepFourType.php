@@ -10,23 +10,18 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints as Assert;
 
-class StepThreeType extends AbstractType
+class StepFourType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('favoriteChampion',ChoiceType::class,[
-            'label' => 'Vos champions favoris *',
+        ->add('hatedChampion',ChoiceType::class,[
+            'label' => 'Vos champions non-favoris *',
             'constraints' => [
-                new NotBlank(['message'=> 'Vous devez indiquer quel sont vos champions favoris.']),
-                new Assert\Count([
-                    'min' => 1,
-                    'max' => 3,
-                    'minMessage' => 'Vous devez indiquer au minimum 1 champion',
-                    'maxMessage' => 'Vous devez indiquer au maximum 3 champions'
-                ])
+                new NotBlank([
+                    'message'=> 'Vous devez indiquer quel sont les champions que vous ne jouez pas ou peu.'
+                ]),
             ],
-            
             'multiple' => true,
             'expanded' => true,
             'choices' => [
@@ -52,9 +47,9 @@ class StepThreeType extends AbstractType
 
                 'kai\'Sa'=>"kai'Sa",'kalista'=>"kalista",'karma'=>"karma",'karthus'=>"karthus",'kassadin'=>"kassadin",'katarina'=>"katarina",'kayle'=>"kayle",'kayn'=>"kayn",'kennen'=>"kennen",'kha\'Zix'=>"kha'Zix",'kindred'=>"kindred",'kled'=>"kled",'kog\'Maw'=>"kog'Maw",
 
-                'leBlanc'=>"leBlanc",'lee sin'=>"lee sin",'leona'=>"leona",'lillia'=>"lillia",'lissandra'=>"lissandra",'lucian'=>"lucian",'lulu'=>"lulu",'lux'=>"lux",
+                'leBlanc'=>"leBlanc",'lee Sin'=>"lee Sin",'leona'=>"leona",'lillia'=>"lillia",'lissandra'=>"lissandra",'lucian'=>"lucian",'lulu'=>"lulu",'lux'=>"lux",
 
-                'malphite'=>"malphite",'malzahar'=>"malzahar",'maokai'=>"maokai",'maître yi'=>"maître yi",'miss fortune'=>"miss fortune",'Mordekaiser'=>"Mordekaiser",'Morgana'=>"Morgana",
+                'malphite'=>"malphite",'malzahar'=>"malzahar",'maokai'=>"maokai",'maître yi'=>"maître yi",'miss fortune'=>"miss fortune",'mordekaiser'=>"mordekaiser",'morgana'=>"morgana",
 
                 'nami'=>"nami",'nasus'=>"nasus",'nautilus'=>"nautilus",'neeko'=>"neeko",'nidalee'=>"nidalee",'nocturne'=>"nocturne",'nunu & willump'=>'nunu & willump',
 

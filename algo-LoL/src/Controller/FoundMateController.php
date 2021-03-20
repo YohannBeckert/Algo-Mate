@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Availability;
 use App\Entity\Champion;
 use App\Entity\User;
+use App\Form\Step\StepFiveType;
+use App\Form\Step\StepFourType;
 use App\Form\Step\StepOneType;
 use App\Form\Step\StepTwoType;
 use App\Form\Step\StepThreeType;
@@ -91,12 +94,84 @@ class FoundMateController extends AbstractController
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('step_four');
         }
 
         return $this->render('found_mate/step_three.html.twig',[
             'form' => $form->createView(),
             'allChamp' => $allChamp
+        ]);
+    }
+
+    /**
+     * @Route("/found/step_4", name="step_four", methods={"GET","POST"})
+     */
+    public function stepFour(Request $request, EntityManagerInterface $em, ChampionRepository $cr): Response
+    {
+        $allChamp = $cr->findAll();
+        $user = $this->getUser();
+        $form = $this->createForm(StepFourType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $em->persist($user);
+            $em->flush();
+
+            return $this->redirectToRoute('step_five');
+        }
+
+        return $this->render('found_mate/step_four.html.twig',[
+            'form' => $form->createView(),
+            'allChamp' => $allChamp
+        ]);
+    }
+
+     /**
+     * @Route("/found/step_5", name="step_five", methods={"GET","POST"})
+     */
+    public function stepFive(Request $request, EntityManagerInterface $em): Response
+    {
+
+        $availability = new Availability();
+        $form = $this->createForm(StepFiveType::class, $availability);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $availability = $form->getData();
+
+            if(empty($availability->getMonday())){
+                $availability->setMonday('Pas Disponible');
+            }
+            if(empty($availability->getTuesday())){
+                $availability->setTuesday('Pas Disponible');
+            }
+            if(empty($availability->getWednesday())){
+                $availability->setWednesday('Pas Disponible');
+            }
+            if(empty($availability->getThursday())){
+                $availability->setThursday('Pas Disponible');
+            }
+            if(empty($availability->getFriday())){
+                $availability->setFriday('Pas Disponible');
+            }
+            if(empty($availability->getSaturday())){
+                $availability->setSaturday('Pas Disponible');
+            }
+            if(empty($availability->getSunday())){
+                $availability->setSunday('Pas Disponible');
+            }
+            
+            $availability->setUser($this->getUser());
+            $em->persist($availability);
+            $em->flush();
+
+            return $this->redirectToRoute('homepage');
+        }
+
+        return $this->render('found_mate/step_five.html.twig',[
+            'form' => $form->createView(),
         ]);
     }
 }

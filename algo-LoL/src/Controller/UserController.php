@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Availability;
 use App\Entity\User;
 use App\Form\RegisterType;
+use App\Repository\AvailabilityRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,10 +19,12 @@ class UserController extends AbstractController
     /**
      * @Route("/profile", name="profile", methods={"GET"})
      */
-    public function profile(): Response
+    public function profile(AvailabilityRepository $av): Response
     {
         $user = $this->getUser();
-
+        $userId = $user->getId();
+        
+        $availabilityUser = $av->findBy(['id' => $userId]);
         if(empty($user->getFirstname() || $user->getAge() || $user->getCountry())){
 
             $this->addFlash('warning', 'Vous devez au minimum remplir votre Prénom, âge et Pays pour accéder à votre profil.');
@@ -29,7 +33,8 @@ class UserController extends AbstractController
         };
 
         return $this->render('user/profile.html.twig',[
-            'user' => $user
+            'user' => $user,
+            'availabilityUser' => $availabilityUser
         ]);
     }
 

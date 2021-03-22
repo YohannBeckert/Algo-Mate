@@ -2,40 +2,47 @@
 
 namespace App\Form\Step;
 
-use App\Entity\User;
-
+use App\Entity\Search;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints as Assert;
 
-class StepTwoType extends AbstractType
+class StepSixType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username',null,[
-                'label' => 'Pseudo in game *',
+            ->add('country', ChoiceType::class, [
+                'label' => 'Pays (IRL)',
                 'attr' => [
-                    'placeholder' => 'Votre pseudo en jeu...'
+                    'placeholder' => 'Votre pays...'
                 ],
                 'constraints' => [
                     new NotBlank([
-                        'message'=> 'Vous devez entrer votre pseudo (in game).'
+                        'message'=> 'Ce champs ne peut pas être vide.'
                     ]),
+                    ],
+                'multiple' => false,
+                'expanded' => false,
+                'choices' => [
+                    'Pas d\'importance' => "Pas d'importance",
+                    'France' => "France",
+                    'Belgique' => "Belgique",
+                    'Suisse' => "Suisse",
+                    'Luxembourg' => "Luxembourg",
                 ]
             ])
             ->add('countryInGame',ChoiceType::class,[
-                'label' => 'Votre régions de jeu *',
+                'label' => 'Régions de jeu (IG)',
                 'constraints' => [
                     new NotBlank([
-                        'message'=> 'Vous devez indiquer quel est votre région de jeu.'
+                        'message'=> 'Ce champ ne peut pas être vide.'
                     ]),
                 ],
                 'multiple' => false,
-                'expanded' => true,
+                'expanded' => false,
                 'choices' => [
                     'EUW' => "EUW",
                     'EUNE' => "EUNE",
@@ -49,10 +56,10 @@ class StepTwoType extends AbstractType
                 ]
             ])
             ->add('soloRank',ChoiceType::class,[
-                'label' => 'Votre rank en solo',
+                'label' => 'Son rank en solo',
                 'constraints' => [
                     new NotBlank([
-                        'message'=> 'Vous devez indiquer quel est votre rank en solo.'
+                        'message'=> 'Vous devez indiquer un rank en solo.'
                     ]),
                 ],
                 'multiple' => false,
@@ -68,36 +75,19 @@ class StepTwoType extends AbstractType
                     'Master'=> "Master",
                     'Grand Master' => "Grand Master",
                     'Challenger' => "Challenger"
-                ]
-            ])
-            ->add('soloDivision',ChoiceType::class,[
-                'label' => 'Votre division',
-                'constraints' => [
-                    new NotBlank([
-                        'message'=> 'Vous devez indiquer quel est votre division en ranked solo.'
-                    ]),
-                ],
-                'multiple' => false,
-                'expanded' => false,
-                'choices' => [
-                    'N/A' => "None",
-                    'V' => "V",
-                    'IV' => "IV",
-                    'III' => "III",
-                    'II' => "II",
-                    'I' => "I",
                 ]
             ])
             ->add('flexRank',ChoiceType::class,[
-                'label' => 'Votre rank en flex',
+                'label' => 'Son rank en flex',
                 'constraints' => [
                     new NotBlank([
-                        'message'=> 'Vous devez indiquer quel est votre rank en flex.'
+                        'message'=> 'Vous devez indiquer un rank en flex.'
                     ]),
                 ],
                 'multiple' => false,
                 'expanded' => false,
-                'choices' => [                    
+                'choices' => [
+                    'Pas d\'importance' => "Pas d'importance",
                     'Unranked' => "Unranked",
                     'Iron' => "Iron",
                     'Bronze' => "Bronze",
@@ -110,29 +100,11 @@ class StepTwoType extends AbstractType
                     'Challenger' => "Challenger"
                 ]
             ])
-            ->add('flexDivision',ChoiceType::class,[
-                'label' => 'Votre division',
-                'constraints' => [
-                    new NotBlank([
-                        'message'=> 'Vous devez indiquer quel est votre division en ranked flex.'
-                    ]),
-                ],
-                'multiple' => false,
-                'expanded' => false,
-                'choices' => [
-                    'N/A' => "None",
-                    'V' => "V",
-                    'IV' => "IV",
-                    'III' => "III",
-                    'II' => "II",
-                    'I' => "I",
-                ]
-            ])
             ->add('firstRole',ChoiceType::class,[
-                'label' => 'Rôle principal',
+                'label' => 'Son rôle principal',
                 'constraints' => [
                     new NotBlank([
-                        'message'=> 'Vous devez indiquer quel est votre rôle.'
+                        'message'=> 'Vous devez indiquer un rôle.'
                     ]),
                 ],
                 'multiple' => false,
@@ -146,16 +118,16 @@ class StepTwoType extends AbstractType
                 ]
             ])
             ->add('secondRole',ChoiceType::class,[
-                'label' => 'Rôle secondaire',
+                'label' => 'Son rôle secondaire',
                 'constraints' => [
                     new NotBlank([
-                        'message'=> 'Vous devez indiquer quel est votre second rôle.'
+                        'message'=> 'Vous devez indiquer un second rôle.'
                     ]),
                 ],
                 'multiple' => false,
                 'expanded' => false,
                 'choices' => [
-                    'Aucun' => "Aucun",
+                    'Pas d\'importance' => "Pas d'importance",
                     'Toplaner' => "Toplaner",
                     'Jungler' => "Jungler",
                     'Midlaner' => "Midlaner",
@@ -164,7 +136,6 @@ class StepTwoType extends AbstractType
                 ]
             ])
             ->add('goal', ChoiceType::class,[
-                'label' => 'Pourquoi cherchez vous un mate?',
                 'constraints' => [
                     new NotBlank([
                         'message'=> 'Vous devez indiquer au moins 1 raison.'
@@ -175,26 +146,19 @@ class StepTwoType extends AbstractType
                 'choices' => [
                     'Rank up' => "Rank up",
                     'Lan' => "Lan",
-                    'Consolider mon équipe' => "Consolider mon équipe",
+                    'Consolider une équipe' => "Consolider une équipe",
                     'Entrer dans une équipe' => "Entrer dans une équipe",
                     'S\'amuser à 2' => "S'amuser à 2",
                     'Autre' => "Autre",
                 ]
             ])
-            /* ->add('favoriteChampion', EntityType::class, [
-                'class'=> Champion::class,
-                'choice_label'=> 'Champions',
-                'constraints' => [new NotBlank(['message'=> 'Ce champs ne peut pas être vide'])]
-            ]) */
-
-            
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => User::class,
+            'data_class' => Search::class,
         ]);
     }
 }

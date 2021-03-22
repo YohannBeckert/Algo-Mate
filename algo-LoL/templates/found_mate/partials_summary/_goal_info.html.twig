@@ -1,0 +1,66 @@
+<div class="all-personal summary">
+    <div class="title-personal">
+        <h3>Critères de recherche</h3>
+        <p class="complementary-info">(Si le flex rank ne vous intéresse pas, sélectionner "Pas d'importance".)</p>
+    </div>
+    <div class="content-personal">
+        <div class="personal-info-irl">
+            <div class="content-info">
+                <div class="label-info">
+                    <p>Pays de votre mate : </p>
+                </div>
+                <div class="response-info">
+                    {{ search[0].country }}
+                </div>
+            </div>
+            <div class="content-info">
+                <div class="label-info">
+                    <p>Région de votre mate : </p>
+                </div>
+                <div class="response-info">
+                    {{ search[0].countryInGame }}
+                </div>
+            </div>
+            <div class="content-info">
+                <div class="label-info">
+                    <p>Solo rank de votre mate : </p>
+                </div>
+                <div class="response-info">
+                    {{ search[0].soloRank }}
+                </div>
+            </div>                         
+            <div class="content-info">
+                <div class="label-info">
+                    <p>Flex rank de votre mate : </p>
+                </div>
+                <div class="response-info">
+                    {{ search[0].flexRank }}
+                </div>
+            </div>
+            <div class="content-info">
+                <div class="label-info">
+                    <p>Rôle principal de votre mate : </p>
+                </div>
+                <div class="response-info">
+                    {{ search[0].firstRole }}
+                </div>
+            </div>
+            <div class="content-info">
+                <div class="label-info">
+                    <p>Rôle secondaire de votre mate : </p>
+                </div>
+                <div class="response-info">
+                    {{ search[0].secondRole }}
+                </div>
+            </div>
+            <div class="content-info">
+                <div class="label-info">
+                    <p>Quels sont les objectifs de votre mate? : </p>
+                </div>
+                <div class="response-info">
+                    {{ search[0].goal[0] }}{{ search[0].goal[1] }}
+                </div>
+            </div>        
+        </div>
+    </div>
+</div>    

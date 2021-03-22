@@ -1,0 +1,152 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<main class="main-step-2 bg-main-step">
+    <section class="content-step bg-step">
+        <div class="title-step">
+            <h1>Étape 6</h1>
+        </div>
+        <div class="text-form under-title">
+            <div class="explain-text">
+                <p>
+                    Critères de recherche
+                </p>
+                <p class="complementary-info">(Toutes les informations doivent être rempli pour pouvoir effectuer la recherche d'un Mate.)</p>
+            </div>
+        </div>
+        <div class="content-step-form">
+            {{ form_start(form) }}
+        <div class="all-personal step-6">
+            <div class="title-personal">
+                <h3>Localisation du Mate *</h3>
+                <p class="complementary-info">("IRL" = Dans la vrai vie, "IG" = Dans le jeu.)</p>
+            </div>
+            <div class="content-personal">
+                <div class="mate-localisation">
+                    <div class="item-form-step aligner">
+                        <div class="label-item-step">
+                            {{ form_label(form.country) }}
+                        </div>
+                        <div class="input-item-step">
+                            {{ form_widget(form.country) }}
+                        </div>
+                        <div class="error-item-step">
+                            {{ form_errors(form.country) }}
+                        </div>
+                    </div>
+                    <div class="item-form-step aligner">
+                        <div class="label-item-step">
+                            {{ form_label(form.countryInGame) }}
+                        </div>
+                        <div class="input-item-step">
+                            {{ form_widget(form.countryInGame) }}
+                        </div>
+                        <div class="error-item-step">
+                            {{ form_errors(form.countryInGame) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="all-personal">
+            <div class="title-personal">
+                <h3>Ranks du Mate *</h3>
+                <p class="complementary-info">(Si le flex rank ne vous intéresse pas, sélectionner "Pas d'importance".)</p>
+            </div>
+            <div class="content-personal">
+                <div class="mate-localisation">
+                    <div class="personal-solo-rank">
+                        <div class="item-form-step aligner">
+                            <div class="label-item-step">
+                                {{ form_label(form.soloRank) }}
+                            </div>
+                            <div class="input-item-step">
+                                {{ form_widget(form.soloRank) }}
+                            </div>
+                            <div class="error-item-step">
+                                {{ form_errors(form.soloRank) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="personal-flex-rank">
+                        <div class="item-form-step aligner">
+                            <div class="label-item-step">
+                                {{ form_label(form.flexRank) }}
+                            </div>
+                            <div class="input-item-step">
+                                {{ form_widget(form.flexRank) }}
+                            </div>
+                            <div class="error-item-step">
+                                {{ form_errors(form.flexRank) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <div class="all-personal">
+            <div class="title-personal">
+                <h3>Rôles du Mate *</h3>
+                <p class="complementary-info">(Si le second rôle ne vous intéresse pas, sélectionner "Pas d'importance".)</p>
+            </div>
+            <div class="content-personal role">
+                <div class="item-form-step aligner">
+                    <div class="label-item-step">
+                        {{ form_label(form.firstRole) }}
+                    </div>
+                    <div class="input-item-step">
+                        {{ form_widget(form.firstRole) }}
+                    </div>
+                    <div class="error-item-step">
+                        {{ form_errors(form.firstRole) }}
+                    </div>
+                </div>
+                <div class="item-form-step aligner">
+                    <div class="label-item-step">
+                        {{ form_label(form.secondRole) }}
+                    </div>
+                    <div class="input-item-step">
+                        {{ form_widget(form.secondRole) }}
+                    </div>
+                    <div class="error-item-step">
+                        {{ form_errors(form.secondRole) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="all-personal">
+                    <div class="title-personal">
+                        <h3>Objectif(s) du Mate *</h3>
+                        <p class="complementary-info">(Vous devez sélectionner au minimum 1 raison.)</p>
+                    </div>
+                    <div class="content-personal goal">
+                        <div class="item-form-step goal-width">
+                            <div class="input-item-step">
+                                {{ form_widget(form.goal) }}
+                            </div>
+                            <div class="error-item-step">
+                                {{ form_errors(form.goal) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>                            
+            <div class="content-btn-found btn-step">
+                    <a href="{{ path('step_five') }}">
+                        <div class="btn-preview next-step">
+                            <p>Étape précédente</p>
+                        </div>
+                    </a>
+                    <button type="submit" class="btn-found next-step">
+                        <p>Étape suivante</p>
+                    </button>
+                {{ form_end(form) }}
+            </div>
+        <div class="return-rules rules-step">
+            <a href="{{ path('found_mate') }}"><span>&larr;</span> Retourner à la liste des règles</a>
+        </div>    
+        </div>     
+    </section>
+</main>
+{% endblock %}

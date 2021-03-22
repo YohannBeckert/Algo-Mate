@@ -24,6 +24,7 @@ input{
 
     height: 2rem;
 }
+.width-50{width: 50%;}.width-60{width: 60%;}.width-80{width: 80%;}
 .input-form, .input-login-item, #register_email, #register_password_first, #register_password_second{
     width: 100%;
     border-radius: 5px;
@@ -598,7 +599,7 @@ body{
     background-size: cover;
 }
 .-tahm{
-    background-image: url(../images/background/tahmkench.jpg);
+    background-image: url(../images/background/tahmkench.png);
     background-size: cover;
     background-position-y: 5%;
 }

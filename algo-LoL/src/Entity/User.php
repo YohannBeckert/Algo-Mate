@@ -120,16 +120,23 @@ class User implements UserInterface
      */
     private $availabilities;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Search::class, mappedBy="user")
+     */
+    private $searches;
+
     public function __construct()
     {  
         $this->favoriteChampion = [];
         $this->hatedChampion = [];
         $this->availabilities = new ArrayCollection();
+        $this->searches = new ArrayCollection();
     }
 
     public function __toString()
     {
         return $this->availabilities;
+        return $this->searches;
     } 
     public function getId(): ?int
     {
@@ -421,6 +428,36 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($availability->getUser() === $this) {
                 $availability->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Search[]
+     */
+    public function getSearches(): Collection
+    {
+        return $this->searches;
+    }
+
+    public function addSearch(Search $search): self
+    {
+        if (!$this->searches->contains($search)) {
+            $this->searches[] = $search;
+            $search->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSearch(Search $search): self
+    {
+        if ($this->searches->removeElement($search)) {
+            // set the owning side to null (unless already changed)
+            if ($search->getUser() === $this) {
+                $search->setUser(null);
             }
         }
 

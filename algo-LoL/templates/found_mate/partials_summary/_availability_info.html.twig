@@ -1,0 +1,75 @@
+<div class="all-personal summary">
+    <div class="title-personal">
+        <h3>Vos Disponibilitées</h3>
+        <p class="complementary-info">(Ces informations seront indiquées sur votre profil.)</p>
+    </div>
+    <div class="content-personal">
+        <div class="personal-info-irl">
+            <div class="content-all-day">
+            <div class="item-day">
+                <div class="label-day">
+                    <p>Lundi</p>
+                </div>
+                <div class="result-day">
+                    <p>{{ availability[0].monday }}</p>
+                </div>
+            </div>
+            <div class="item-day">
+                <div class="label-day">
+                    <p>Mardi : </p>
+                </div>
+                <div class="result-day">
+                    <p>{{ availability[0].tuesday }}</p>
+                </div>
+            </div>
+            <div class="item-day">
+                <div class="label-day">
+                    <p>Mercredi : </p>
+                </div>
+                <div class="result-day">
+                    <p>{{ availability[0].wednesday }}</p>
+                </div>
+            </div>
+            <div class="item-day">
+                <div class="label-day">
+                    <p>Jeudi : </p>
+                </div>
+                <div class="result-day">
+                    <p>{{ availability[0].thursday }}</p>
+                </div>
+            </div>
+            <div class="item-day">
+                <div class="label-day">
+                    <p>Vendredi : </p>
+                </div>
+                <div class="result-day">
+                    <p>{{ availability[0].friday }}</p>
+                </div>
+            </div>
+            <div class="item-day">
+                <div class="label-day">
+                    <p>Samedi : </p>
+                </div>
+                <div class="result-day">
+                    <p>{{ availability[0].saturday }}</p>
+                </div>
+            </div>
+            <div class="item-day">
+                <div class="label-day">
+                    <p>Dimanche : </p>
+                </div>
+                <div class="result-day">
+                    <p>{{ availability[0].sunday }}</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="content-btn-found btn-step">
+        <a href="{{ path('step_one') }}">
+            <div class="btn-preview next-step btn-summary">
+                <p>Modifier une information</p>
+            </div>
+        </a>
+    </div>
+</div>

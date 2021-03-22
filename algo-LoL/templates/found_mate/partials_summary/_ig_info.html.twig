@@ -1,0 +1,146 @@
+<div class="all-personal summary">
+    <div class="title-personal">
+        <h3>Vos informations personnelles en jeu</h3>
+        <p class="complementary-info">(Si le flex rank ne vous intéresse pas, sélectionner "Pas d'importance".)</p>
+    </div>
+    <div class="content-personal aligner">
+        <div class="personal-info-step ig">
+            <div class="summary-info width-60">
+                <div class="title-summary-info">
+                    <h3>Pseudo & Région</h3>
+                    <p class="complementary-info">(Ces informations seront indiquées sur votre profil.)</p>
+                </div>
+                <div class="content-item-info width-100">
+                    <div class="item-info aligner">
+                        <div class="label-info">
+                            <p>Votre pseudo : </p>
+                        </div>
+                        <div class="response-info">
+                                {{ user.username }}
+                        </div>
+                    </div>
+                    <div class="item-info aligner">
+                        <div class="label-info">
+                            <p>Votre région : </p>
+                        </div>
+                        <div class="response-info with-img">
+                            <img src="/assets/images/flags/{{ user.countryInGame }}.png" alt="">
+                            {{ user.countryInGame }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="summary-info width-80">
+                <div class="title-summary-info">
+                    <h3>Ranks & Rôles</h3>
+                    <p class="complementary-info">(Ces informations seront indiquées sur votre profil.)</p>
+                </div>
+                <div class="content-item-info width-100">
+                    <div class="item-info-left">
+                        <div class="item-info aligner">
+                            <div class="label-info">
+                                <p>Votre rank et division en solo : </p>
+                            </div>
+                            <div class="response-info with-img-rank">
+                            <img src="/assets/images/rank/{{ user.soloRank }}.png" alt="">
+                                {{ user.soloRank }} {{ user.soloDivision }}
+                            </div>
+                        </div>
+                        <div class="item-info aligner">
+                            <div class="label-info">
+                                <p>Votre rank et division en flex : </p>
+                            </div>
+                            <div class="response-info with-img-rank">
+                            <img src="/assets/images/rank/{{ user.flexRank }}.png" alt="">
+                                {{ user.flexRank }} {{ user.flexDivision }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-info-right">
+                        <div class="item-info aligner">
+                            <div class="label-info">
+                                <p>Votre rôle principal : </p>
+                            </div>
+                            <div class="response-info">
+                                {{ user.firstRole }}
+                            </div>
+                        </div>
+                        <div class="item-info aligner">
+                            <div class="label-info">
+                                <p>Votre rôle secondaire : </p>
+                            </div>
+                            <div class="response-info">
+                                {{ user.secondRole }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="summary-info width-80">
+                <div class="title-summary-info">
+                    <h3>Vos Champions</h3>
+                    <p class="complementary-info">(Ces informations seront indiquées sur votre profil.)</p>
+                </div>
+                <div class="content-item-info width-100">
+                    <div class="item-info-left">
+                        <div class="item-info-champ aligner">
+                            <div class="label-info">
+                                <p>Vos champions favoris : </p>
+                            </div>
+                            <div class="response-info">
+                                <div class="content-three-champ favorite">
+                                    <div class="content-card-champ">
+                                        {% for lovechamp in user.favoriteChampion %}                                           
+                                            <div class="champ-card">
+                                                <img src="/assets/images/champions/{{lovechamp}}.png" alt="">
+                                            </div>
+                                        {% endfor %}    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-info-right">
+                        <div class="item-info-champ aligner">
+                            <div class="label-info">
+                                <p>Vos champions non-favoris : </p>
+                            </div>
+                            <div class="response-info">
+                                <div class="content-three-champ hated">
+                                    <div class="content-card-champ">
+                                        {% for hatechamp in user.hatedChampion %}                                           
+                                            <div class="champ-card">
+                                                <img src="/assets/images/champions/{{hatechamp}}.png" alt="">
+                                            </div>
+                                        {% endfor %}    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <div class="summary-info width-50">
+                <div class="title-summary-info">
+                    <h3>Vos Objectifs</h3>
+                    <p class="complementary-info">(Ces informations ne seront pas indiquées sur votre profil.)</p>
+                </div>
+                <div class="item-info aligner">
+                    <div class="label-info">
+                        <p>Vos objectifs de recherche : </p>
+                    </div>
+                    <div class="response-info">
+                        <p>Pour : {{ user.goal[0] }}</p>
+                    </div>
+                </div>           
+            </div>
+        </div>
+    </div>
+    <div class="content-btn-found btn-step">
+        <a href="{{ path('step_one') }}">
+            <div class="btn-preview next-step btn-summary">
+                <p>Modifier une information</p>
+            </div>
+        </a>
+    </div>
+</div>

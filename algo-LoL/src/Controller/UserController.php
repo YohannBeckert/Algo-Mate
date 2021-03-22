@@ -19,12 +19,12 @@ class UserController extends AbstractController
     /**
      * @Route("/profile", name="profile", methods={"GET"})
      */
-    public function profile(AvailabilityRepository $av): Response
+    public function profile(AvailabilityRepository $ar): Response
     {
         $user = $this->getUser();
         $userId = $user->getId();
         
-        $availabilityUser = $av->findBy(['id' => $userId]);
+        $availabilityUser = $ar->findBy(['user' => $userId]);  
         if(empty($user->getFirstname() || $user->getAge() || $user->getCountry())){
 
             $this->addFlash('warning', 'Vous devez au minimum remplir votre Prénom, âge et Pays pour accéder à votre profil.');

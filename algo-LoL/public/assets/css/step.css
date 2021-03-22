@@ -73,6 +73,9 @@
     width: 70%;
     height: 70%;
 }
+.title-personal h3{
+    font-size: 1.4rem;
+}
 
                  /*      */
                 /* Step */
@@ -232,19 +235,19 @@
     width: 100%;
     margin: 0;
 }
-#step_two_goal{
+#step_two_goal, #step_six_goal{
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
 }
-#step_two_goal input{
+#step_two_goal input, #step_six_goal input{
     width: 15px;
     height: 15px;
     margin: 2px 5px 0 0;
 }
-#step_two_goal label{
-    margin-right: 5%;
+#step_two_goal label, #step_six_goal label{
+    margin-right: 1%;
 }
 
 
@@ -311,4 +314,124 @@
     margin-bottom: 8%;
     font-size: 0.9rem;
     width: 22rem;
+}
+
+                 /*        */
+                /* Step 6 */
+               /*        */
+
+
+.mate-localisation{
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.step-6{
+    margin-top: 2%;
+}
+
+                 /*         */
+                /* Summary */
+               /*         */
+
+
+.personal-info-step{
+    display: flex;
+    justify-content: space-around;
+    margin: 3% 0;
+}
+.irl{
+    width: 35%;
+    margin: 3% 0;
+}
+.ig{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.content-info-label{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.label-info,.response-info{
+    margin-bottom: 2%;
+}
+.label-info{
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-shadow: black 1px 1px 1px;
+}
+.summary{
+    padding: 4% 0;
+    margin: 6% 0 0 0;
+}
+.btn-summary{
+    width: 15rem;
+    height: 2.8rem;
+}
+.summary-info{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 4% 0;
+    border-radius: 8px;
+    border: 1px solid #868686;
+    padding: 4% 0;
+}
+.title-summary-info{
+    text-align: center;
+    margin-bottom: 5%;
+}
+.title-summary-info h3{
+    text-decoration: underline;
+}
+.content-item-info{
+    display: flex;
+    justify-content: space-around;
+}
+.with-img{
+    width: 4rem;
+    display: flex;
+}
+.with-img-rank{
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+}
+.with-img img{
+    width: 18px;
+    height: 18px;
+    margin-right: 8%;
+}
+.with-img-rank img{
+    width: 18px;
+    height: 18px;
+    margin-right: 3%;
+}
+.item-info-left,.item-info-right{
+    width: 50%;
+}
+.item-info-champ .response-info{
+    display: flex;
+    justify-content: center;
+}
+.item-info-champ .content-three-champ{
+    margin: 0;
+    width: 75%;
+}
+.item-info-champ .champ-card{
+    margin-top: 2%;
+}
+.item-info-champ .content-card-champ{
+    width: 90%;
+}
+.personal-info-irl{
+    border: 1px solid #868686;
+    padding: 1% 3%;
+    border-radius: 8px;
 }

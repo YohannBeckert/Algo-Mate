@@ -1,0 +1,60 @@
+<div class="all-personal summary">
+    <div class="title-personal">
+        <h3>Vos informations personnelles</h3>
+        <p class="complementary-info">(Seul votre prénom, votre âge et votre pays seront affichés sur votre profil.)</p>
+    </div>
+    <div class="content-personal">
+        <div class="personal-info-step irl">
+            <div class="content-info-label">
+                <div class="label-info">
+                    <p>Votre nom : </p>
+                </div>
+                <div class="label-info">
+                    <p>Votre prénom : </p>
+                </div>
+                <div class="label-info">
+                    <p>Votre âge : </p>
+                </div>
+                <div class="label-info">
+                    <p>Votre pays : </p>
+                </div>
+                <div class="label-info">
+                    <p>Votre ville : </p>
+                </div>                            
+            </div>
+            <div class="content-info-response">
+                <div class="response-info">
+                {% if user.lastname is empty() %}
+                    <p>"non mentionner"</p>
+                {% else %}
+                    <p>{{ user.lastname }}</p>
+                {% endif %}
+                </div>
+                <div class="response-info">
+                    {{ user.firstname }}
+                </div>                       
+                <div class="response-info">
+                    <p>{{ user.age }} ans</p>
+                </div>
+                <div class="response-info with-img">
+                 <img src="/assets/images/flags/{{ user.country }}.png" alt="">
+                    {{ user.country }}
+                </div>
+                <div class="response-info">
+                {% if user.city is empty() %}
+                    <p>"non mentionner"</p>
+                {% else %}
+                    <p>{{ user.city }}</p>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-btn-found btn-step">
+        <a href="{{ path('step_one') }}">
+            <div class="btn-preview next-step btn-summary">
+                <p>Modifier une information</p>
+            </div>
+        </a>
+    </div>
+</div>

@@ -129,8 +129,12 @@
                     <div class="label-info">
                         <p>Vos objectifs de recherche : </p>
                     </div>
-                    <div class="response-info">
-                        <p>Pour : {{ user.goal[0] }}</p>
+                    <div class="response-info personal-goal">
+                    <ul>                
+                        {% for key, goal in user.goal %}
+                            <li>{{ goal }}</li>
+                        {% endfor %}                     
+                    </ul>
                     </div>
                 </div>           
             </div>

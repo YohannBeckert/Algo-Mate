@@ -216,6 +216,8 @@ class FoundMateController extends AbstractController
         $availabilityUser = $ar->findBy(['user' => $userId]);        
         $searchUser = $sr->findBy(['user' => $userId]);
 
+        $this->addFlash('success-found', 'Vos informations ont bien été enrgistré. Vous pouvez dès à présent voir vos Mate sur votre profil');
+
         return $this->render('found_mate/summary.html.twig',[
             'user' => $user,
             'availability' => $availabilityUser,

@@ -50,22 +50,20 @@ body{
 .invalid{
     border: 2px solid red;
 }
-.flash-success{
-    background-color: #27937c;
-    padding: 1%;
-    border-radius: 5px;
-    font-weight: bold;
-    text-shadow: 1px 1px 1px black;
-}
-.flash-warning{
-    background-color: #af5019;
+.flash{  
     color: white;
     padding: 1%;
-    margin-bottom: 1%;
     border-radius: 5px;
     font-weight: bold;
     text-shadow: 1px 1px 1px black;
 }
+.success{
+    background-color: #27937c;
+}
+.warning{
+    background-color: #af5019;
+}
+
                      /*        */
                     /* Footer */
                    /*        */

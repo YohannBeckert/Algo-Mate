@@ -76,7 +76,7 @@ VALUES ('graves',NULL,'Jungle',NULL);
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)
 VALUES ('hecarim',NULL,'Jungle','Top');
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)
-VALUES ('heimerdinguer',NULL,'Middle','Top');
+VALUES ('heimerdinger',NULL,'Middle','Top');
 
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)
 VALUES ('illaoi',NULL,'Top',NULL);
@@ -155,6 +155,7 @@ VALUES ('miss fortune',NULL,'ADC',NULL);
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)
 VALUES ('mordekaiser',NULL,'Top',NULL);
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)
+VALUES ('morgana',NULL,'Support','Middle');
 
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)
 VALUES ('nami',NULL,'Support',NULL);
@@ -222,7 +223,7 @@ VALUES ('shaco',NULL,'Jungle',NULL);
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)
 VALUES ('shen',NULL,'Top',NULL);
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)
-VALUES ('shyvanna',NULL,'Jungle',NULL);
+VALUES ('shyvana',NULL,'Jungle',NULL);
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)
 VALUES ('singed',NULL,'Top',NULL);
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)
@@ -279,7 +280,7 @@ VALUES ('vayne',NULL,'ADC','Top');
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)
 VALUES ('veigar',NULL,'Middle',NULL);
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)
-VALUES ('vel\'koz',NULL,'Middle','Support');
+VALUES ('vel\'Koz',NULL,'Middle','Support');
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)
 VALUES ('vi',NULL,'Jungle',NULL);
 INSERT INTO `champion` (`name`, `image`,`first_role`,`second_role`)

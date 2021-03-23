@@ -16,7 +16,7 @@
                 <p class="complementary-info">(Vous pourrez modifier ces informations même après validation de ces dernières.)</p>
             </div>
         </div>
-        <div class="content-step-form">
+        <div class="content-step-form summary-form">
 
             {{ include('found_mate/partials_summary/_irl_info.html.twig') }}
 
@@ -26,14 +26,11 @@
             
             {{ include('found_mate/partials_summary/_goal_info.html.twig') }}
             <div class="content-btn-found btn-step">
-                <a href="{{ path('step_one') }}">
-                    <div class="btn-preview next-step">
-                        <p>Étape précédente</p>
-                    </div>
-                </a>
-                <button type="submit" class="btn-found next-step">
-                    <p>Étape suivante</p>
-                </button>
+                <a href="{{ path('homepage') }}">
+                        <div class="btn-preview next-step">
+                            <p>Valider mes informations</p>
+                        </div>
+                    </a>
             </div>
         <div class="return-rules rules-step">
             <a href="{{ path('found_mate') }}"><span>&larr;</span> Retourner à la liste des règles</a>

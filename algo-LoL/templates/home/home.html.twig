@@ -6,10 +6,15 @@
 <main class="home-main">
     <section class="bg-home">
         {% for message in app.flashes('warning-found') %}
-        <div class="flash-warning">
-            {{ message }}
-        </div>
-    {% endfor %}
+            <div class="flash warning">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('success-found') %}
+            <div class="flash success">
+                {{ message }}
+            </div>
+        {% endfor %}
     </section>
 </main>
 {% endblock %}

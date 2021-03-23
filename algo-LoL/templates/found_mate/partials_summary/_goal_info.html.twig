@@ -1,66 +1,82 @@
 <div class="all-personal summary">
     <div class="title-personal">
         <h3>Critères de recherche</h3>
-        <p class="complementary-info">(Si le flex rank ne vous intéresse pas, sélectionner "Pas d'importance".)</p>
+        <p class="complementary-info">(Ces informations seront utilisées pour trouver une concordance avec votre profil.)</p>
     </div>
     <div class="content-personal">
-        <div class="personal-info-irl">
-            <div class="content-info">
+        <div class="personal-info-step width-100">
+            <div class="content-info-label goal">
                 <div class="label-info">
                     <p>Pays de votre mate : </p>
                 </div>
-                <div class="response-info">
-                    {{ search[0].country }}
-                </div>
-            </div>
-            <div class="content-info">
                 <div class="label-info">
                     <p>Région de votre mate : </p>
                 </div>
-                <div class="response-info">
-                    {{ search[0].countryInGame }}
-                </div>
-            </div>
-            <div class="content-info">
                 <div class="label-info">
                     <p>Solo rank de votre mate : </p>
                 </div>
-                <div class="response-info">
-                    {{ search[0].soloRank }}
-                </div>
-            </div>                         
-            <div class="content-info">
                 <div class="label-info">
                     <p>Flex rank de votre mate : </p>
                 </div>
-                <div class="response-info">
-                    {{ search[0].flexRank }}
-                </div>
-            </div>
-            <div class="content-info">
                 <div class="label-info">
                     <p>Rôle principal de votre mate : </p>
                 </div>
-                <div class="response-info">
-                    {{ search[0].firstRole }}
-                </div>
-            </div>
-            <div class="content-info">
                 <div class="label-info">
                     <p>Rôle secondaire de votre mate : </p>
+                </div>
+                <div class="label-info">
+                    <p>Quels sont les objectifs de votre mate ? : </p>
+                </div>
+            </div>
+            <div class="content-info-response goal">
+                <div class="response-info with-img">
+                <img src="/assets/images/flags/{{ search[0].country }}.png" alt="">
+                    {{ search[0].country }}
+                </div>           
+                <div class="response-info with-img">
+                <img src="/assets/images/flags/{{ search[0].countryInGame }}.png" alt="">
+                    {{ search[0].countryInGame }}
+                </div>
+                <div class="response-info with-img">
+                <img src="/assets/images/rank/{{ search[0].soloRank }}.png" alt="">
+
+                    {{ search[0].soloRank }}
+                </div>
+                {% if search[0].flexRank is same as("Pas d'importance") %}
+                <div class="response-info">
+                    {{ search[0].flexRank }}
+                </div>
+                {% else %}
+                <div class="response-info with-img">
+                <img src="/assets/images/rank/{{ search[0].flexRank }}.png" alt="">
+                    {{ search[0].flexRank }}
+                </div>
+                {% endif %}
+                <div class="response-info">
+                    {{ search[0].firstRole }}
                 </div>
                 <div class="response-info">
                     {{ search[0].secondRole }}
                 </div>
-            </div>
-            <div class="content-info">
-                <div class="label-info">
-                    <p>Quels sont les objectifs de votre mate? : </p>
-                </div>
+                {% if search[0].goal[1] %}
+                   <div class="response-info">                 
+                    {% for key, goal in search[0].goal %}  
+                        {{ goal }},               
+                    {% endfor %} 
+                    </div>
+                {% else %}
                 <div class="response-info">
-                    {{ search[0].goal[0] }}{{ search[0].goal[1] }}
+                    {{ search[0].goal[0] }}
                 </div>
+                {% endif %}
             </div>        
         </div>
+    </div>
+    <div class="content-btn-found btn-step">
+        <a href="{{ path('step_one') }}">
+            <div class="btn-preview next-step btn-summary">
+                <p>Modifier une information</p>
+            </div>
+        </a>
     </div>
 </div>    

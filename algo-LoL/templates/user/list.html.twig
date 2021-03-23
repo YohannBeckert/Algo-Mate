@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Champion index{% endblock %}
+
+{% block body %}
+
+<section class="top-content">
+    <div class="background-content bg-user-list">
+        <div class="content-item-div">
+            <div class="title-champion">
+                <h1>Rechercher un joueur</h1>
+            </div>
+            <div class="content-search-bar">
+                <div class="search-bar">
+                    <input id="search" class="search" type="text" placeholder="Pseudo du joueur ..." name="search" size="40" value="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="main-champion">
+
+    <div class="filter-content">
+        <div class="lane-selection">
+            <a class="top" href="">Top</a>
+            <a class="jungle" href="">Jungle</a>
+            <a class="mid" href="">Mid</a>
+            <a class="bot" href="">Bot</a>
+            <a class="support" href="">Support</a>
+            <a class="all" href="">All</a>
+        </div>
+    </div>
+
+    <div class="all-users-content width-80">
+        <div class="all-headers-table">
+            <div class="header-table -space"></div>
+            <div class="header-table -username">
+                <p>Pseudo</p>
+            </div>
+            <div class="header-table -srank">
+                <p>Solo Rank</p>
+            </div>
+            <div class="header-table -frank">
+                <p>Flex Rank</p>
+            </div>
+            <div class="header-table -frole">
+                <p>Rôle Principal</p>
+            </div>
+            <div class="header-table -fchamp">
+                <p>Champions Favoris</p>
+            </div>
+        </div>
+        <div class="all-users-list">
+            {% for user in allUsers %}
+                <div class="item-user">
+                    <div class="box-user box-flag -space">
+                        <img src="/assets/images/flags/{{ user.country }}.png" alt="">
+                    </div>
+                    <div class="box-user box-username -username">
+                        <a href="">{{ user.username }}</a>
+                    </div>
+                    <div class="box-user box-rank -srank">
+                        <img src="/assets/images/rank/{{ user.soloRank }}.png" alt="">
+                        <div class="ranks">
+                            {% if user.soloDivision is same as("None") or user.soloRank is same as("Master") or user.soloRank is same as("Grand Master") or user.soloRank is same as("Challenger") %}
+                                <p class="margin-rank" {% if user.soloRank is same as("Grand Master")%}id="GM"{% endif %}>{{ user.soloRank}}</p>
+                            {% else %}
+                            <p class="margin-rank" {% if user.soloRank is same as("Grand Master")%}id="GM"{% endif %}>{{ user.soloRank}}</p>
+                            <p>{{user.soloDivision}}</p>
+                            {% endif %}
+                        </div>                        
+                    </div>
+                    <div class="box-user box-rank -frank">
+                        <img src="/assets/images/rank/{{ user.flexRank }}.png" alt="">
+                        <div class="ranks">
+                            {% if user.flexDivision is same as("None") or user.flexRank is same as("Master") or user.flexRank is same as("Grand Master") or user.flexRank is same as("Challenger") %}
+                                <p class="margin-rank" {% if user.flexRank is same as("Grand Master")%}id="GM"{% endif %}>{{ user.flexRank}}</p>
+                            {% else %}
+                            <p class="margin-rank" {% if user.flexRank is same as("Grand Master")%}id="GM"{% endif %}>{{ user.flexRank}}</p>
+                            <p>{{user.flexDivision}}</p>
+                            {% endif %}
+                        </div>                    
+                    </div>
+                    <div class="box-user box-role -frole">
+                        <p>{{ user.firstRole }}</p>
+                    </div>
+                    <div class="box-user box-fchamp -fchamp">
+                        <div class="content-card-champ">
+                            {% for lovechamp in user.favoriteChampion %}                                           
+                                <div class="champ-card">
+                                    <img src="/assets/images/champions/{{lovechamp}}.png" alt="">
+                                </div>
+                            {% endfor %}    
+                        </div>
+                    </div>               
+                </div>
+            {% endfor %}
+        </div>
+           {#  {% for user in allUsers %}
+
+                <td class="box-table">
+                    <div class="content-card-champ">
+                        {% for lovechamp in user.favoriteChampion %}                                           
+                            <div class="champ-card">
+                                <img src="/assets/images/champions/{{lovechamp}}.png" alt="">
+                            </div>
+                        {% endfor %}    
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody> #}
+    </div>
+</main>
+
+{% endblock %}

@@ -30,6 +30,20 @@ input{
     border-radius: 5px;
     /* opacity: 0.8; */
 }
+.j-center{
+    display: flex;
+    justify-content: center;
+}
+.aligner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.totaly-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .log-main{
     display: flex;
     height: 85.66vh;

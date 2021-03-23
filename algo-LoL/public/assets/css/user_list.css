@@ -1,0 +1,86 @@
+.bg-user-list{
+    background-image: url(../images/others/bg-user_list.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 0%;
+}
+.all-users-content{
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    color: white;
+}
+.all-headers-table{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 45px;
+    border-bottom: 1px solid white;
+}
+.-space{
+    width: 8%;
+}
+.-username{
+    width: 25%;
+}
+.-srank,.-frank{
+    width: 16%;
+}
+.-frole{
+    width: 10%;
+}
+.-fchamp{
+    width: 25%;
+}
+
+.all-users-list{
+
+}
+
+        /* Item user */
+
+.item-user{
+    height: 60px;
+    border-bottom: 1px solid white;
+    display: flex;
+}
+.box-user{
+    height: 100%;
+}
+.box-flag,.box-username,.box-rank,.box-role{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-flag img{
+    height: 18px;
+    width: 25px;
+}
+
+.box-rank img{
+    height: 25px;
+    width: 23px;
+    margin: 0 3% 1% 0;
+}
+.ranks{
+    display: flex;
+}
+.margin-rank{
+    margin-right: 6%;
+}
+#GM{
+    margin: 0;
+}
+.box-fchamp .content-card-champ{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.box-fchamp .champ-card{
+    width: 59px;
+    margin-right: 1%;
+}
+.box-fchamp .champ-card:first-child{
+    margin-left: 1%;
+}

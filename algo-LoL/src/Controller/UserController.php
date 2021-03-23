@@ -6,6 +6,7 @@ use App\Entity\Availability;
 use App\Entity\User;
 use App\Form\RegisterType;
 use App\Repository\AvailabilityRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -75,4 +76,15 @@ class UserController extends AbstractController
         ]);
     }
 
+     /**
+     * @Route("/user/list", name="user_list", methods="GET")
+     */
+    public function list(UserRepository $ur): Response
+    {
+        $allUsers = $ur->findAll();
+
+        return $this->render('user/list.html.twig',[
+            'allUsers' => $allUsers,
+        ]);
+    }
 }

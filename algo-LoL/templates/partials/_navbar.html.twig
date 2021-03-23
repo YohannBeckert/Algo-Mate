@@ -18,13 +18,16 @@
                             <div class="nav-item">
                                 <li {% if route_name == "champion_list" %}class="central-nav-item active" {% else %} class="central-nav-item" {% endif %}>
                                     <a href="{{ path('champion_list') }}">Champions</a>
-                                </li>
-                                
-                                
+                                </li>                                                               
                             </div>
                             <div class="nav-item">
                                 <li {% if route_name == "found_mate" %}class="central-nav-item active" {% else %} class="central-nav-item" {% endif %}>
                                     <a href="{{ path('found_mate') }}">Trouvez un Mate</a>
+                                </li>                              
+                            </div>
+                            <div class="nav-item">
+                                <li {% if route_name == "user_list" %}class="central-nav-item active" {% else %} class="central-nav-item" {% endif %}>
+                                    <a href="{{ path('user_list') }}">Liste des joueurs</a>
                                 </li>                              
                             </div>
                             {% if is_granted('ROLE_ADMIN') %}

@@ -7,10 +7,12 @@ use App\Entity\User;
 use App\Form\RegisterType;
 use App\Repository\AvailabilityRepository;
 use App\Repository\UserRepository;
+use App\Services\ResponseEmail;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
@@ -42,7 +44,7 @@ class UserController extends AbstractController
     /**
      * @Route("/register", name="register", methods={"GET", "POST"})
      */
-    public function register(Request $request, UserPasswordEncoderInterface $encoder, EntityManagerInterface $em): Response
+    public function register(Request $request, UserPasswordEncoderInterface $encoder, EntityManagerInterface $em, MailerInterface $mailer, ResponseEmail $responseEmail): Response
     {
         $user = new User();
         $form = $this->createForm(RegisterType::class);
@@ -55,6 +57,9 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) { 
             $user = $form->getData();
+            $email = $responseEmail->registerEmail($user);
+
+            $mailer->send($email);
             // récupérer le mot de passe en clair
              $rawPassword = $user->getPassword(); 
             // l'encoder
@@ -66,7 +71,7 @@ class UserController extends AbstractController
             $em->persist($user);
             $em->flush();
 
-            $this->addFlash('success', 'Vous êtes enregistré. Vous pouvez désormais vous connecter.');
+            $this->addFlash('success-inscription', 'Vous êtes enregistré. Vous pouvez désormais vous connecter.');
 
             return $this->redirectToRoute('app_login');
         } 
@@ -98,13 +103,20 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/user/{id}", name="user_page",requirements={"id": "\d+"}, methods="GET")
+     * @Route("/user/profile/{id}", name="user_page",requirements={"id": "\d+"}, methods="GET")
      */
     public function show(User $user): Response
     {
-        return $this->render('user/show.html.twig',[
-            'user' => $user,
-        ]);
+        if($user = $this->getUser()){           
+            return $this->render('user/show.html.twig',[
+                'user' => $user,
+            ]);
+        }
+        else{
+            $this->addFlash('warning-check-profile', 'Vous devez êtes connecté pour pouvoir accéder aux profiles des joueurs.');
+            return $this->redirectToRoute('user_list');
+        };
+        
     }
 
 }

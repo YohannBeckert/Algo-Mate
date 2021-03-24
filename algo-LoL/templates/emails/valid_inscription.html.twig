@@ -1,0 +1,16 @@
+<h1>Validation de votre inscription</h1>
+
+<p>De: algomate.info@gmail.com</p>
+
+<p>
+Bonjour, <br><br>
+
+Votre inscription à bien été prise en compte sous les informations suivantes:<br><br>
+{% for newUser in user %}
+- E-mail: {{newUser.email}},<br>
+- Password: {{newUser.password}}
+{% endfor %}
+<br><br>
+Vous pouvez désormais vous connecter sur notre site à l'adresse suivante: <a href="https://foodlocal.surge.sh/login">https://foodlocal.surge.sh/login</a>
+
+</p>

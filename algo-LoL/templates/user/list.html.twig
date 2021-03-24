@@ -20,7 +20,11 @@
 </section>
 
 <main class="main-champion">
-
+    {% for message in app.flashes('warning-check-profile') %}
+        <div class="flash warning margin-t">
+            {{ message }}
+        </div>
+    {% endfor %}
     <div class="title-user-list width-100 aligner">
         <h1>Liste des joueurs</h1>
          <p class="complementary-info">(Seul les joueurs avec un profil complet sont affiché ici)</p>

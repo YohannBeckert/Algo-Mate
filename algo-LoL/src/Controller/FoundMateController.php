@@ -36,7 +36,7 @@ class FoundMateController extends AbstractController
         return $this->render('found_mate/rules.html.twig');
         }
         else{
-            $this->addFlash('warning-found', 'Vous devez vous inscire pour accéder à "Trouver un mate".');
+            $this->addFlash('warning-found', 'Vous devez être inscrit et connecté pour accéder à "Trouver un mate".');
             return $this->redirectToRoute('homepage');
         }
     }

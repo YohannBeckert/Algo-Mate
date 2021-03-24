@@ -81,10 +81,30 @@ class UserController extends AbstractController
      */
     public function list(UserRepository $ur): Response
     {
-        $allUsers = $ur->findAll();
+        $allUsersDb = $ur->findAll();
+
+        foreach ($allUsersDb as $user){
+            if($user->getUsername() == NULL){
+
+            }
+            else{
+                $allUsers[] = $user;
+            }
+        };
 
         return $this->render('user/list.html.twig',[
             'allUsers' => $allUsers,
         ]);
     }
+
+    /**
+     * @Route("/user/{id}", name="user_page",requirements={"id": "\d+"}, methods="GET")
+     */
+    public function show(User $user): Response
+    {
+        return $this->render('user/show.html.twig',[
+            'user' => $user,
+        ]);
+    }
+
 }

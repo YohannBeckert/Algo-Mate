@@ -21,6 +21,10 @@
 
 <main class="main-champion">
 
+    <div class="title-user-list width-100 aligner">
+        <h1>Liste des joueurs</h1>
+         <p class="complementary-info">(Seul les joueurs avec un profil complet sont affiché ici)</p>
+    </div>
     <div class="filter-content">
         <div class="lane-selection">
             <a class="top" href="">Top</a>
@@ -39,10 +43,10 @@
                 <p>Pseudo</p>
             </div>
             <div class="header-table -srank">
-                <p>Solo Rank</p>
+                <p class="title-rank">Solo Rank</p>
             </div>
             <div class="header-table -frank">
-                <p>Flex Rank</p>
+                <p class="title-rank">Flex Rank</p>
             </div>
             <div class="header-table -frole">
                 <p>Rôle Principal</p>
@@ -53,15 +57,23 @@
         </div>
         <div class="all-users-list">
             {% for user in allUsers %}
-                <div class="item-user">
+                <div {# {% if user.username or user.country or user.soloRank or user.flexRank is empty() %}id="display-none"{% else %} #}class="item-user"{# {% endif %} #}>
                     <div class="box-user box-flag -space">
-                        <img src="/assets/images/flags/{{ user.country }}.png" alt="">
+                        {% if user.country is empty() %}
+
+                        {% else %}
+                        <img class="flag-img" src="/assets/images/flags/{{ user.country }}.png" alt="">
+                        {% endif %}
                     </div>
                     <div class="box-user box-username -username">
-                        <a href="">{{ user.username }}</a>
+                        <a href="{{ path('user_page', {'id': user.id}) }}">{{ user.username }}</a>
                     </div>
                     <div class="box-user box-rank -srank">
+                        {% if user.soloRank is empty() %}
+
+                        {% else %}
                         <img src="/assets/images/rank/{{ user.soloRank }}.png" alt="">
+                        {% endif %}
                         <div class="ranks">
                             {% if user.soloDivision is same as("None") or user.soloRank is same as("Master") or user.soloRank is same as("Grand Master") or user.soloRank is same as("Challenger") %}
                                 <p class="margin-rank" {% if user.soloRank is same as("Grand Master")%}id="GM"{% endif %}>{{ user.soloRank}}</p>
@@ -72,7 +84,11 @@
                         </div>                        
                     </div>
                     <div class="box-user box-rank -frank">
+                        {% if user.flexRank is empty() %}
+
+                        {% else %}
                         <img src="/assets/images/rank/{{ user.flexRank }}.png" alt="">
+                        {% endif %}
                         <div class="ranks">
                             {% if user.flexDivision is same as("None") or user.flexRank is same as("Master") or user.flexRank is same as("Grand Master") or user.flexRank is same as("Challenger") %}
                                 <p class="margin-rank" {% if user.flexRank is same as("Grand Master")%}id="GM"{% endif %}>{{ user.flexRank}}</p>
@@ -97,20 +113,6 @@
                 </div>
             {% endfor %}
         </div>
-           {#  {% for user in allUsers %}
-
-                <td class="box-table">
-                    <div class="content-card-champ">
-                        {% for lovechamp in user.favoriteChampion %}                                           
-                            <div class="champ-card">
-                                <img src="/assets/images/champions/{{lovechamp}}.png" alt="">
-                            </div>
-                        {% endfor %}    
-                    </div>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody> #}
     </div>
 </main>
 

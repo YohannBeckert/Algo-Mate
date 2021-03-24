@@ -5,30 +5,46 @@
     background-size: cover;
     background-position-y: 0%;
 }
-.all-users-content{
-    border-top: 1px solid white;
-    border-right: 1px solid white;
-    border-left: 1px solid white;
+.title-user-list h1{
     color: white;
+    text-shadow: 1px 1px 1px black;
+    font-size: 2rem;
+    margin-top: 2%;
+}
+.all-users-content{
+    box-shadow: 0px 0px 12px #00e6ff;
+    color: white;
+    margin-bottom: 5%;
+    border: black 1px solid;
+    border-radius: 4px;
 }
 .all-headers-table{
     display: flex;
     align-items: center;
     text-align: center;
     height: 45px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid black;
+    border-radius: 3px 3px 0 0;
+    background-color: #2d3535;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 0px 0px 2px black;
 }
+
 .-space{
     width: 8%;
 }
 .-username{
-    width: 25%;
+    width: 23%;
 }
 .-srank,.-frank{
     width: 16%;
 }
+.title-rank{
+  margin-left: 8%;  
+}
 .-frole{
-    width: 10%;
+    width: 12%;
 }
 .-fchamp{
     width: 25%;
@@ -41,9 +57,24 @@
         /* Item user */
 
 .item-user{
-    height: 60px;
-    border-bottom: 1px solid white;
+    height: 65px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #212727;
     display: flex;
+    background-color: #415558;
+    text-shadow: 0px 0px 1px black;
+}
+.item-user:hover{
+    background-color: #546c70;
+    text-shadow: 1px 1px 1px black;
+}
+.item-user:hover .flag-img{
+    box-shadow: 0px 0px 2px black;
+}
+.item-user:last-child{
+    border-radius: 0 0 3px 3px;
+    border-bottom: none;
 }
 .box-user{
     height: 100%;
@@ -57,7 +88,12 @@
     height: 18px;
     width: 25px;
 }
-
+.box-username a{
+    font-size: 1.05rem;
+}
+.box-username a:hover{
+    text-decoration: underline;
+}
 .box-rank img{
     height: 25px;
     width: 23px;
@@ -76,10 +112,13 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 .box-fchamp .champ-card{
-    width: 59px;
-    margin-right: 1%;
+    width: 55px;
+    margin-right: 1.5%;
+    display: flex;
+    align-items: center;
 }
 .box-fchamp .champ-card:first-child{
     margin-left: 1%;

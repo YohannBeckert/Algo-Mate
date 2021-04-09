@@ -3,18 +3,209 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<main class="home-main">
-    <section class="bg-home">
-        {% for message in app.flashes('warning-found') %}
-            <div class="flash warning">
-                {{ message }}
+<main class="main-profile">
+    <div class="all-content-profile">
+        <section class="all-personal-info">
+            <div class="personal-img">
+                <img src="/assets/images/pinguin.jpg" alt="">
             </div>
-        {% endfor %}
-        {% for message in app.flashes('success-found') %}
-            <div class="flash success">
-                {{ message }}
+            <div class="personal-info">
+                <div class="personal-info-container">
+                    <div class="country-firstname">
+                        <img src="/assets/images/flags/{{ user.country }}.png" alt="">
+                        <p class="personal-firstname">{{ user.firstname }}</p>
+                    </div>
+                    <div class="personal-age">
+                        <p><span>{{ user.age }}</span> ans</p>
+                    </div>
+                </div>
+                <div class="content-all-availability">
+                    <div class="title-availability">
+                        <h3>Disponibilités</h3>
+                    </div>
+                    <div class="content-all-day">
+                        {% if availabilityUser == NULL %}
+                        <div class="item-day">
+                            <p class="no-result-day">Aucune Disponibilités n'a été enregistré</p>
+                        </div>
+                        {% else %}
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Lundi</p>
+                            </div>
+                            <div class="result-day">
+                                <p>{{ availabilityUser[0].monday }}</p>
+                            </div>
+                        </div>
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Mardi : </p>
+                            </div>
+                            <div class="result-day">
+                                <p>{{ availabilityUser[0].tuesday }}</p>
+                            </div>
+                        </div>
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Mercredi : </p>
+                            </div>
+                            <div class="result-day">
+                                <p>{{ availabilityUser[0].wednesday }}</p>
+                            </div>
+                        </div>
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Jeudi : </p>
+                            </div>
+                            <div class="result-day">
+                                <p>{{ availabilityUser[0].thursday }}</p>
+                            </div>
+                        </div>
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Vendredi : </p>
+                            </div>
+                            <div class="result-day">
+                                <p>{{ availabilityUser[0].friday }}</p>
+                            </div>
+                        </div>
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Samedi : </p>
+                            </div>
+                            <div class="result-day">
+                                <p>{{ availabilityUser[0].saturday }}</p>
+                            </div>
+                        </div>
+                        <div class="item-day">
+                            <div class="label-day">
+                                <p>Dimanche : </p>
+                            </div>
+                            <div class="result-day">
+                                <p>{{ availabilityUser[0].sunday }}</p>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
-        {% endfor %}
-    </section>
+            <div class="btn-modify-profile">
+                <a href="{{ path('step_one') }}">
+                    <div class="btn-modify">
+                        <p>Modifier mon profil</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section class="game-info">
+            <div class="all-game-info">
+                <div class="username-game">
+                    {% if user.username is empty() %}
+                        <h1>{{ user.email }}</h1>
+                    {% else %}
+                        <h1>{{ user.username }}</h1>
+                    {% endif %}
+                    <div class="game-region">
+                        {% if user.countryInGame is empty() %}                    
+                        <div class="flag -player">
+                            <img src="/assets/images/flags/{{ user.country }}.png" alt="">
+                            <p>{{ user.country }}</p>
+                        </div>
+                        {% else %}
+                        <div class="flag -player">
+                            <img src="/assets/images/flags/{{ user.country }}.png" alt="">
+                            <p>{{ user.country }}</p>
+                        </div>
+                        <p class="space"> - </p>
+                        <div class="flag -game">
+                            <img src="/assets/images/flags/{{ user.countryInGame }}.png" alt="">
+                            <p>{{ user.countryInGame }}</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="content-info-description">
+                    <div class="rank-and-champ">
+                        <div class="content-all-rank totaly-center">
+                            {% if user.soloRank is empty() %}
+
+                            {% else %}
+                                <div class="content-rank solo">
+                                    <h5>Solo rank</h5>
+                                    <img src="/assets/images/rank/{{ user.soloRank }}.png" alt="">
+                                    {% if user.soloRank == "Unranked" %}
+                                        <p>{{ user.soloRank }}</p>
+                                    {% else %}
+                                        <p>{{ user.soloRank }} {{ user.soloDivision }}</p>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                            {% if user.flexRank is empty() %}
+
+                            {% else %}
+                                <div class="content-rank flex">
+                                    <h5>Flex rank</h5>
+                                    <img src="/assets/images/rank/{{ user.flexRank }}.png" alt="">
+                                    {% if user.flexRank == "Unranked" %}
+                                        <p>{{ user.flexRank }}</p>
+                                    {% else %}
+                                        <p>{{ user.flexRank }} {{ user.flexDivision }}</p>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="content-table-champ">
+                            {% if user.favoriteChampion is empty() %}
+
+                            {% else %}
+                            <div class="content-three-champ favorite">
+                                <div class="title-three-champ">
+                                    <h5>Champions apprécié</h5>
+                                </div>
+                                <div class="content-card-champ">
+                                    {% for lovechamp in user.favoriteChampion %}                                           
+                                        <div class="champ-card">
+                                            <a href="{{ path('champion_show', {'name':lovechamp}) }}">
+                                                <img src="/assets/images/champions/{{lovechamp}}.png" alt="">
+                                            </a>
+                                        </div>
+                                    {% endfor %}    
+                                </div>                                            
+                            </div>
+                            {% endif %}  
+                            {% if user.hatedChampion is empty() %}
+
+                            {% else %}
+                            <div class="content-three-champ hated">
+                                <div class="title-three-champ">
+                                    <h5>Champions non apprécié</h5>
+                                </div>
+                                <div class="content-card-champ">
+                                    {% for hatechamp in user.hatedChampion %}                                           
+                                        <div class="champ-card">
+                                            <a href="{{ path('champion_show', {'name':hatechamp}) }}">
+                                                <img src="/assets/images/champions/{{hatechamp}}.png" alt="">
+                                            </a>
+                                        </div>
+                                    {% endfor %}    
+                                </div>                                            
+                            </div>
+                            {% endif %}  
+                        </div>
+                    </div>
+                    <div class="write-description totaly-center">
+                        <div class="write totaly-center">
+                         <p>description à venir</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mate-container">
+                <div class="content-img-mate">
+                    <img id="unknow-people" src="/assets/images/others/inconnu.png" alt="">
+                </div>                        
+            </div>
+        </section>
+    </div>
 </main>
 {% endblock %}

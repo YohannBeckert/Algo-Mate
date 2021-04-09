@@ -30,14 +30,34 @@ class UserController extends AbstractController
         $availabilityUser = $ar->findBy(['user' => $userId]);  
         if(empty($user->getFirstname() || $user->getAge() || $user->getCountry())){
 
-            $this->addFlash('warning', 'Vous devez au minimum remplir votre Prénom, âge et Pays pour accéder à votre profil.');
+            $this->addFlash('warning-profile_empty', 'Pour accéder à votre profil, vous devez au minimum remplir votre prénom, votre âge et votre pays.');
 
             return $this->redirectToRoute('step_one');
         };
 
+
         return $this->render('user/profile.html.twig',[
             'user' => $user,
             'availabilityUser' => $availabilityUser
+        ]);
+    }
+    /**
+     * @Route("/profile/edit", name="edit_profile", methods={"GET","PUT"})
+     */
+    public function edit(Request $request, User $user): Response
+    {
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);       
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('profile');
+        }
+
+        return $this->render('user/edit.html.twig', [
+            'user' => $user,
+            'form' => $form->createView(),
         ]);
     }
 
@@ -105,11 +125,14 @@ class UserController extends AbstractController
     /**
      * @Route("/user/profile/{id}", name="user_page",requirements={"id": "\d+"}, methods="GET")
      */
-    public function show(User $user): Response
+    public function show(User $user, AvailabilityRepository $ar): Response
     {
-        if($user = $this->getUser()){           
+        if($this->getUser()){
+            $userId = $user->getId();           
+            $availabilityUser = $ar->findBy(['user' => $userId]);     
             return $this->render('user/show.html.twig',[
                 'user' => $user,
+                'availabilityUser' => $availabilityUser
             ]);
         }
         else{

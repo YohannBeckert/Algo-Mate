@@ -30,9 +30,13 @@
             </div>
             <div class="content-info-response goal">
                 <div class="response-info with-img">
+                {% if search[0].country is same as("Pas d'importance") %}
+                    {{ search[0].country }}
+                {% else %}
                 <img src="/assets/images/flags/{{ search[0].country }}.png" alt="">
                     {{ search[0].country }}
-                </div>           
+                {% endif %}           
+                </div>
                 <div class="response-info with-img">
                 <img src="/assets/images/flags/{{ search[0].countryInGame }}.png" alt="">
                     {{ search[0].countryInGame }}
@@ -58,17 +62,11 @@
                 <div class="response-info">
                     {{ search[0].secondRole }}
                 </div>
-                {% if search[0].goal[1] %}
                    <div class="response-info">                 
                     {% for key, goal in search[0].goal %}  
                         {{ goal }},               
                     {% endfor %} 
                     </div>
-                {% else %}
-                <div class="response-info">
-                    {{ search[0].goal[0] }}
-                </div>
-                {% endif %}
             </div>        
         </div>
     </div>

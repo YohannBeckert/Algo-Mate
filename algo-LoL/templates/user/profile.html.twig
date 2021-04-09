@@ -24,6 +24,11 @@
                         <h3>Disponibilités</h3>
                     </div>
                     <div class="content-all-day">
+                        {% if availabilityUser == NULL %}
+                        <div class="item-day">
+                            <p class="no-result-day">Aucune Disponibilités n'a été enregistré</p>
+                        </div>
+                        {% else %}
                         <div class="item-day">
                             <div class="label-day">
                                 <p>Lundi</p>
@@ -80,11 +85,12 @@
                                 <p>{{ availabilityUser[0].sunday }}</p>
                             </div>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
             <div class="btn-modify-profile">
-                <a href="{{ path('step_one') }}">
+                <a href="{{ path('edit_profile') }}">
                     <div class="btn-modify">
                         <p>Modifier mon profil</p>
                     </div>
@@ -92,11 +98,6 @@
             </div>
         </section>
         <section class="game-info">
-            {% if user.favoriteChampion is empty() %}
-                <div class="bg-favorite-champ -teemo"></div>
-            {% else %}
-                <div class="bg-favorite-champ -{{ user.favoriteChampion[0] }}"></div>
-            {% endif %}
             <div class="all-game-info">
                 <div class="username-game">
                     {% if user.username is empty() %}
@@ -123,76 +124,86 @@
                         {% endif %}
                     </div>
                 </div>
-                    <div class="content-all-rank">
-                        {% if user.soloRank is empty() %}
+                <div class="content-info-description">
+                    <div class="rank-and-champ">
+                        <div class="content-all-rank totaly-center">
+                            {% if user.soloRank is empty() %}
 
-                        {% else %}
-                            <div class="content-rank solo">
-                                <h5>Solo rank</h5>
-                                <img src="/assets/images/rank/{{ user.soloRank }}.png" alt="">
-                                {% if user.soloRank == "Unranked" %}
-                                    <p>{{ user.soloRank }}</p>
-                                {% else %}
-                                    <p>{{ user.soloRank }} {{ user.soloDivision }}</p>
-                                {% endif %}
-                            </div>
-                        {% endif %}
-                        {% if user.flexRank is empty() %}
+                            {% else %}
+                                <div class="content-rank solo">
+                                    <h5>Solo rank</h5>
+                                    <img src="/assets/images/rank/{{ user.soloRank }}.png" alt="">
+                                    {% if user.soloRank == "Unranked" %}
+                                        <p>{{ user.soloRank }}</p>
+                                    {% else %}
+                                        <p>{{ user.soloRank }} {{ user.soloDivision }}</p>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                            {% if user.flexRank is empty() %}
 
-                        {% else %}
-                            <div class="content-rank flex">
-                                <h5>Flex rank</h5>
-                                <img src="/assets/images/rank/{{ user.flexRank }}.png" alt="">
-                                {% if user.flexRank == "Unranked" %}
-                                    <p>{{ user.flexRank }}</p>
-                                {% else %}
-                                    <p>{{ user.flexRank }} {{ user.flexDivision }}</p>
-                                {% endif %}
-                            </div>
-                        {% endif %}
-                    </div>
-                    <div class="content-table-champ">
-                        {% if user.favoriteChampion is empty() %}
-
-                        {% else %}
-                        <div class="content-three-champ favorite">
-                            <div class="title-three-champ">
-                                <h5>Champions apprécié</h5>
-                            </div>
-                            <div class="content-card-champ">
-                                {% for lovechamp in user.favoriteChampion %}                                           
-                                    <div class="champ-card">
-                                        <a href="{{ path('champion_show', {'name':lovechamp}) }}">
-                                            <img src="/assets/images/champions/{{lovechamp}}.png" alt="">
-                                        </a>
-                                    </div>
-                                {% endfor %}    
-                            </div>                                            
+                            {% else %}
+                                <div class="content-rank flex">
+                                    <h5>Flex rank</h5>
+                                    <img src="/assets/images/rank/{{ user.flexRank }}.png" alt="">
+                                    {% if user.flexRank == "Unranked" %}
+                                        <p>{{ user.flexRank }}</p>
+                                    {% else %}
+                                        <p>{{ user.flexRank }} {{ user.flexDivision }}</p>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
                         </div>
-                        {% endif %}  
-                        {% if user.hatedChampion is empty() %}
+                        <div class="content-table-champ">
+                            {% if user.favoriteChampion is empty() %}
 
-                        {% else %}
-                        <div class="content-three-champ hated">
-                            <div class="title-three-champ">
-                                <h5>Champions non apprécié</h5>
+                            {% else %}
+                            <div class="content-three-champ favorite">
+                                <div class="title-three-champ">
+                                    <h5>Champions apprécié</h5>
+                                </div>
+                                <div class="content-card-champ">
+                                    {% for lovechamp in user.favoriteChampion %}                                           
+                                        <div class="champ-card">
+                                            <a href="{{ path('champion_show', {'name':lovechamp}) }}">
+                                                <img src="/assets/images/champions/{{lovechamp}}.png" alt="">
+                                            </a>
+                                        </div>
+                                    {% endfor %}    
+                                </div>                                            
                             </div>
-                            <div class="content-card-champ">
-                                {% for hatechamp in user.hatedChampion %}                                           
-                                    <div class="champ-card">
-                                        <a href="{{ path('champion_show', {'name':hatechamp}) }}">
-                                            <img src="/assets/images/champions/{{hatechamp}}.png" alt="">
-                                        </a>
-                                    </div>
-                                {% endfor %}    
-                            </div>                                            
+                            {% endif %}  
+                            {% if user.hatedChampion is empty() %}
+
+                            {% else %}
+                            <div class="content-three-champ hated">
+                                <div class="title-three-champ">
+                                    <h5>Champions non apprécié</h5>
+                                </div>
+                                <div class="content-card-champ">
+                                    {% for hatechamp in user.hatedChampion %}                                           
+                                        <div class="champ-card">
+                                            <a href="{{ path('champion_show', {'name':hatechamp}) }}">
+                                                <img src="/assets/images/champions/{{hatechamp}}.png" alt="">
+                                            </a>
+                                        </div>
+                                    {% endfor %}    
+                                </div>                                            
+                            </div>
+                            {% endif %}  
                         </div>
-                        {% endif %}  
                     </div>
-                    <div class="content-gamer-info">
-                       
-                        
+                    <div class="write-description totaly-center">
+                        <div class="write totaly-center">
+                         <p>description à venir</p>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <div class="mate-container">
+                <div class="content-img-mate">
+                    <img id="unknow-people" src="/assets/images/others/inconnu.png" alt="">
+                </div>                        
             </div>
         </section>
     </div>

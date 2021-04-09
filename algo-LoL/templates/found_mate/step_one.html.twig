@@ -4,8 +4,8 @@
 
 {% block body %}
 <main class="main-rules bg-main-step">
-    {% for message in app.flashes('warning') %}
-        <div class="flash-warning">
+    {% for message in app.flashes('warning-profile_empty') %}
+        <div class="flash warning margin-b">
             {{ message }}
         </div>
     {% endfor %}

@@ -79,6 +79,12 @@ input[name="user[countryInGame]"]{
 #user_goal label{
     margin-right: 2%;
 }
+.edit-personal{
+    flex-direction: row;
+}
+.edit-rank, .edit-role{
+    width: 50%;
+}
 
 
 

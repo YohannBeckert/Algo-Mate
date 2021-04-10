@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Availability;
 use App\Entity\User;
 use App\Form\RegisterType;
+use App\Form\UserType;
 use App\Repository\AvailabilityRepository;
 use App\Repository\UserRepository;
 use App\Services\ResponseEmail;
@@ -44,8 +45,9 @@ class UserController extends AbstractController
     /**
      * @Route("/profile/edit", name="edit_profile", methods={"GET","PUT"})
      */
-    public function edit(Request $request, User $user): Response
+    public function edit(Request $request): Response
     {
+        $user = $this->getUser();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);       
 

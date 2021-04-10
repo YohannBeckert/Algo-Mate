@@ -3,18 +3,249 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<main class="home-main">
-    <section class="bg-home">
-        {% for message in app.flashes('warning-found') %}
-            <div class="flash warning">
-                {{ message }}
+<main class="edit-profile totaly-center">
+     <section class="content-step bg-step content-edit">
+        <div class="title-step">
+            <h1>Modification du profil</h1>
+        </div>
+        <div class="text-form under-title">
+            <div class="explain-text">
+                <p>
+                    Informations personnelles
+                </p>
+                <p class="complementary-info">(Seul votre prénom, votre âge et votre pays seront affichés sur votre profil.)</p>
             </div>
-        {% endfor %}
-        {% for message in app.flashes('success-found') %}
-            <div class="flash success">
-                {{ message }}
+        </div>
+        <div class="content-step-form">
+            {{ form_start(form, {'attr': {'id': 'edit-form'}}) }}
+            <div class="editing-content">
+                <div class="irl-edit">
+                    <div class="title-step">
+                        <h2>Informations personnelles</h2>
+                    </div>
+                    <div class="item-form-step aligner">
+                        <div class="label-item-step">
+                            {{ form_label(form.lastname) }}
+                        </div>
+                        <div class="input-item-step">
+                            {{ form_widget(form.lastname) }}
+                        </div>
+                        <div class="error-item-step">
+                            {{ form_errors(form.lastname) }}
+                        </div>
+                    </div>
+                    <div class="item-form-step aligner">
+                        <div class="label-item-step">
+                            {{ form_label(form.firstname) }}
+                        </div>
+                        <div class="input-item-step">
+                            {{ form_widget(form.firstname) }}
+                        </div>
+                        <div class="error-item-step">
+                            {{ form_errors(form.firstname) }}
+                        </div>
+                    </div>
+                    <div class="item-form-step aligner">
+                        <div class="label-item-step">
+                            {{ form_label(form.age) }}
+                        </div>
+                        <div class="input-item-step">
+                            {{ form_widget(form.age) }}
+                        </div>
+                        <div class="error-item-step">
+                            {{ form_errors(form.age) }}
+                        </div>
+                    </div>
+                    <div class="item-form-step aligner">
+                        <div class="label-item-step">
+                            {{ form_label(form.country) }}
+                        </div>
+                        <div class="input-item-step">
+                            {{ form_widget(form.country) }}
+                        </div>
+                        <div class="error-item-step">
+                            {{ form_errors(form.country) }}
+                        </div>
+                    </div>
+                    <div class="item-form-step aligner">
+                        <div class="label-item-step">
+                            {{ form_label(form.city) }}
+                        </div>
+                        <div class="input-item-step">
+                            {{ form_widget(form.city) }}
+                        </div>
+                        <div class="error-item-step">
+                            {{ form_errors(form.city) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="ig-edit">
+                    <div class="title-step">
+                        <h2>Informations en jeu</h2>
+                    </div>
+                    <div class="item-form-step aligner">
+                        <div class="label-item-step">
+                            {{ form_label(form.username) }}
+                        </div>
+                        <div class="input-item-step">
+                            {{ form_widget(form.username) }}
+                        </div>
+                        <div class="error-item-step">
+                            {{ form_errors(form.username) }}
+                        </div>
+                    </div>
+                    <div class="item-form-step">
+                        <div class="label-item-step">
+                            {{ form_label(form.countryInGame) }}
+                        </div>
+                        <div class="input-item-step">
+                            {{ form_widget(form.countryInGame) }}
+                        </div>
+                        <div class="error-item-step">
+                            {{ form_errors(form.countryInGame) }}
+                        </div>
+                    </div>
+                    <div class="all-personal">
+                    <div class="title-personal">
+                        <h3>Vos Ranks *</h3>
+                        <p class="complementary-info">(Si vous êtes unranked, veuillez choisir la division "N/A")</p>
+                    </div>
+                    <div class="content-personal">
+                        <div class="personal-solo-rank">
+                            <div class="item-form-step aligner">
+                                <div class="label-item-step">
+                                    {{ form_label(form.soloRank) }}
+                                </div>
+                                <div class="input-item-step">
+                                    {{ form_widget(form.soloRank) }}
+                                </div>
+                                <div class="error-item-step">
+                                    {{ form_errors(form.soloRank) }}
+                                </div>
+                            </div>
+                            <div class="item-form-step aligner">
+                                <div class="label-item-step">
+                                    {{ form_label(form.soloDivision) }}
+                                </div>
+                                <div class="input-item-step">
+                                    {{ form_widget(form.soloDivision) }}
+                                </div>
+                                <div class="error-item-step">
+                                    {{ form_errors(form.soloDivision) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="personal-flex-rank">
+                            <div class="item-form-step aligner">
+                                <div class="label-item-step">
+                                    {{ form_label(form.flexRank) }}
+                                </div>
+                                <div class="input-item-step">
+                                    {{ form_widget(form.flexRank) }}
+                                </div>
+                                <div class="error-item-step">
+                                    {{ form_errors(form.flexRank) }}
+                                </div>
+                            </div>
+                            <div class="item-form-step aligner">
+                                <div class="label-item-step">
+                                    {{ form_label(form.flexDivision) }}
+                                </div>
+                                <div class="input-item-step">
+                                    {{ form_widget(form.flexDivision) }}
+                                </div>
+                                <div class="error-item-step">
+                                    {{ form_errors(form.flexDivision) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="all-personal">
+                    <div class="title-personal">
+                        <h3>Vos Rôles *</h3>
+                        <p class="complementary-info">(Vous devez sélectionner au minimum votre rôle principal.)</p>
+                    </div>
+                    <div class="content-personal role">
+                        <div class="item-form-step aligner">
+                            <div class="label-item-step">
+                                {{ form_label(form.firstRole) }}
+                            </div>
+                            <div class="input-item-step">
+                                {{ form_widget(form.firstRole) }}
+                            </div>
+                            <div class="error-item-step">
+                                {{ form_errors(form.firstRole) }}
+                            </div>
+                        </div>
+                        <div class="item-form-step aligner">
+                            <div class="label-item-step">
+                                {{ form_label(form.secondRole) }}
+                            </div>
+                            <div class="input-item-step">
+                                {{ form_widget(form.secondRole) }}
+                            </div>
+                            <div class="error-item-step">
+                                {{ form_errors(form.secondRole) }}
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="all-personal">
+                    <div class="title-personal">
+                        <h3>Pourquoi cherchez-vous un Mate? *</h3>
+                        <p class="complementary-info">(Vous devez sélectionner au minimum 1 raison.)</p>
+                    </div>
+                    <div class="content-personal width-100">
+                        <div class="item-form-step goal-width">
+                            <div class="input-item-step">
+                                {{ form_widget(form.goal) }}
+                            </div>
+                            <div class="error-item-step">
+                                {{ form_errors(form.goal) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+                </div>
+                <div class="champion-edit">
+                    <div class="content-personal">
+                        <div class="item-form-step aligner">
+                            <div class="label-item-step">
+                                {{ form_label(form.favoriteChampion) }}
+                            </div>
+                            <div class="input-item-step aligner wrap-3">
+                                {{ form_widget(form.favoriteChampion) }}
+                                
+                            </div>
+                            <div class="error-item-step">
+                                {{ form_errors(form.favoriteChampion) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-personal">
+                        <div class="item-form-step aligner">
+                            <div class="label-item-step">
+                                {{ form_label(form.hatedChampion) }}
+                            </div>
+                            <div class="input-item-step aligner wrap-3">
+                                {{ form_widget(form.hatedChampion) }}                            
+                            </div>
+                            <div class="error-item-step">
+                                {{ form_errors(form.hatedChampion) }}
+                            </div>
+                        </div>
+                    </div>     
+                </div>
             </div>
-        {% endfor %}
+            <div class="content-btn-found btn-step">
+                    <button type="submit" class="btn-found next-step">
+                        <p>Étape suivante</p>
+                    </button>
+            </div>
+            {{ form_end(form) }}
+        </div>
     </section>
 </main>
+<script src="/assets/js/edit.js"></script> 
 {% endblock %}

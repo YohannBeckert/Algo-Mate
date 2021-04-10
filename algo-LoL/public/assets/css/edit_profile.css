@@ -1,0 +1,88 @@
+                 /*              */
+                /* Edit Profile */
+               /*              */
+
+
+.edit-profile{
+    width: 100%;
+    padding: 3% 0;
+    background-color: #171717;
+    font-family: 'Yantramanav', sans-serif;
+}
+.content-edit{
+    width: 90%;
+}
+.editing-content{
+    display: flex;
+    width: 100%;
+}
+
+        /* Irl edit */
+
+.irl-edit{
+    width: 20%;
+}
+.irl-edit .title-step{
+    margin-bottom: 8%;
+    text-align: center;
+}
+.irl-edit input{
+    width: auto;
+    text-align: center;
+}
+
+        /* Ig edit*/
+
+.ig-edit{
+    width: 60%;
+}
+.ig-edit .title-step{
+    margin-bottom: 2%;
+    text-align: center;
+}
+.ig-edit input{
+    text-align: center;
+}
+.ig-edit #user_countryInGame{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input[name="user[countryInGame]"]{
+    box-shadow: none;
+    width: auto;
+    height: auto;
+    border-radius: none;
+    border: none;
+}
+#user_countryInGame input{
+    width: 15px;
+    height: 15px;
+    box-shadow: none;
+    margin-right: 0.5%;
+}
+#user_countryInGame label{
+    margin: 0 3% 0 0;
+}
+#user_goal{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+#user_goal input{
+    width: 15px;
+    height: 15px;
+    margin: 2px 5px 0 0;
+}
+#user_goal label{
+    margin-right: 2%;
+}
+
+
+
+
+.champion-edit{
+    width: 20%;
+}

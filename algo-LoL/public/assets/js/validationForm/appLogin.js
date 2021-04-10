@@ -49,8 +49,6 @@ const app = {
     },
 
 }
-
-
-// On ajoute un écouteur d'événément sur la page afin de surveiller son chargement complet. Quand celui-ci a lieu, l'événement "DOMCOntentLoaded" est déclenché, et notre petit mouchard exécute la fonction "app.init".
 document.addEventListener('DOMContentLoaded', app.init);
+
 

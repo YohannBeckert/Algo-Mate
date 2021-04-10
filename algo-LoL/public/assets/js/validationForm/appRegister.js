@@ -1,20 +1,20 @@
-const app = {
-    // On crée des propriétés à notre objet app. Ce sont des variables qui sont utilisables dans l'entièreté de l'objet app, donc dans init comme dans d'autres fonctions.
+const appRegister = {
+    // On crée des propriétés à notre objet appRegister. Ce sont des variables qui sont utilisables dans l'entièreté de l'objet appRegister, donc dans init comme dans d'autres fonctions.
     fieldUsername: null,
     fieldPassword: null,
     init: function(){
     // On sélectionne notre champ username et on le stocke dans la propriété fieldUsername.
-    app.fieldUsername = document.querySelector('#register_email');
-    app.fieldPasswordOne = document.querySelector('#register_password_first');
-    app.fieldPasswordTwo = document.querySelector('#register_password_second');
+    appRegister.fieldUsername = document.querySelector('#register_email');
+    appRegister.fieldPasswordOne = document.querySelector('#register_password_first');
+    appRegister.fieldPasswordTwo = document.querySelector('#register_password_second');
     // Avec const, je peux déclarer une variable que je ne redéfinis jamais. 
     // Ici on sélectionne notre formulaire
     const form = document.querySelector('#register_form');
     
-    // On place un écouteur d'événement sur le champ. Quand celui-ci détecte un "blur" (perte de focus), il exécute la méthode "app.handleBlur".
-    app.fieldUsername.addEventListener('blur', app.handleBlur);
-    app.fieldPasswordOne.addEventListener('blur', app.handleBlur);
-    app.fieldPasswordTwo.addEventListener('blur', app.handleBlur);
+    // On place un écouteur d'événement sur le champ. Quand celui-ci détecte un "blur" (perte de focus), il exécute la méthode "appRegister.handleBlur".
+    appRegister.fieldUsername.addEventListener('blur', appRegister.handleBlur);
+    appRegister.fieldPasswordOne.addEventListener('blur', appRegister.handleBlur);
+    appRegister.fieldPasswordTwo.addEventListener('blur', appRegister.handleBlur);
     
     },
     handleBlur: function(event){
@@ -22,7 +22,7 @@ const app = {
     // On récupère le champ qui a déclenché l'évenement.
     let currentField = event.target;
     let fieldValue = currentField.value;
-    let isValidLenght = app.checkValidLength(fieldValue);
+    let isValidLenght = appRegister.checkValidLength(fieldValue);
     
     // On vérifie la longueur de la valeur du champ
     if(isValidLenght) {
@@ -48,8 +48,4 @@ const app = {
     },
     
     }
-    
-    // On ajoute un écouteur d'événément sur la page afin de surveiller son chargement complet. Quand celui-ci a lieu, l'événement "DOMCOntentLoaded" est déclenché, et notre petit mouchard exécute la fonction "app.init".
-    document.addEventListener('DOMContentLoaded', app.init);
-    
-    
+    document.addEventListener('DOMContentLoaded', appRegister.init);

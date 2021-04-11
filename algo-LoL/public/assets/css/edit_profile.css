@@ -5,36 +5,58 @@
 
 .edit-profile{
     width: 100%;
-    padding: 3% 0;
+    padding: 1% 0;
     background-color: #171717;
     font-family: 'Yantramanav', sans-serif;
 }
 .content-edit{
-    width: 90%;
+    width: 95%;
+    height: 53rem;
+    padding: 2% 0;
 }
 .editing-content{
     display: flex;
     width: 100%;
+}
+#edit-form{
+    margin-top: 2%;
+}
+.btn-edit{
+    width: 100%;
+    height: auto;
 }
 
         /* Irl edit */
 
 .irl-edit{
     width: 20%;
+    display: flex;
+    flex-direction: column;
 }
 .irl-edit .title-step{
-    margin-bottom: 8%;
     text-align: center;
+}
+.personal-edit-container{
+    align-self: center;
 }
 .irl-edit input{
     width: auto;
     text-align: center;
+}
+.irl-edit .content-all-availability{
+    box-shadow: none;
+    padding: 0;
+}
+.irl-edit .content-all-day{
+    margin-top: 0;
 }
 
         /* Ig edit*/
 
 .ig-edit{
     width: 60%;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
 }
 .ig-edit .title-step{
     margin-bottom: 2%;
@@ -82,13 +104,55 @@ input[name="user[countryInGame]"]{
 .edit-personal{
     flex-direction: row;
 }
-.edit-rank, .edit-role{
+.edit-rank, .edit-role, .edit-rank .personal-solo-rank, .edit-rank .personal-flex-rank{
     width: 50%;
 }
+.edit-role{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.edit-role .content-personal{
+    width: 80%;
+}
+.editing-content .all-personal{
+    border: none;
+}
+.ig-edit .goal-edit{
+    margin-bottom: 0;
+}
 
-
-
+        /* Champions edit */
 
 .champion-edit{
     width: 20%;
+}
+.champion-container{
+    margin-bottom: 3%;
+}
+.first-champ, .second-champ, .third-champ{
+    text-transform: capitalize;
+    display: flex;
+    width: 12rem;
+    height: 4rem;
+    background-color: #202020;
+    border: solid 1.5px #333333;
+    border-radius: 2px;
+}
+.first-champ .champion-image, .second-champ .champion-image, .third-champ .champion-image{
+    width: 32%;
+}
+.change-champ{
+    width: 5rem;
+    height: 1.6rem;
+}
+.name-and-btn{
+    width: 68%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.btn-modify-champ{
+    margin-bottom: 5%;
 }

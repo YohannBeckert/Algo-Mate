@@ -96,7 +96,7 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('soloRank',ChoiceType::class,[
-                'label' => 'Votre rank en solo',
+                'label' => 'Solo rank *',
                 'constraints' => [
                     new NotBlank([
                         'message'=> 'Vous devez indiquer quel est votre rank en solo.'
@@ -118,7 +118,7 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('soloDivision',ChoiceType::class,[
-                'label' => 'Votre division',
+                'label' => 'Division *',
                 'constraints' => [
                     new NotBlank([
                         'message'=> 'Vous devez indiquer quel est votre division en ranked solo.'
@@ -136,7 +136,7 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('flexRank',ChoiceType::class,[
-                'label' => 'Votre rank en flex',
+                'label' => 'Flex rank *',
                 'constraints' => [
                     new NotBlank([
                         'message'=> 'Vous devez indiquer quel est votre rank en flex.'
@@ -158,7 +158,7 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('flexDivision',ChoiceType::class,[
-                'label' => 'Votre division',
+                'label' => 'Division *',
                 'constraints' => [
                     new NotBlank([
                         'message'=> 'Vous devez indiquer quel est votre division en ranked flex.'
@@ -176,7 +176,7 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('firstRole',ChoiceType::class,[
-                'label' => 'Rôle principal',
+                'label' => 'Rôle principal *',
                 'constraints' => [
                     new NotBlank([
                         'message'=> 'Vous devez indiquer quel est votre rôle.'
@@ -193,7 +193,7 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('secondRole',ChoiceType::class,[
-                'label' => 'Rôle secondaire',
+                'label' => 'Rôle secondaire *',
                 'constraints' => [
                     new NotBlank([
                         'message'=> 'Vous devez indiquer quel est votre second rôle.'
@@ -228,8 +228,8 @@ class UserType extends AbstractType
                     'Autre' => "Autre",
                 ]
             ])
-            ->add('favoriteChampion')
-            ->add('hatedChampion')
+            /* ->add('favoriteChampion')
+            ->add('hatedChampion') */
             /* ->add('availability') */
         ;
     }

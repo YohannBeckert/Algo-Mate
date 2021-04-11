@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<main class="main-step-2 bg-main-step">
+    <section class="content-step bg-step">
+        <div class="title-step">
+            <h1>Étape 3</h1>
+        </div>
+        <div class="text-form under-title">
+            <div class="explain-text">
+                <p>
+                    Informations personnelles en jeu
+                </p>
+                <p class="complementary-info">(Toutes les informations doivent être rempli et seront affichées sur votre profil)</p>
+            </div>
+        </div>
+        <div class="content-step-form" id="top">
+            {{ form_start(form, {'attr': {'id': 'fav-champ-form'}}) }}
+                <div class="all-personal">
+                    <div class="title-personal">
+                        <h3>Vos Champions</h3>
+                        <p class="complementary-info">(Vous devez sélectionner au minimum 1 champion et au maximum 3 champions.)</p>
+                    </div>                    
+                    <div class="content-personal">
+                        <div class="item-form-step aligner">
+                            <div class="label-item-step">
+                                {{ form_label(form.favoriteChampion) }}
+                            </div>
+                            <div class="input-item-step aligner wrap-3">
+                                {{ form_widget(form.favoriteChampion) }}
+                               
+                            </div>
+                            <div class="error-item-step">
+                                {{ form_errors(form.favoriteChampion) }}
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+           <div class="content-btn-found btn-step" id="bottom">
+                <a href="{{ path('step_two') }}">
+                    <div class="btn-preview next-step">
+                        <p>Étape précédente</p>
+                    </div>
+                </a>
+                <button type="submit" class="btn-found next-step">
+                    <p>Étape suivante</p>
+                </button>
+            {{ form_end(form) }}     
+            </div>
+            <div class="return-rules rules-step">
+                <a href="{{ path('found_mate') }}"><span>&larr;</span> Retourner à la liste des règles</a>
+            </div> 
+        </div>     
+    </section>
+    <section class="scroll-form">
+        <a href="#top">
+            <div class="scroll-cube center">
+                <img src="/assets/images/others/arrow-up.png" alt="">
+            </div>
+        </a>
+        <a href="#bottom">
+            <div class="scroll-cube center">
+                <img src="/assets/images/others/arrow-down.png" alt="">
+            </div>
+        </a>
+    </section>
+</main>
+{% endblock %}

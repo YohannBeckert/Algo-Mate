@@ -10,74 +10,146 @@
         </div>
         <div class="text-form under-title">
             <div class="explain-text">
-                <p>
-                    Informations personnelles
-                </p>
-                <p class="complementary-info">(Seul votre prénom, votre âge et votre pays seront affichés sur votre profil.)</p>
+                <p class="complementary-info">(Les champs avec une * doivent être impérativement rempli.)</p>
             </div>
         </div>
         <div class="content-step-form">
             {{ form_start(form, {'attr': {'id': 'edit-form'}}) }}
             <div class="editing-content">
                 <div class="irl-edit">
-                    <div class="title-step">
-                        <h2>Informations personnelles</h2>
+                    <div class="primary-info-edit">
+                        <div class="title-step">
+                            <h2>Informations personnelles</h2>
+                        </div>
+                        <div class="personal-edit-container">
+                            <div class="item-form-step aligner">
+                                <div class="label-item-step">
+                                    {{ form_label(form.lastname) }}
+                                </div>
+                                <div class="input-item-step">
+                                    {{ form_widget(form.lastname) }}
+                                </div>
+                                <div class="error-item-step">
+                                    {{ form_errors(form.lastname) }}
+                                </div>
+                            </div>
+                            <div class="item-form-step aligner">
+                                <div class="label-item-step">
+                                    {{ form_label(form.firstname) }}
+                                </div>
+                                <div class="input-item-step">
+                                    {{ form_widget(form.firstname) }}
+                                </div>
+                                <div class="error-item-step">
+                                    {{ form_errors(form.firstname) }}
+                                </div>
+                            </div>
+                            <div class="item-form-step aligner">
+                                <div class="label-item-step">
+                                    {{ form_label(form.age) }}
+                                </div>
+                                <div class="input-item-step">
+                                    {{ form_widget(form.age) }}
+                                </div>
+                                <div class="error-item-step">
+                                    {{ form_errors(form.age) }}
+                                </div>
+                            </div>
+                            <div class="item-form-step aligner">
+                                <div class="label-item-step">
+                                    {{ form_label(form.country) }}
+                                </div>
+                                <div class="input-item-step">
+                                    {{ form_widget(form.country) }}
+                                </div>
+                                <div class="error-item-step">
+                                    {{ form_errors(form.country) }}
+                                </div>
+                            </div>
+                            <div class="item-form-step aligner">
+                                <div class="label-item-step">
+                                    {{ form_label(form.city) }}
+                                </div>
+                                <div class="input-item-step">
+                                    {{ form_widget(form.city) }}
+                                </div>
+                                <div class="error-item-step">
+                                    {{ form_errors(form.city) }}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item-form-step aligner">
-                        <div class="label-item-step">
-                            {{ form_label(form.lastname) }}
+                    <div class="availabilities-edit">
+                    <div class="content-all-availability">
+                        <div class="title-personal">
+                            <h3>Disponibilités</h3>
                         </div>
-                        <div class="input-item-step">
-                            {{ form_widget(form.lastname) }}
-                        </div>
-                        <div class="error-item-step">
-                            {{ form_errors(form.lastname) }}
+                        <div class="content-all-day">
+                            {% if availabilityUser == NULL %}
+                            <div class="item-day">
+                                <p class="no-result-day">Aucune Disponibilités n'a été enregistré</p>
+                            </div>
+                            {% else %}
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Lundi</p>
+                                </div>
+                                <div class="result-day" onclick="">
+                                    <p>{{ availabilityUser[0].monday }}</p>
+                                </div>
+                            </div>
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Mardi : </p>
+                                </div>
+                                <div class="result-day">
+                                    <p>{{ availabilityUser[0].tuesday }}</p>
+                                </div>
+                            </div>
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Mercredi : </p>
+                                </div>
+                                <div class="result-day">
+                                    <p>{{ availabilityUser[0].wednesday }}</p>
+                                </div>
+                            </div>
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Jeudi : </p>
+                                </div>
+                                <div class="result-day">
+                                    <p>{{ availabilityUser[0].thursday }}</p>
+                                </div>
+                            </div>
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Vendredi : </p>
+                                </div>
+                                <div class="result-day">
+                                    <p>{{ availabilityUser[0].friday }}</p>
+                                </div>
+                            </div>
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Samedi : </p>
+                                </div>
+                                <div class="result-day">
+                                    <p>{{ availabilityUser[0].saturday }}</p>
+                                </div>
+                            </div>
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Dimanche : </p>
+                                </div>
+                                <div class="result-day">
+                                    <p>{{ availabilityUser[0].sunday }}</p>
+                                </div>
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
-                    <div class="item-form-step aligner">
-                        <div class="label-item-step">
-                            {{ form_label(form.firstname) }}
-                        </div>
-                        <div class="input-item-step">
-                            {{ form_widget(form.firstname) }}
-                        </div>
-                        <div class="error-item-step">
-                            {{ form_errors(form.firstname) }}
-                        </div>
-                    </div>
-                    <div class="item-form-step aligner">
-                        <div class="label-item-step">
-                            {{ form_label(form.age) }}
-                        </div>
-                        <div class="input-item-step">
-                            {{ form_widget(form.age) }}
-                        </div>
-                        <div class="error-item-step">
-                            {{ form_errors(form.age) }}
-                        </div>
-                    </div>
-                    <div class="item-form-step aligner">
-                        <div class="label-item-step">
-                            {{ form_label(form.country) }}
-                        </div>
-                        <div class="input-item-step">
-                            {{ form_widget(form.country) }}
-                        </div>
-                        <div class="error-item-step">
-                            {{ form_errors(form.country) }}
-                        </div>
-                    </div>
-                    <div class="item-form-step aligner">
-                        <div class="label-item-step">
-                            {{ form_label(form.city) }}
-                        </div>
-                        <div class="input-item-step">
-                            {{ form_widget(form.city) }}
-                        </div>
-                        <div class="error-item-step">
-                            {{ form_errors(form.city) }}
-                        </div>
-                    </div>
+                </div>
                 </div>
                 <div class="ig-edit">
                     <div class="title-step">
@@ -108,10 +180,10 @@
                     <div class="all-personal edit-personal">
                     <div class="edit-rank">
                     <div class="title-personal">
-                        <h3>Vos Ranks *</h3>
+                        <h3>Vos Ranks</h3>
                         <p class="complementary-info">(Si vous êtes unranked, veuillez choisir la division "N/A")</p>
                     </div>
-                    <div class="content-personal">
+                    <div class="content-personal width-100">
                         <div class="personal-solo-rank">
                             <div class="item-form-step aligner">
                                 <div class="label-item-step">
@@ -164,10 +236,10 @@
                     </div>
                     <div class="edit-role">
                     <div class="title-personal">
-                        <h3>Vos Rôles *</h3>
-                        <p class="complementary-info">(Vous devez sélectionner au minimum votre rôle principal.)</p>
+                        <h3>Vos Rôles</h3>
+                        <p class="complementary-info">(Si vous n'avez pas de rôle secondaire, sélectionner "Aucun".)</p>
                     </div>
-                    <div class="content-personal role">
+                    <div class="content-personal">
                         <div class="item-form-step aligner">
                             <div class="label-item-step">
                                 {{ form_label(form.firstRole) }}
@@ -193,7 +265,7 @@
                     </div>
                 </div>
                 </div> 
-                <div class="all-personal">
+                <div class="all-personal goal-edit">
                     <div class="title-personal">
                         <h3>Pourquoi cherchez-vous un Mate? *</h3>
                         <p class="complementary-info">(Vous devez sélectionner au minimum 1 raison.)</p>
@@ -208,42 +280,151 @@
                             </div>
                         </div>
                     </div>
-                </div>               
+                </div>
+                <div class="content-btn-found btn-edit">
+                    <button type="submit" class="btn-found next-step">
+                        <p>Valider les modifications</p>
+                    </button>
+                </div>              
                 </div>
                 <div class="champion-edit">
-                    <div class="content-personal">
-                        <div class="item-form-step aligner">
-                            <div class="label-item-step">
-                                {{ form_label(form.favoriteChampion) }}
-                            </div>
-                            <div class="input-item-step aligner wrap-3">
-                                {{ form_widget(form.favoriteChampion) }}
-                                
-                            </div>
-                            <div class="error-item-step">
-                                {{ form_errors(form.favoriteChampion) }}
-                            </div>
-                        </div>
+                <div class="favorite-edit-container">
+                    <div class="title-personal">
+                        <h3>Vos champions favoris</h3>
+                        <p class="complementary-info">(Vous devez sélectionner au moins 1 champion.)</p>
                     </div>
-                    <div class="content-personal">
-                        <div class="item-form-step aligner">
-                            <div class="label-item-step">
-                                {{ form_label(form.hatedChampion) }}
+                    <div class="three-champ-container aligner">
+                        <div class="champion-container aligner width-100">
+                            <div class="label-champ-container">
+                                <h4>Champion favori n°1 : *</h4>
                             </div>
-                            <div class="input-item-step aligner wrap-3">
-                                {{ form_widget(form.hatedChampion) }}                            
-                            </div>
-                            <div class="error-item-step">
-                                {{ form_errors(form.hatedChampion) }}
+                            <div class="first-champ">
+                                <div class="champion-image">
+                                    <img class="param-img" src="/assets/images/champions/{{ user.favoriteChampion[0] }}.png">
+                                </div>
+                                <div class="name-and-btn">
+                                    {{ user.favoriteChampion[0] }}
+                                    <div class="btn-modify-champ">
+                                        <a href="{{ path('edit_profile') }}">
+                                            <div class="btn-modify change-champ">
+                                                <p>Modifier</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>       
                             </div>
                         </div>
-                    </div>     
+                        <div class="champion-container aligner width-100">
+                            <div class="label-champ-container">
+                                <h4>Champion favori n°2 :</h4>
+                            </div>
+                            <div class="second-champ">
+                                <div class="champion-image">
+                                    <img class="param-img" src="/assets/images/champions/{{ user.favoriteChampion[1] }}.png">
+                                </div>
+                                 <div class="name-and-btn">
+                                    {{ user.favoriteChampion[1] }}
+                                    <div class="btn-modify-champ">
+                                        <a href="{{ path('edit_profile') }}">
+                                            <div class="btn-modify change-champ">
+                                                <p>Modifier</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>       
+                        </div>                        
+                        <div class="champion-container aligner width-100">
+                            <div class="label-champ-container">
+                                <h4>Champion favori n°3 :</h4>
+                            </div>
+                            <div class="third-champ">
+                                <div class="champion-image">
+                                    <img class="param-img" src="/assets/images/champions/{{ user.favoriteChampion[2] }}.png">
+                                </div>
+                                <div class="name-and-btn">
+                                    {{ user.favoriteChampion[2] }}
+                                    <div class="btn-modify-champ">
+                                        <a href="{{ path('edit_profile') }}">
+                                            <div class="btn-modify change-champ">
+                                                <p>Modifier</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div> 
+                            </div>       
+                        </div>                    
+                    </div>
                 </div>
-            </div>
-            <div class="content-btn-found btn-step">
-                    <button type="submit" class="btn-found next-step">
-                        <p>Étape suivante</p>
-                    </button>
+                <div class="hated-edit-container">
+                    <div class="title-personal">
+                        <h3>Vos champions non-favoris</h3>
+                        <p class="complementary-info">(Vous devez sélectionner au moins 1 champion.)</p>
+                    </div>
+                    <div class="three-champ-container aligner">
+                        <div class="champion-container aligner width-100">
+                            <div class="label-champ-container">
+                                <h4>Champion non-favori n°1 : *</h4>
+                            </div>
+                            <div class="first-champ">
+                                <div class="champion-image">
+                                    <img class="param-img" src="/assets/images/champions/{{ user.hatedChampion[0] }}.png">
+                                </div>
+                                <div class="name-and-btn">
+                                    {{ user.hatedChampion[0] }}
+                                    <div class="btn-modify-champ">
+                                        <a href="{{ path('edit_profile') }}">
+                                            <div class="btn-modify change-champ">
+                                                <p>Modifier</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>       
+                            </div>
+                        </div>
+                        <div class="champion-container aligner width-100">
+                            <div class="label-champ-container">
+                                <h4>Champion non-favori n°2 :</h4>
+                            </div>
+                            <div class="second-champ">
+                                <div class="champion-image">
+                                    <img class="param-img" src="/assets/images/champions/{{ user.hatedChampion[1] }}.png">
+                                </div>
+                                 <div class="name-and-btn">
+                                    {{ user.hatedChampion[1] }}
+                                    <div class="btn-modify-champ">
+                                        <a href="{{ path('edit_profile') }}">
+                                            <div class="btn-modify change-champ">
+                                                <p>Modifier</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>       
+                        </div>
+                        <div class="champion-container aligner width-100">
+                            <div class="label-champ-container">
+                                <h4>Champion non-favori n°3 :</h4>
+                            </div>
+                            <div class="third-champ">
+                                <div class="champion-image">
+                                    <img class="param-img" src="/assets/images/champions/{{ user.hatedChampion[2] }}.png">
+                                </div>
+                                <div class="name-and-btn">
+                                    {{ user.hatedChampion[2] }}
+                                    <div class="btn-modify-champ">
+                                        <a href="{{ path('edit_profile') }}">
+                                            <div class="btn-modify change-champ">
+                                                <p>Modifier</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div> 
+                            </div>       
+                        </div>                    
+                    </div>
+                </div>
+                </div>
             </div>
             {{ form_end(form) }}
         </div>

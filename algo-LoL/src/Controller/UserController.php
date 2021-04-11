@@ -43,11 +43,14 @@ class UserController extends AbstractController
         ]);
     }
     /**
-     * @Route("/profile/edit", name="edit_profile", methods={"GET","PUT"})
+     * @Route("/profile/edit", name="edit_profile", methods={"GET","POST"})
      */
-    public function edit(Request $request): Response
+    public function edit(Request $request, AvailabilityRepository $ar): Response
     {
         $user = $this->getUser();
+        $userId = $user->getId();
+        $availabilityUser = $ar->findBy(['user' => $userId]);
+
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);       
 
@@ -59,6 +62,7 @@ class UserController extends AbstractController
 
         return $this->render('user/edit.html.twig', [
             'user' => $user,
+            'availabilityUser' => $availabilityUser,
             'form' => $form->createView(),
         ]);
     }

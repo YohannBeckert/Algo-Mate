@@ -131,7 +131,7 @@ input[name="user[countryInGame]"]{
 .champion-container{
     margin-bottom: 3%;
 }
-.first-champ, .second-champ, .third-champ{
+.card-champ-edit{
     text-transform: capitalize;
     display: flex;
     width: 12rem;
@@ -140,7 +140,7 @@ input[name="user[countryInGame]"]{
     border: solid 1.5px #333333;
     border-radius: 2px;
 }
-.first-champ .champion-image, .second-champ .champion-image, .third-champ .champion-image{
+.card-champ-edit .champion-image{
     width: 32%;
 }
 .change-champ{

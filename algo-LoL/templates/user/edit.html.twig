@@ -294,16 +294,17 @@
                         <p class="complementary-info">(Vous devez sélectionner au moins 1 champion.)</p>
                     </div>
                     <div class="three-champ-container aligner">
+                    {% for loveChamp in user.favoriteChampion %}  
                         <div class="champion-container aligner width-100">
                             <div class="label-champ-container">
-                                <h4>Champion favori n°1 : *</h4>
+                                <h4>Champion favori n°{# 1 #} : *</h4>
                             </div>
-                            <div class="first-champ">
+                            <div class="card-champ-edit">
                                 <div class="champion-image">
-                                    <img class="param-img" src="/assets/images/champions/{{ user.favoriteChampion[0] }}.png">
+                                    <img class="param-img" src="/assets/images/champions/{{ loveChamp }}.png">
                                 </div>
                                 <div class="name-and-btn">
-                                    {{ user.favoriteChampion[0] }}
+                                    {{ loveChamp }}
                                     <div class="btn-modify-champ">
                                         <a href="{{ path('edit_profile') }}">
                                             <div class="btn-modify change-champ">
@@ -314,46 +315,7 @@
                                 </div>       
                             </div>
                         </div>
-                        <div class="champion-container aligner width-100">
-                            <div class="label-champ-container">
-                                <h4>Champion favori n°2 :</h4>
-                            </div>
-                            <div class="second-champ">
-                                <div class="champion-image">
-                                    <img class="param-img" src="/assets/images/champions/{{ user.favoriteChampion[1] }}.png">
-                                </div>
-                                 <div class="name-and-btn">
-                                    {{ user.favoriteChampion[1] }}
-                                    <div class="btn-modify-champ">
-                                        <a href="{{ path('edit_profile') }}">
-                                            <div class="btn-modify change-champ">
-                                                <p>Modifier</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>       
-                        </div>                        
-                        <div class="champion-container aligner width-100">
-                            <div class="label-champ-container">
-                                <h4>Champion favori n°3 :</h4>
-                            </div>
-                            <div class="third-champ">
-                                <div class="champion-image">
-                                    <img class="param-img" src="/assets/images/champions/{{ user.favoriteChampion[2] }}.png">
-                                </div>
-                                <div class="name-and-btn">
-                                    {{ user.favoriteChampion[2] }}
-                                    <div class="btn-modify-champ">
-                                        <a href="{{ path('edit_profile') }}">
-                                            <div class="btn-modify change-champ">
-                                                <p>Modifier</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div> 
-                            </div>       
-                        </div>                    
+                    {% endfor %}     
                     </div>
                 </div>
                 <div class="hated-edit-container">
@@ -362,16 +324,17 @@
                         <p class="complementary-info">(Vous devez sélectionner au moins 1 champion.)</p>
                     </div>
                     <div class="three-champ-container aligner">
+                    {% for hatedChamp in user.hatedChampion %}
                         <div class="champion-container aligner width-100">
                             <div class="label-champ-container">
                                 <h4>Champion non-favori n°1 : *</h4>
                             </div>
-                            <div class="first-champ">
+                            <div class="card-champ-edit">
                                 <div class="champion-image">
-                                    <img class="param-img" src="/assets/images/champions/{{ user.hatedChampion[0] }}.png">
+                                    <img class="param-img" src="/assets/images/champions/{{ hatedChamp }}.png">
                                 </div>
                                 <div class="name-and-btn">
-                                    {{ user.hatedChampion[0] }}
+                                    {{ hatedChamp }}
                                     <div class="btn-modify-champ">
                                         <a href="{{ path('edit_profile') }}">
                                             <div class="btn-modify change-champ">
@@ -382,46 +345,7 @@
                                 </div>       
                             </div>
                         </div>
-                        <div class="champion-container aligner width-100">
-                            <div class="label-champ-container">
-                                <h4>Champion non-favori n°2 :</h4>
-                            </div>
-                            <div class="second-champ">
-                                <div class="champion-image">
-                                    <img class="param-img" src="/assets/images/champions/{{ user.hatedChampion[1] }}.png">
-                                </div>
-                                 <div class="name-and-btn">
-                                    {{ user.hatedChampion[1] }}
-                                    <div class="btn-modify-champ">
-                                        <a href="{{ path('edit_profile') }}">
-                                            <div class="btn-modify change-champ">
-                                                <p>Modifier</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>       
-                        </div>
-                        <div class="champion-container aligner width-100">
-                            <div class="label-champ-container">
-                                <h4>Champion non-favori n°3 :</h4>
-                            </div>
-                            <div class="third-champ">
-                                <div class="champion-image">
-                                    <img class="param-img" src="/assets/images/champions/{{ user.hatedChampion[2] }}.png">
-                                </div>
-                                <div class="name-and-btn">
-                                    {{ user.hatedChampion[2] }}
-                                    <div class="btn-modify-champ">
-                                        <a href="{{ path('edit_profile') }}">
-                                            <div class="btn-modify change-champ">
-                                                <p>Modifier</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div> 
-                            </div>       
-                        </div>                    
+                    {% endfor %}               
                     </div>
                 </div>
                 </div>

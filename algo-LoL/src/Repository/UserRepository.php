@@ -64,4 +64,19 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         ;
     }
     */
+    public function findAllExceptThis($actualUser)
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT * FROM `user`
+            WHERE `id` != ' . $actualUser . '
+               '
+        ;
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAllAssociative();
+    }
 }

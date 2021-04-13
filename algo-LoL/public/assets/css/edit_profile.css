@@ -103,6 +103,7 @@ input[name="user[countryInGame]"]{
 }
 .edit-personal{
     flex-direction: row;
+    margin-bottom: 3%;
 }
 .edit-rank, .edit-role, .edit-rank .personal-solo-rank, .edit-rank .personal-flex-rank{
     width: 50%;
@@ -155,4 +156,14 @@ input[name="user[countryInGame]"]{
 }
 .btn-modify-champ{
     margin-bottom: 5%;
+}
+
+
+
+
+
+
+
+#edit-monday{
+    display: flex;
 }

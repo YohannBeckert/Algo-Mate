@@ -14,6 +14,15 @@
     background-image: url(../images/background/leona.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-algo{
+    width: 30rem;
+    height: 30rem;
+    background-color: black;
 }
 
 

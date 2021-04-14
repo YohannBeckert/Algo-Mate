@@ -147,6 +147,18 @@ input[name="user[countryInGame]"]{
     width: 5rem;
     height: 1.6rem;
 }
+.add-champ{
+    width: 10rem;
+    height: 1.6rem;
+}
+.add-availab{
+    display: flex;
+    justify-content: center;
+}
+.add-availability{
+    width: 12rem;
+    height: 1.6rem;
+}
 .name-and-btn{
     width: 68%;
     display: flex;
@@ -166,4 +178,82 @@ input[name="user[countryInGame]"]{
 
 #edit-monday{
     display: flex;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+/*     right: 0;
+    bottom: 0; */
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+}
+#popup::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.modal-dialog {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 0.5rem;
+    pointer-events: none;
+}
+.modal-dialog-centered {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100% - 1rem);
+}
+.modal-content {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: auto;
+    pointer-events: auto;
+    background-color: #242424;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+.modal-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+.modal-body {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+.modal-footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-bottom-right-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
 }

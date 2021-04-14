@@ -89,6 +89,30 @@
                             <div class="item-day">
                                 <p class="no-result-day">Aucune Disponibilités n'a été enregistré</p>
                             </div>
+                            <div class="content-btn-found btn-edit">
+                                <button type="button" id="add-av" onclick="edit.handleClickBtnAddAvai()" class="btn-found next-step" data-toggle="modal" data-target="#popup">
+                                    <p>Ajouter une disponibilité</p>
+                                </button>
+                            </div>
+                            <div id="popup" class="modal">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <div class="title-personal">
+                                                <h3>Ajouter une disponibilité</h3>
+                                            </div>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p> Je suis un magnifique pop-up</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" onclick="edit.handleClickBtnClose()" class="btn btn-secondary" data-dismiss="modal">Fermer le pop-up
+                               </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{ dump(user.availabilities) }} 
                             {% else %}
                             <div class="item-day">
                                 <div class="label-day">
@@ -294,10 +318,10 @@
                         <p class="complementary-info">(Vous devez sélectionner au moins 1 champion.)</p>
                     </div>
                     <div class="three-champ-container aligner">
-                    {% for loveChamp in user.favoriteChampion %}  
+                    {% for index, loveChamp in user.favoriteChampion %}  
                         <div class="champion-container aligner width-100">
                             <div class="label-champ-container">
-                                <h4>Champion favori n°{# 1 #} : *</h4>
+                                <h4>Champion favori n°{{ index+1 }}: *</h4>
                             </div>
                             <div class="card-champ-edit">
                                 <div class="champion-image">
@@ -315,8 +339,17 @@
                                 </div>       
                             </div>
                         </div>
-                    {% endfor %}     
-                    </div>
+                    {% endfor %}  
+                    {% if user.favoriteChampion|length < 3  %}
+                        <div class="btn-modify-champ">
+                            <a href="{{ path('edit_profile') }}">
+                                <div class="btn-modify add-champ">
+                                    <p>Ajouter un champion</p>
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+                    </div>                   
                 </div>
                 <div class="hated-edit-container">
                     <div class="title-personal">
@@ -324,10 +357,10 @@
                         <p class="complementary-info">(Vous devez sélectionner au moins 1 champion.)</p>
                     </div>
                     <div class="three-champ-container aligner">
-                    {% for hatedChamp in user.hatedChampion %}
+                    {% for index, hatedChamp in user.hatedChampion %}
                         <div class="champion-container aligner width-100">
                             <div class="label-champ-container">
-                                <h4>Champion non-favori n°1 : *</h4>
+                                <h4>Champion non-favori n°{{ index+1 }} : *</h4>
                             </div>
                             <div class="card-champ-edit">
                                 <div class="champion-image">
@@ -345,7 +378,16 @@
                                 </div>       
                             </div>
                         </div>
-                    {% endfor %}               
+                    {% endfor %}
+                    {% if user.hatedChampion|length < 3 %}
+                        <div class="btn-modify-champ">
+                            <a href="{{ path('edit_profile') }}">
+                                <div class="btn-modify add-champ">
+                                    <p>Ajouter un champion</p>
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}               
                     </div>
                 </div>
                 </div>
@@ -354,5 +396,5 @@
         </div>
     </section>
 </main>
-{# <script src="/assets/js/edit.js"></script>  #}
+<script src="/assets/js/edit.js"></script>
 {% endblock %}

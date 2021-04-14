@@ -230,7 +230,7 @@ class UserType extends AbstractType
             ])
             /* ->add('favoriteChampion')
             ->add('hatedChampion') */
-            /* ->add('availability') */
+            /* ->add('availabilities') */
         ;
     }
 

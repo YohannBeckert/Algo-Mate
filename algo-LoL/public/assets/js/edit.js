@@ -1,16 +1,17 @@
 const edit = {
 
     init: function(){
-        console.log("initialisation de l'édition");       
-
+        console.log("initialisation de l'édition");
+        btnAddAvai = document.querySelector("#add-av");
+        modal = document.querySelector("#popup");
     },
 
-    handleClick: function(){
-        let resultDay = document.querySelector('.result-day');
-        resultDay.value = document.querySelector('.result-day p');
-        let oldValue = resultDay.value;
-        console.log(oldValue);
-        document.querySelector("#edit_monday").classList.add("display-none");
+    handleClickBtnAddAvai: function(){
+        modal.style.display = "block";
+    },
+    
+    handleClickBtnClose: function(){
+        modal.style.display = "none";
     }
 
 

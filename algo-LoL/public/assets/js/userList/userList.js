@@ -2,52 +2,91 @@ const userList = {
 
     init: function(){
         console.log("initialisation");
-
+       
         const btnTop = document.querySelector(".top");
         btnTop.addEventListener('click', userList.handleClickTop);
+        const btnJungle = document.querySelector(".jungle");
+        btnJungle.addEventListener('click', userList.handleClickJungle);
+        const btnMid = document.querySelector(".mid");
+        btnMid.addEventListener('click', userList.handleClickMid);
+        const btnBot = document.querySelector(".bot");
+        btnBot.addEventListener('click', userList.handleClickBot);
+        const btnSupport = document.querySelector(".support");
+        btnSupport.addEventListener('click', userList.handleClickSupport);
+        const btnAll = document.querySelector(".all");
+        btnAll.addEventListener('click', userList.handleClickAll);
     },
 
     handleClickTop: function(){
+        const allRole = document.querySelectorAll(".item-user");
         const btnTop = document.querySelector(".top");
-        btnTop.style.background = "#00e6ff";
+        btnTop.style.background = "#00e6ff";       
 
-        const topRole = document.querySelectorAll("#Toplaner");
-        const jungleRole = document.querySelectorAll("#Jungler");
-        const midRole = document.querySelectorAll("#Midlaner");
-        const botRole = document.querySelectorAll("#ADC");
-        const supportRole = document.querySelectorAll("#Support");
-        const allRole = document.querySelectorAll(".item-user"); 
-
-        /* otherRole =[
-            jungleRole,midRole,botRole,supportRole
-        ] */
-        let index = 0;
-        for (index in allRole){
-            if (botRole || jungleRole || midRole || supportRole){
-                botRole[index].style.display = "none";
-                jungleRole[index].style.display = "none";
-                midRole[index].style.display = "none";
-                supportRole[index].style.display = "none";
+        allRole.forEach(element => {
+            if(element.id !== "Toplaner"){
+                element.classList.add("display-none");
             }
-            index++;
+        });
+    },
 
-        }
-/*         for (index in midRole){
-            midRole[index].style.display = "none";
-        }  
-        for (index in botRole){
-            botRole[index].style.display = "none";
-        }  
-        for (index in supportRole){
-            supportRole[index].style.display = "none";
-        }  
- */
-        for (index in topRole){
-            topRole[index].style.display = "flex";
-        }  
+    handleClickJungle: function(){
+        const allRole = document.querySelectorAll(".item-user");
+        const btnJungle = document.querySelector(".jungle");
+        btnJungle.style.background = "#00e6ff";       
 
-    }
+        allRole.forEach(element => {
+            if(element.id !== "Jungler"){
+                element.classList.add("display-none");
+            }
+        });
+    },
 
+    handleClickMid: function(){
+        const allRole = document.querySelectorAll(".item-user");
+        const btnMid = document.querySelector(".mid");
+        btnMid.style.background = "#00e6ff";       
 
+        allRole.forEach(element => {
+            if(element.id !== "Midlaner"){
+                element.classList.add("display-none");
+            }
+        });
+    },
+
+    handleClickBot: function(){
+        const allRole = document.querySelectorAll(".item-user");
+        const btnBot = document.querySelector(".bot");
+        btnBot.style.background = "#00e6ff";       
+
+        allRole.forEach(element => {
+            if(element.id !== "ADC"){
+                element.classList.add("display-none");
+            }
+        });
+    },
+
+    handleClickSupport: function(){
+        const allRole = document.querySelectorAll(".item-user");
+        const btnSupport = document.querySelector(".support");
+        btnSupport.style.background = "#00e6ff";       
+
+        allRole.forEach(element => {
+            if(element.id !== "Support"){
+                element.classList.add("display-none");
+            }
+        });
+    },
+
+    handleClickAll: function(){
+        const allRole = document.querySelectorAll(".item-user");
+        const btnAll = document.querySelector(".all");
+        btnAll.style.background = "#00e6ff";       
+
+       /*  allRole.forEach(element => {
+            if(element.id !== "Alllan"){
+                element.classList.add("display-none");
+            }
+        }); */
+    },
 }
 document.addEventListener('DOMContentLoaded', userList.init);

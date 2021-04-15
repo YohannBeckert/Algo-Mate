@@ -123,3 +123,7 @@
 .box-fchamp .champ-card:first-child{
     margin-left: 1%;
 }
+
+#display-none, .display-none{
+    display: none;
+}

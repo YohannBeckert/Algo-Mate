@@ -102,26 +102,23 @@
     justify-content: center;
 }
 
+.jungle,.mid,.bot,.support,.top,.all{
+    padding: 1% 2%;
+    background-color: #415558;
+    color: white;
+    font-weight: bold;
+    text-shadow: black 1px 1px 2px;
+    border: 2px outset gray;
+    border-left: none;
+    cursor: pointer;
+    outline: 0;
+}
+.jungle:hover,.mid:hover,.bot:hover,.support:hover,.top:hover,.all:hover{
+    background-color: #546c70;
+}
 .top{
-    padding: 1%;
-    border: 1px solid white;
-    border-top-left-radius: 15%;
-    border-bottom-left-radius: 15%;
-    opacity: 0.6;
+    border-left: 2px outset gray;
 }
-.jungle,.mid,.bot,.support{
-    padding: 1%;
-    border: 1px solid white;
-    opacity: 0.6;
-}
-.all{
-    padding: 1%;
-    border: 1px solid white;
-    border-top-right-radius: 15%;
-    border-bottom-right-radius: 15%;
-    opacity: 0.6;
-}
-
 .lane-selection a:hover{
     opacity: 1;
 }

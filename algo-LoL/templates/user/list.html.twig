@@ -31,12 +31,12 @@
     </div>
     <div class="filter-content">
         <div class="lane-selection">
-            <a class="top" href="">Top</a>
-            <a class="jungle" href="">Jungle</a>
-            <a class="mid" href="">Mid</a>
-            <a class="bot" href="">Bot</a>
-            <a class="support" href="">Support</a>
-            <a class="all" href="">All</a>
+            <button class="top">Top</button>
+            <button class="jungle" >Jungle</button>
+            <button class="mid" >Mid</button>
+            <button class="bot" >Bot</button>
+            <button class="support" >Support</button>
+            <button class="all" >All</button>
         </div>
     </div>
 
@@ -61,7 +61,7 @@
         </div>
         <div class="all-users-list">
             {% for user in allUsers %}
-                <div {# {% if user.username or user.country or user.soloRank or user.flexRank is empty() %}id="display-none"{% else %} #}class="item-user"{# {% endif %} #}>
+                <div class="item-user" id="{{ user.firstRole }}">
                     <div class="box-user box-flag -space">
                         {% if user.country is empty() %}
 
@@ -119,5 +119,5 @@
         </div>
     </div>
 </main>
-
+<script src="/assets/js/userList/userList.js"></script>
 {% endblock %}

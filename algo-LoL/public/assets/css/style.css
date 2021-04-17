@@ -122,7 +122,9 @@
 .lane-selection a:hover{
     opacity: 1;
 }
-
+.btn-clicked{
+    background-color: #af692d;
+}
 /* champions */
 
 .all-champions-content{

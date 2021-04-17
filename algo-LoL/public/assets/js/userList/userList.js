@@ -1,5 +1,7 @@
 const userList = {
 
+    
+
     init: function(){
         console.log("initialisation");
        
@@ -15,12 +17,31 @@ const userList = {
         btnSupport.addEventListener('click', userList.handleClickSupport);
         const btnAll = document.querySelector(".all");
         btnAll.addEventListener('click', userList.handleClickAll);
+
+
     },
 
-    handleClickTop: function(){
+    handleClickAll: function(event){
+        userList.reset();
+
         const allRole = document.querySelectorAll(".item-user");
-        const btnTop = document.querySelector(".top");
-        btnTop.style.background = "#00e6ff";       
+
+        let btnToCheck = event.currentTarget;
+        let btnValue = btnToCheck.value;
+        
+        userList.colorizeBtn(btnToCheck, userList.btnValueIsValid(btnValue));
+
+    },
+
+    handleClickTop: function(event){
+        userList.reset();
+
+        const allRole = document.querySelectorAll(".item-user");
+
+        let btnToCheck = event.currentTarget;
+        let btnValue = btnToCheck.value;
+        
+        userList.colorizeBtn(btnToCheck, userList.btnValueIsValid(btnValue));
 
         allRole.forEach(element => {
             if(element.id !== "Toplaner"){
@@ -29,10 +50,15 @@ const userList = {
         });
     },
 
-    handleClickJungle: function(){
+    handleClickJungle: function(event){
+        userList.reset();
+
         const allRole = document.querySelectorAll(".item-user");
-        const btnJungle = document.querySelector(".jungle");
-        btnJungle.style.background = "#00e6ff";       
+        
+        let btnToCheck = event.currentTarget;
+        let btnValue = btnToCheck.value;
+        
+        userList.colorizeBtn(btnToCheck, userList.btnValueIsValid(btnValue));
 
         allRole.forEach(element => {
             if(element.id !== "Jungler"){
@@ -41,10 +67,15 @@ const userList = {
         });
     },
 
-    handleClickMid: function(){
+    handleClickMid: function(event){
+        userList.reset();
+
         const allRole = document.querySelectorAll(".item-user");
-        const btnMid = document.querySelector(".mid");
-        btnMid.style.background = "#00e6ff";       
+
+        let btnToCheck = event.currentTarget;
+        let btnValue = btnToCheck.value;
+
+        userList.colorizeBtn(btnToCheck, userList.btnValueIsValid(btnValue));
 
         allRole.forEach(element => {
             if(element.id !== "Midlaner"){
@@ -53,10 +84,15 @@ const userList = {
         });
     },
 
-    handleClickBot: function(){
+    handleClickBot: function(event){
+        userList.reset();
+
         const allRole = document.querySelectorAll(".item-user");
-        const btnBot = document.querySelector(".bot");
-        btnBot.style.background = "#00e6ff";       
+
+        let btnToCheck = event.currentTarget;
+        let btnValue = btnToCheck.value;
+
+        userList.colorizeBtn(btnToCheck, userList.btnValueIsValid(btnValue));
 
         allRole.forEach(element => {
             if(element.id !== "ADC"){
@@ -65,10 +101,15 @@ const userList = {
         });
     },
 
-    handleClickSupport: function(){
+    handleClickSupport: function(event){
+        userList.reset();
+
         const allRole = document.querySelectorAll(".item-user");
-        const btnSupport = document.querySelector(".support");
-        btnSupport.style.background = "#00e6ff";       
+
+        let btnToCheck = event.currentTarget;
+        let btnValue = btnToCheck.value;
+
+        userList.colorizeBtn(btnToCheck, userList.btnValueIsValid(btnValue));
 
         allRole.forEach(element => {
             if(element.id !== "Support"){
@@ -77,16 +118,44 @@ const userList = {
         });
     },
 
-    handleClickAll: function(){
+    reset: function (){
         const allRole = document.querySelectorAll(".item-user");
-        const btnAll = document.querySelector(".all");
-        btnAll.style.background = "#00e6ff";       
 
-       /*  allRole.forEach(element => {
-            if(element.id !== "Alllan"){
-                element.classList.add("display-none");
-            }
-        }); */
+        const btnAll = document.querySelector(".all");
+        const btnTop = document.querySelector(".top");
+        const btnJungle = document.querySelector(".jungle");
+        const btnMid = document.querySelector(".mid");
+        const btnBot = document.querySelector(".bot");
+        const btnSupport = document.querySelector(".support");
+
+        let arrayBtn = [btnTop, btnJungle, btnMid, btnBot,btnSupport,btnAll];
+
+        arrayBtn.forEach(element => {
+            element.classList.remove("btn-clicked");
+        });userList.reset();
+        allRole.forEach(element => {
+            element.classList.remove("display-none");
+        });
     },
+
+    btnValueIsValid: function (valueToCheck) {
+        if (valueToCheck ) {
+          return true;
+        } else {
+          return false;
+        }
+    },
+
+    colorizeBtn: function (btnToColorize, btnIsValid) {
+        btnToColorize.classList.remove("btn-clicked");
+        btnToColorize.classList.remove("btn-clicked");
+
+        if (btnIsValid) {
+          btnToColorize.classList.add("btn-clicked");
+        } else {
+          btnToColorize.classList.add("btn-clicked");
+        }
+      },
+
 }
 document.addEventListener('DOMContentLoaded', userList.init);

@@ -10,29 +10,29 @@
                 <div class="content-nav">
                     <nav>
                         <ul class="content-item central-nav">
-                            <div class="nav-item">
-                                <li {% if route_name == "homepage" %}class="central-nav-item active" {% else %} class="central-nav-item" {% endif %}>
-                                    <a href="{{ path('homepage') }}">Accueil</a>
+                            <a href="{{ path('homepage') }}"{% if route_name == "homepage" %} class="nav-item nav-active" {% else %} class="nav-item" {% endif %}>
+                                <li {% if route_name == "homepage" %} class="central-nav-item item-active" {% else %} class="central-nav-item" {% endif %}>
+                                    Accueil
                                 </li>                        
-                            </div>
-                            <div class="nav-item">
-                                <li {% if route_name == "champion_list" %}class="central-nav-item active" {% else %} class="central-nav-item" {% endif %}>
-                                    <a href="{{ path('champion_list') }}">Champions</a>
-                                </li>                                                               
-                            </div>
-                            <div class="nav-item">
-                                <li {% if route_name == "found_mate" %}class="central-nav-item active" {% else %} class="central-nav-item" {% endif %}>
-                                    <a href="{{ path('found_mate') }}">Trouvez un Mate</a>
+                            </a>
+                            <a href="{{ path('champion_list') }}" {% if route_name == "champion_list" %}class="nav-item nav-active" {% else %} class="nav-item" {% endif %}>
+                                <li {% if route_name == "champion_list" %}class="central-nav-item item-active"{% else %} class="central-nav-item" {% endif %}> 
+                                    Champions
+                                </li> 
+                            </a>                                                              
+                            <a href="{{ path('found_mate') }}" {% if route_name == "found_mate" %}class="nav-item nav-active" {% else %} class="nav-item" {% endif %}>
+                                <li {% if route_name == "found_mate" %}class="central-nav-item item-active" {% else %} class="central-nav-item" {% endif %}>
+                                    Trouvez un Mate
                                 </li>                              
-                            </div>
-                            <div class="nav-item">
-                                <li {% if route_name == "user_list" %}class="central-nav-item active" {% else %} class="central-nav-item" {% endif %}>
-                                    <a href="{{ path('user_list') }}">Liste des joueurs</a>
+                            </a>
+                            <a href="{{ path('user_list') }}" {% if route_name == "user_list" %}class="nav-item nav-active" {% else %} class="nav-item" {% endif %}>
+                                <li {% if route_name == "user_list" %}class="central-nav-item item-active" {% else %} class="central-nav-item" {% endif %}>
+                                    Liste des joueurs
                                 </li>                              
-                            </div>
+                            </a>
                             {% if is_granted('ROLE_ADMIN') %}
-                            <div class="nav-item">
-                                <li {% if route_name == "admin" %}class="central-nav-item active" {% else %} class="central-nav-item" {% endif %}>
+                            <div {% if route_name == "admin" %}class="nav-item nav-active" {% else %} class="nav-item" {% endif %}>
+                                <li {% if route_name == "admin" %}class="central-nav-item item-active" {% else %} class="central-nav-item" {% endif %}>
                                     <a href="{{ path('admin') }}">Administration</a>
                                 </li>                              
                             </div>
@@ -41,11 +41,9 @@
                     </nav>
                 </div>
 
-
-
                 <div class="content-disconnect">
                     {% if app.user %}
-                        <div class="nav-item">
+                        <div {% if route_name == "profile" %} class="nav-item-connect nav-active item-active" {% else %} class="nav-item-connect" {% endif %}>
                             <a href="{{ path('profile') }}">
                                 {% if app.user.username == NULL %}
                                     {{ app.user.email }}
@@ -54,13 +52,13 @@
                                 {% endif %}
                             </a>
                         </div>
-                        <div class="nav-item disconnect">
+                        <div class="nav-item-connect disconnect">
                             <a href="{{ path('app_logout') }}">
                                 Déconnexion
                             </a>
                         </div>
                     {% else %}
-                    <div class="nav-item connection">
+                    <div class="nav-item-connect connection">
                         <a href="{{ path('app_login') }}">
                             <div>Connexion / Inscription</div>
                         </a>

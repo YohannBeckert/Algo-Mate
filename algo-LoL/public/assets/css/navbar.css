@@ -4,24 +4,32 @@
 
 
 #navbar{
-    height: 55px;
+    height: 60px;
+    width: 100%;
     background-color: #2d3535;
     display: flex;
-    justify-content: space-between;
     padding: 0 2%;
+    border-bottom: 1px inset #292929;
 }
-.active{
+.nav-active{
+    background-color: #414c4c;
+    border-right: 1px solid #292929;
+    border-left:1px solid #292929;
+}
+.nav-active-connect{
+    text-decoration: underline;
+}
+.item-active{
     text-decoration: underline;
 }
         /* section logo */
 
 .content-logo{
+    width: 20%;
     color: white;
     font-weight: bold;
     font-size: 30px;
     display: flex;
-    justify-content: center;
-
 }
 .content-logo a{
     align-self: center;
@@ -37,39 +45,48 @@ nav{
 .mate{
     width: 7.8rem;
 }
-.content-nav, nav{
-    width: auto;
+.content-nav{
+    width: 60%;
 }
 .central-nav{
     height: 100%;
-    width: 32rem;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
-.nav-item{
+.nav-item, .nav-item-connect{
     height: 100%;
+    padding: 0 2%;
     display: flex;
     align-items: center;
 }
-.nav-item a:hover{
-    font-size: 1.05rem;
+.nav-item:hover{
+    background-color: #414c4c;
 }
 
         /* déconnexion */
 
 
 .content-disconnect{
+    width: 20%;
     display: flex;
+    justify-content: flex-end;
 }
-
+.nav-item-connect{
+    padding: 0 5%;
+}
+.content-disconnect:last-child{
+    padding: 0 0 0 5%;
+}
+.nav-item-connect a:hover{
+    text-decoration: underline;
+}
 .connection{
     height: 100%;
     display: flex;
     align-items: center;
 }       
-.disconnect{
-    margin-left: 6%;
-}
+
 
                 

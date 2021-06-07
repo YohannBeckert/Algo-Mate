@@ -50,8 +50,43 @@
     width: 25%;
 }
 
-.all-users-list{
+.filter-content{
+    margin: 3% 0 5% 0;
+    width: 100%;
+}
+.lane-selection{
+    display: flex;
+    justify-content: center;
+}
 
+.jungle,.mid,.bot,.support,.top,.all{
+    padding: 0.8% 0;
+    width: 8rem;
+    background-color: #415558;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-shadow: black 1px 1px 2px;
+    border: 2px outset gray;
+    border-left: none;
+    cursor: pointer;
+    outline: 0;
+}
+.jungle:hover,.mid:hover,.bot:hover,.support:hover,.top:hover,.all:hover{
+    background-color: #546c70;
+}
+.all{
+    border-radius: 0 3px 3px 0;
+}
+.top{
+    border-left: 2px outset gray;
+    border-radius: 3px 0 0 3px;
+}
+.lane-selection a:hover{
+    opacity: 1;
+}
+.btn-clicked{
+    background-color: #af692d;
 }
 
         /* Item user */

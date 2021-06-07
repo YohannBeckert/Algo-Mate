@@ -114,13 +114,13 @@
                             </div>
                             {{ dump(user.availabilities) }} 
                             {% else %}
-                            <div class="item-day">
+                            <div class="item-day" id="monday">
                                 <div class="label-day">
                                     <p>Lundi</p>
                                 </div>
-                                <div class="result-day" onclick="edit.handleClick()">
+                                <button class="result-day" id="btn-monday" value="{{ availabilityUser[0].monday }}">
                                     <p>{{ availabilityUser[0].monday }}</p>
-                                </div>
+                                </button>
                             </div>
                             <div class="item-day">
                                 <div class="label-day">

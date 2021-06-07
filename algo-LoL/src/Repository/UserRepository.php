@@ -79,4 +79,39 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
         return $stmt->fetchAllAssociative();
     }
+
+    public function compareSoloRank($actualUserId, $preferMateRank)
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+
+        $sql = '
+            SELECT * FROM `user`
+            WHERE `id` != ' . $actualUserId. '
+            AND `solo_rank` = "' .$preferMateRank. '"
+               '
+        ;
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAllAssociative();
+    }
+/*     public function compareCountry($mateSameRank, $mateCountry)
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+
+        $sql = '
+            SELECT * FROM `user`
+            WHERE `id` = ' .$mateSameRank. '
+            AND `country` = "' .$mateCountry. '"
+               '
+        ;
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAllAssociative();
+    } */
 }

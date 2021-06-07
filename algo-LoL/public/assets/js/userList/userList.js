@@ -3,7 +3,6 @@ const userList = {
     
 
     init: function(){
-        console.log("initialisation");
        
         const btnTop = document.querySelector(".top");
         btnTop.addEventListener('click', userList.handleClickTop);
@@ -132,7 +131,7 @@ const userList = {
 
         arrayBtn.forEach(element => {
             element.classList.remove("btn-clicked");
-        });userList.reset();
+        });
         allRole.forEach(element => {
             element.classList.remove("display-none");
         });

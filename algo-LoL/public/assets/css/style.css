@@ -1,8 +1,5 @@
 
 
-
-
-
                      /*        */
                     /* Footer */
                    /*        */
@@ -17,12 +14,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.content-algo{
-    width: 30rem;
-    height: 30rem;
-    background-color: black;
 }
 
 
@@ -103,9 +94,11 @@
 }
 
 .jungle,.mid,.bot,.support,.top,.all{
-    padding: 1% 2%;
+    padding: 0.8% 0;
+    width: 8rem;
     background-color: #415558;
     color: white;
+    font-size: 0.9rem;
     font-weight: bold;
     text-shadow: black 1px 1px 2px;
     border: 2px outset gray;
@@ -116,8 +109,12 @@
 .jungle:hover,.mid:hover,.bot:hover,.support:hover,.top:hover,.all:hover{
     background-color: #546c70;
 }
+.all{
+    border-radius: 0 3px 3px 0;
+}
 .top{
     border-left: 2px outset gray;
+    border-radius: 3px 0 0 3px;
 }
 .lane-selection a:hover{
     opacity: 1;

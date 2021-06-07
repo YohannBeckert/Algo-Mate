@@ -1,19 +1,33 @@
 const edit = {
 
     init: function(){
-        console.log("initialisation de l'édition");
-        btnAddAvai = document.querySelector("#add-av");
-        modal = document.querySelector("#popup");
+
+        const monday = document.querySelector("#monday");
+        monday.addEventListener('click',edit.changeValueMonday);
+        const inputSelected = document.querySelector("#monday-id");
+        inputSelected.addEventListener('click',edit.handleInpute);       
+
     },
 
-    handleClickBtnAddAvai: function(){
-        modal.style.display = "block";
+    changeValueMonday: function(event){
+        event.preventDefault();
+
+        const mondayBtn = document.querySelector("#btn-monday");
+        mondayBtnValue = mondayBtn.value;
+        
+        mondayBtn.classList.add("display-none");
+
+        let input = document.createElement('input');
+        input.type = "text";
+        input.value = mondayBtnValue;
+        input.id = "monday-id";
+        let mondayDiv = document.querySelector("#monday");
+        mondayDiv.appendChild(input);
     },
-    
-    handleClickBtnClose: function(){
-        modal.style.display = "none";
+
+    handleInpute: function(event){
+        event.preventDefault();
     }
-
 
 }
 document.addEventListener('DOMContentLoaded', edit.init);

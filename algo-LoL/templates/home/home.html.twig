@@ -15,6 +15,113 @@
                 {{ message }}
             </div>
         {% endfor %}
+        <div class="title-home">
+            <h1>Viens trouver ton mate</h1>
+        </div>
+
+        <div class="carousel" aria-label="Gallery">
+            <div class="carousel__viewport">
+            <ol id="carousel__slide1" tabIndex="0" class="carousel__slide">
+
+                <a href="" class="spc-one">
+                    <li class="spc-one">
+                
+                    <section class="card-last">
+                        <div class="item-last-card">
+                            <section class="left-side">
+                            <div class="text-last-card">
+                                <p>Nos nouveaux produits</p>
+                            </div>
+                            <div class="filter-last-card">
+                                <div class="flc">
+                                    <div class="text-flc">
+                                        <p>Voir les produits</p>
+                                    </div>
+                                    <div class="img-flc">
+                                        <img src= alt="searchIcon" />
+                                    </div>
+                                </div>
+                            </div>
+                            </section>
+                            <section class="right-side">
+                            </section>
+                        </div>
+                    </section>
+
+                    </li>
+                </a>
+                <a href="/produit" class="spc-two"><li class="spc-two"></li></a>
+                <a href="/produit" class="spc-three"><li class="spc-three"></li></a>
+
+                <a href="#carousel__slide4" class="carousel__prev" />
+                <a href="#carousel__slide2" class="carousel__next" />
+
+            </ol>
+            <ol id="carousel__slide2" tabIndex="0" class="carousel__slide">
+
+                <a href="/produit" class="spc-one"><li class="spc-one"></li></a>
+                <a href="/produit" class="spc-two"><li class="spc-two"></li></a>
+                <a href="/produit" class="spc-three"><li class="spc-three"></li></a>
+
+                <a href="#carousel__slide1" class="carousel__prev" />
+                <a href="#carousel__slide3" class="carousel__next" />
+
+            </ol>
+            <ol id="carousel__slide3" tabIndex="0" class="carousel__slide">
+
+                <a href="/produit" class="spc-one"><li class="spc-one"></li></a>
+                <a href="/produit" class="spc-two"><li class="spc-two"></li></a>
+                <a href="/produit" class="spc-three"><li class="spc-three"></li></a>
+
+                <a href="#carousel__slide2" class="carousel__prev" />
+                <a href="#carousel__slide4" class="carousel__next" />
+
+            </ol>
+            <ol id="carousel__slide4" tabIndex="0" class="carousel__slide">
+
+                <a href="/produit" class="spc-one"><li class="spc-one"></li></a>
+                <a href="/produit" class="spc-two"><li class="spc-two"></li></a>
+                <a href="/produit" class="spc-three"><li class="spc-three"></li></a>
+
+                <a href="#carousel__slide3" class="carousel__prev" />
+                <a href="#carousel__slide1" class="carousel__next" />
+
+            </ol>
+
+            </div>
+            <aside class="carousel__navigation">
+            <ol class="carousel__navigation-list">
+                <li class="carousel__navigation-item">
+                <a
+                    href="#carousel__slide1"
+                    class="carousel__navigation-button"
+                >Go to slide 1
+                </a>
+                </li>
+                <li class="carousel__navigation-item">
+                <a
+                    href="#carousel__slide2"
+                    class="carousel__navigation-button"
+                >Go to slide 2
+                </a>
+                </li>
+                <li class="carousel__navigation-item">
+                <a
+                    href="#carousel__slide3"
+                    class="carousel__navigation-button"
+                >Go to slide 3
+                </a>
+                </li>
+                <li class="carousel__navigation-item">
+                <a
+                    href="#carousel__slide4"
+                    class="carousel__navigation-button"
+                >Go to slide 4
+                </a>
+                </li>
+            </ol>
+            </aside>
+        </div>
     </section>
 </main>
 {% endblock %}

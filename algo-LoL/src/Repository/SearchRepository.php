@@ -47,4 +47,75 @@ class SearchRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findAllExceptThis($actualUser)
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT * FROM `search`
+            WHERE `user_id` != ' . $actualUser . '
+               '
+        ;
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAllAssociative();
+    }
+
+    public function findSameGoalMate($actualUserId,$auCountry,$auCountryInGame,$auSoloRank,$auFlexRank,$auFirstRole,$auSecondRole)
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT * FROM `search`
+            WHERE `user_id` != ' . $actualUserId . '
+            AND `country` = "' .$auCountry. '"
+            AND `country_in_game` = "' .$auCountryInGame. '"
+            AND `solo_rank` = "' .$auSoloRank. '"
+            AND `flex_rank` = "' .$auFlexRank. '"
+            AND `first_role` = "' .$auFirstRole. '"
+            AND `second_role` = "' .$auSecondRole. '"
+               '
+        ;
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAllAssociative();
+    }
+
+    public function findGoalCountry($actualUserId,$auCountry)
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT * FROM `search`
+            WHERE `user_id` != ' . $actualUserId . '
+            AND `country` = "' .$auCountry. '"
+               '
+        ;
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAllAssociative();
+    }
+
+    public function findGoalCountryInGame($actualUserId,$auCountryInGame)
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT * FROM `search`
+            WHERE `user_id` != ' . $actualUserId . '
+            AND `country` = "' .$auCountryInGame. '"
+               '
+        ;
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAllAssociative();
+    }
 }

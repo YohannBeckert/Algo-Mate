@@ -99,28 +99,41 @@ class MainController extends AbstractController
             }
             $matchFlexRank = $matchMateFlexRank[0];
 
-            /* Récupération de tous les utilisateurs qui ont le first role que le user recherche. Basé sur le tableau précédent */
+            /* Récupération de tous les utilisateurs qui ont le first role OU le second role
+            correspondant à ce que le user recherche. Basé sur le tableau précédent */            
             foreach ($matchFlexRank as $firstRole){
                 $mateFirstRole = $firstRole["first_role"];
-                if($mateFirstRole == $auFirstRole){
-                    $matchMateFirstRole[] = $firstRole;
+                if($mateFirstRole == $auFirstRole || $mateFirstRole == $auSecondRole){
+                    $matchMateRole[] = $firstRole;
                 }
                 else{
 
                 }
-            }  
-            dump($matchMateFirstRole);
+            }
+            if($auSecondRole == "Pas d'importance"){
 
-            /* COMPARER LE SECOND ROLE, SI PAS D'IMPORTANCE => TOUT RECUPERER,
-            SI UN CHOIX SELECTIONNE => PARTIR DU TABLEAU  MATCHFLEXRANK ?? */
+            }
+            else{
+                foreach ($matchFlexRank as $secondRole) {
+                    $mateSecondRole = $secondRole["second_role"];
+                    if ($mateSecondRole == $auFirstRole || $mateSecondRole == $auSecondRole) {
+                        $matchMateRole[] = $secondRole;
+                    }
+                    else {
 
+                    }
+                }
+            }
 
+            /* Récupération de tous les utilisateurs qui ont le même objectif que le user. Basé sur le tableau précédent */   
+            foreach ($matchMateRole as $matchGoal) {
+                $mateMatchGoal = $matchGoal["goal"];             
+                if ($mateMatchGoal == $autableGoal[0]){
+                    $matchMate[] = $matchGoal;
+                }
+            }
 
-
-
-
-
-
+                /* $matchMate[] contient les utilisateurs correspondant parfaitement au user */
 
 
         }

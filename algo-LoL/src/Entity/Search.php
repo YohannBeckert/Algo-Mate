@@ -48,14 +48,19 @@ class Search
     private $secondRole;
 
     /**
-     * @ORM\Column(type="simple_array", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $goal = [];
+    private $goal;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="searches")
      */
     private $user;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $age;
 
     public function __toString()
     {
@@ -138,12 +143,12 @@ class Search
         return $this;
     }
 
-    public function getGoal(): ?array
+    public function getGoal(): ?string
     {
         return $this->goal;
     }
 
-    public function setGoal(?array $goal): self
+    public function setGoal(?string $goal): self
     {
         $this->goal = $goal;
 
@@ -158,6 +163,18 @@ class Search
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getAge(): ?string
+    {
+        return $this->age;
+    }
+
+    public function setAge(?string $age): self
+    {
+        $this->age = $age;
 
         return $this;
     }

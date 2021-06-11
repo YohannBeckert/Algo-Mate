@@ -201,8 +201,102 @@
                 </div>
             </div>
             <div class="mate-container">
-                <div class="content-img-mate">
-                    <img id="unknow-people" src="/assets/images/others/inconnu.png" alt="">
+                <div class="personal-info-mate">
+                    <div class="content-img-mate">
+                        <img id="unknow-people" src="/assets/images/others/inconnu.png" alt="">
+                    </div>
+                    <div class="content-personal-info">
+                        <div class="country-firstname">
+                            <div class="country-and-name">
+                                <img src="/assets/images/flags/{{ mate.country }}.png" alt="">
+                                <p class="personal-firstname">{{ mate.firstname }}</p>
+                            </div>
+                            <div class="age">
+                                <p><span>{{ mate.age }}</span> ans</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ig-info-mate width-80">
+                    <div class="header-ig-mate aligner">
+                        <div class="username-game">
+                            <h2>{{ mate.username }}</h2>
+                        </div>
+                        <div class="game-region">
+                            {% if user.countryInGame is empty() %}                    
+                            <div class="flag -player">
+                                <img src="/assets/images/flags/{{ mate.country }}.png" alt="">
+                                <p>{{ mate.country }}</p>
+                            </div>
+                            {% else %}
+                            <div class="flag -player">
+                                <img src="/assets/images/flags/{{ mate.country }}.png" alt="">
+                                <p>{{ mate.country }}</p>
+                            </div>
+                            <p class="space"> - </p>
+                            <div class="flag -game">
+                                <img src="/assets/images/flags/{{ mate.country_in_game }}.png" alt="">
+                                <p>{{ mate.country_in_game }}</p>
+                            </div>
+                            {% endif %}
+                        </div> 
+                    </div>
+                    <div class="rest-info">
+
+
+
+                        <div class="rank-mate">                            
+                            <div class="solo-rank-mate width-50">
+                                <div class="title-rank-mate">
+                                    <h4>Solo Rank :</h4>
+                                </div>
+                                <div class="img-solorank-mate">
+                                    <img src="/assets/images/rank/{{ mate.solo_rank }}.png" alt="">
+                                </div>
+                                <div>
+                                    {% if mate.solo_rank == "Unranked" %}
+                                        <p>{{ mate.solo_rank }}</p>
+                                    {% else %}
+                                        <p>{{ mate.solo_rank }} {{ mate.solo_division }}</p>
+                                    {% endif %}
+                                </div>                          
+                            </div>
+                            <div class="flex-rank-mate width-50">
+                                <div class="title-rank-mate">
+                                    <h4>Solo Rank :</h4>
+                                </div>
+                                <div class="img-flexrank-mate">
+                                    <img class="width-50" src="/assets/images/rank/{{ mate.flex_rank }}.png" alt="">
+                                </div>
+                                <div>
+                                    {% if mate.flex_rank == "Unranked" %}
+                                        <p>{{ mate.flex_rank }}</p>
+                                    {% else %}
+                                        <p>{{ mate.flex_rank }} {{ mate.flex_division }}</p>
+                                    {% endif %}
+                                </div>                          
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                        <div class="role-and-obj">
+                        
+                        </div>
+                        <div class="fh-champ">
+                        
+                        </div>
+                    </div>               
+                </div>   
+
+                <div class="dispo-mate">
+                
                 </div>                        
             </div>
         </section>

@@ -138,10 +138,10 @@ class StepSixType extends AbstractType
             ->add('goal', ChoiceType::class,[
                 'constraints' => [
                     new NotBlank([
-                        'message'=> 'Vous devez indiquer au moins 1 raison.'
+                        'message'=> 'Vous devez indiquer 1 raison.'
                     ]),
                 ],
-                'multiple' => true,
+                'multiple' => false,
                 'expanded' => true,
                 'choices' => [
                     'Rank up' => "Rank up",
@@ -150,6 +150,20 @@ class StepSixType extends AbstractType
                     'Entrer dans une équipe' => "Entrer dans une équipe",
                     'S\'amuser à 2' => "S'amuser à 2",
                     'Autre' => "Autre",
+                ]
+            ])
+            ->add('age', ChoiceType::class,[
+                'constraints' => [
+                    new NotBlank([
+                        'message'=> 'Vous devez indiquer 1 tranche d\'âge.'
+                    ]),
+                ],
+                'multiple' => false,
+                'expanded' => true,
+                'choices' => [
+                    'Pas d\'importance' => "Pas d'importance",
+                    'Moins de 18 ans' => "Moins de 18 ans",
+                    'Plus de 18 ans' => "Plus de 18 ans",
                 ]
             ])
         ;

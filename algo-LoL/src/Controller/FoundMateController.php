@@ -17,6 +17,7 @@ use App\Repository\AvailabilityRepository;
 use App\Repository\ChampionRepository;
 use App\Repository\SearchRepository;
 use App\Repository\UserRepository;
+use App\Services\CompareGoal;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

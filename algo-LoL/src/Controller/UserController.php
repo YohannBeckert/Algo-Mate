@@ -7,7 +7,9 @@ use App\Entity\User;
 use App\Form\RegisterType;
 use App\Form\UserType;
 use App\Repository\AvailabilityRepository;
+use App\Repository\SearchRepository;
 use App\Repository\UserRepository;
+use App\Services\CompareGoal;
 use App\Services\ResponseEmail;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,12 +25,25 @@ class UserController extends AbstractController
     /**
      * @Route("/profile", name="profile", methods={"GET"})
      */
-    public function profile(AvailabilityRepository $ar): Response
+    public function profile(AvailabilityRepository $ar, CompareGoal $cg, UserRepository $ur, SearchRepository $sr): Response
     {
+        /* Récupération du user actuel et son ID */
         $user = $this->getUser();
         $userId = $user->getId();
-        
-        $availabilityUser = $ar->findBy(['user' => $userId]);  
+
+        /* Récupération du service de comparaison */
+        $resultCompareGoal = $cg->compareGoal($ur, $sr, $user);
+        /* Stockage du résultat dans un tableau */
+        $matchMateTable = $resultCompareGoal[0];
+        /* Récupération du premier mate du tableau */
+        $mate = $matchMateTable[0];
+        dump($mate);
+
+
+        /* Récupération des disponibilités du user actuel */
+        $availabilityUser = $ar->findBy(['user' => $userId]);
+
+        /* Si profil non rempli */
         if(empty($user->getFirstname() || $user->getAge() || $user->getCountry())){
 
             $this->addFlash('warning-profile_empty', 'Pour accéder à votre profil, vous devez au minimum remplir votre prénom, votre âge et votre pays.');
@@ -36,10 +51,11 @@ class UserController extends AbstractController
             return $this->redirectToRoute('step_one');
         };
 
-
+        /* Si profil rempli */
         return $this->render('user/profile.html.twig',[
             'user' => $user,
-            'availabilityUser' => $availabilityUser
+            'availabilityUser' => $availabilityUser,
+            'mate' => $mate
         ]);
     }
     /**
@@ -75,11 +91,6 @@ class UserController extends AbstractController
         $user = new User();
         $form = $this->createForm(RegisterType::class);
         $form->handleRequest($request);
-
-
-        function test(){
-
-        };
 
         if ($form->isSubmitted() && $form->isValid()) { 
             $user = $form->getData();

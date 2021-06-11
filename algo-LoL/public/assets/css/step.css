@@ -238,12 +238,12 @@
     display: flex;
     justify-content: center;
 }
-#step_two_goal input, #step_six_goal input{
+#step_two_goal input, #step_six_goal input, #step_six_age input{
     width: 15px;
     height: 15px;
     margin: 2px 5px 0 0;
 }
-#step_two_goal label, #step_six_goal label{
+#step_two_goal label, #step_six_goal label, #step_six_age label{
     margin-right: 2%;
 }
 
@@ -449,4 +449,8 @@
 }
 .personal-goal li{
     list-style: inherit;
+}
+
+#step_six_age:first-child{
+    margin-left: 10rem;
 }

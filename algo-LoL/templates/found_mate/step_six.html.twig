@@ -116,22 +116,38 @@
                 </div>
             </div>
         </div>
-                <div class="all-personal">
+        <div class="all-personal">
+            <div class="title-personal">
+                <h3>Objectif(s) du Mate *</h3>
+                <p class="complementary-info">(Vous devez sélectionner une raison.)</p>
+            </div>
+            <div class="content-personal width-100">
+                <div class="item-form-step goal-width">
+                    <div class="input-item-step">
+                        {{ form_widget(form.goal) }}
+                    </div>
+                    <div class="error-item-step">
+                        {{ form_errors(form.goal) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="all-personal">
                     <div class="title-personal">
-                        <h3>Objectif(s) du Mate *</h3>
-                        <p class="complementary-info">(Vous devez sélectionner au minimum 1 raison.)</p>
+                        <h3>Âge du Mate *</h3>
+                        <p class="complementary-info">(Vous devez sélectionner une tranche d'âge.)</p>
                     </div>
                     <div class="content-personal width-100">
                         <div class="item-form-step goal-width">
                             <div class="input-item-step">
-                                {{ form_widget(form.goal) }}
+                                {{ form_widget(form.age) }}
                             </div>
                             <div class="error-item-step">
-                                {{ form_errors(form.goal) }}
+                                {{ form_errors(form.age) }}
                             </div>
                         </div>
                     </div>
-                </div>                            
+                </div>                          
             <div class="content-btn-found btn-step">
                     <a href="{{ path('step_five') }}">
                         <div class="btn-preview next-step">

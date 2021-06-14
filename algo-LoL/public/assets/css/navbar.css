@@ -9,7 +9,10 @@
     background-color: #2d3535;
     display: flex;
     padding: 0 2%;
-    border-bottom: 1px inset #292929;
+    border-bottom: 1px inset black;
+    z-index: 9999;
+    box-shadow: 1px 2px 3px black;
+    font-family: Yantramanav;
 }
 .nav-active{
     background-color: #414c4c;

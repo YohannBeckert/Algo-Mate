@@ -36,12 +36,20 @@ class UserController extends AbstractController
         /* Stockage du résultat dans un tableau */
         $matchMateTable = $resultCompareGoal[0];
         /* Récupération du premier mate du tableau */
-        $mate = $matchMateTable[0];
+        $mateCompare = $matchMateTable[0];
+        /* Récupération de l'ID du mate */
+        $mateId = $mateCompare["id"];
+        /* Appel de l'entité de la BDD */
+        $mateDb = $ur->findBy(['id' => $mateId]);
+        $mate = $mateDb[0];
         dump($mate);
-
 
         /* Récupération des disponibilités du user actuel */
         $availabilityUser = $ar->findBy(['user' => $userId]);
+        /* Récupération des disponibilités du mate */
+        $availabilityMateTable = $ar->findBy(['user' => $mateId]);
+        $availabilityMate = $availabilityMateTable[0];
+        dump($availabilityMate);
 
         /* Si profil non rempli */
         if(empty($user->getFirstname() || $user->getAge() || $user->getCountry())){
@@ -55,7 +63,8 @@ class UserController extends AbstractController
         return $this->render('user/profile.html.twig',[
             'user' => $user,
             'availabilityUser' => $availabilityUser,
-            'mate' => $mate
+            'mate' => $mate,
+            'availabilityMate' => $availabilityMate
         ]);
     }
     /**

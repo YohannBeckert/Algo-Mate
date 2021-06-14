@@ -1,0 +1,91 @@
+
+.all-personal-info{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #171717;
+    color: white;
+    border-right:1px inset #242424;
+}
+.personal-img{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.personal-img img{
+    width: 15rem;
+    height: 18rem;
+    
+}
+.personal-age{
+    padding-left: 1%;
+}
+
+.personal-info{
+    width: 15rem;
+    height: 55%;
+    align-self: center;
+}
+.personal-info-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10%;
+}
+.country-firstname{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.personal-firstname{
+    margin-left: 3%;
+    font-weight: bold;
+}
+
+        /* Availability */
+
+.content-all-availability{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 6px #bbbbbb;
+    padding: 6% 0;
+}
+.content-all-day{
+    margin-top: 5%;
+}
+.item-day{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2%;
+}
+.label-day{
+    font-weight: bold;
+}
+.no-result-day{
+    text-align: center;
+    padding: 0 18%;
+}
+
+        /* Button modify */
+.btn-modify-profile{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-modify{
+    display: flex;
+    width: 10rem;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #00e6ff;
+    text-shadow: 0px 0px 2px black;
+}

@@ -96,6 +96,7 @@ body{
     height: 50px;
     background-color: #2d3535;
     display: flex;
+    border-top: 1px inset black;
 }
                      /*                     */
                     /* Background Champion */

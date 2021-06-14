@@ -1,0 +1,117 @@
+        /* Mate Container */
+
+        .mate-container{
+            height: 35%;
+            background-color: #171717;
+            display: flex;
+            border-top: 1px inset black;
+        }
+                /* Personal info mate */
+        .personal-info-mate{
+            width: 22%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .content-img-mate{
+            width: 100%;
+            height: 80%;
+        }
+        .content-personal-info{
+            height: 20%;
+        display: flex;
+        justify-content: center;
+        }
+        .content-personal-info .country-firstname{
+            flex-direction: column;
+            align-items: center;
+        }
+        .country-and-name{
+            display: flex;
+        }
+        #unknow-people{
+            height: 100%;
+            width: 100%;
+        }
+        
+        .write{
+            width: 90%;
+            height: 90%;
+            background-color: gray;
+            border: black solid 1px;
+            border-radius: 5px;
+        }
+
+        /* IG info mate */
+    /* header */
+
+    .ig-info-mate{
+        padding: 1%;
+    }
+    .header-ig-mate{
+        justify-content: center;
+    }
+    
+        /* Rest info */
+    
+    .rest-info{
+        height: 84%;
+        display: flex;
+    }
+    .rank-mate{
+        width: 35%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .img-flexrank-mate{
+     width: 70%;
+    }
+    .content-img-mate{
+        width: 100%;
+        height: 90%;
+    }
+    .mate-img{
+        width: 100%;
+        height: auto;
+    }
+    .fh-champ{
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+    }
+        /* rôles */
+    
+    .role-mate{
+        display: flex;
+    }
+    .role-and-goal{
+        width: 30%;
+        height: 80%;
+        justify-content: space-around;
+        align-self: center;
+    }
+    .fh-champ{
+        margin-right: 1%;
+    }
+    .fh-champ .content-table-champ{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    
+            /* Disponibilities mate */
+    
+    .dispo-mate{
+        width: 26%;
+        height: 100%;
+    }
+    .dispo-mate .content-all-availability{
+        padding: 0;
+        box-shadow: none;
+        font-size: 13px;
+    }
+    
+    

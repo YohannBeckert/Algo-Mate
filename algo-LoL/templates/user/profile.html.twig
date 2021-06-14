@@ -193,11 +193,22 @@
                             {% endif %}  
                         </div>
                     </div>
-                    <div class="write-description totaly-center">
-                        <div class="write totaly-center">
-                         <p>description à venir</p>
+                        <div class="aera-description width-50">
+                            <form method="post" id="form-description" class="aligner">
+                                <div id="nav-desc" class="width-80">
+                                    <div class="item-nav-desc totaly-center">
+                                        <p id="weight">G</p>
+                                    </div>
+                                    <div class="item-nav-desc totaly-center">
+                                        <p id="underline">S</p>
+                                    </div>
+                                    <div class="item-nav-desc totaly-center">
+                                        <p id="italic">I</p>
+                                    </div>
+                                </div>
+                                <input class="text-desc width-80" type="textaera">
+                            </form>
                         </div>
-                    </div>
                 </div>
             </div>
             <div class="mate-container">
@@ -218,6 +229,7 @@
 
                     </div>
                 </div>
+
                 <div class="ig-info-mate width-80">
                     <div class="header-ig-mate aligner">
                         <div class="username-game">
@@ -236,67 +248,179 @@
                             </div>
                             <p class="space"> - </p>
                             <div class="flag -game">
-                                <img src="/assets/images/flags/{{ mate.country_in_game }}.png" alt="">
-                                <p>{{ mate.country_in_game }}</p>
+                                <img src="/assets/images/flags/{{ mate.countryInGame }}.png" alt="">
+                                <p>{{ mate.countryInGame }}</p>
                             </div>
                             {% endif %}
                         </div> 
                     </div>
+
                     <div class="rest-info">
-
-
-
                         <div class="rank-mate">                            
-                            <div class="solo-rank-mate width-50">
+                            <div class="solo-rank-mate width-50 aligner">
                                 <div class="title-rank-mate">
                                     <h4>Solo Rank :</h4>
                                 </div>
                                 <div class="img-solorank-mate">
-                                    <img src="/assets/images/rank/{{ mate.solo_rank }}.png" alt="">
+                                    <img src="/assets/images/rank/{{ mate.soloRank }}.png" alt="">
                                 </div>
                                 <div>
-                                    {% if mate.solo_rank == "Unranked" %}
-                                        <p>{{ mate.solo_rank }}</p>
+                                    {% if mate.soloRank == "Unranked" %}
+                                        <p>{{ mate.soloRank }}</p>
                                     {% else %}
-                                        <p>{{ mate.solo_rank }} {{ mate.solo_division }}</p>
+                                        <p>{{ mate.soloRank }} {{ mate.soloDivision }}</p>
                                     {% endif %}
                                 </div>                          
                             </div>
-                            <div class="flex-rank-mate width-50">
+                            
+                            <div class="flex-rank-mate width-50 aligner">
                                 <div class="title-rank-mate">
-                                    <h4>Solo Rank :</h4>
+                                    <h4>Flex Rank :</h4>
                                 </div>
                                 <div class="img-flexrank-mate">
-                                    <img class="width-50" src="/assets/images/rank/{{ mate.flex_rank }}.png" alt="">
+                                    <div class="content-img-mate">
+                                        <img class="mate-img" src="/assets/images/rank/{{ mate.flexRank }}.png" alt="">
+                                    </div>
                                 </div>
                                 <div>
-                                    {% if mate.flex_rank == "Unranked" %}
-                                        <p>{{ mate.flex_rank }}</p>
+                                    {% if mate.flexRank == "Unranked" %}
+                                        <p>{{ mate.flexRank }}</p>
                                     {% else %}
-                                        <p>{{ mate.flex_rank }} {{ mate.flex_division }}</p>
+                                        <p>{{ mate.flexRank }} {{ mate.flexDivision }}</p>
                                     {% endif %}
                                 </div>                          
                             </div>
                         </div>
 
-
-
-
-
-
-
-
-                        <div class="role-and-obj">
-                        
+                        <div class="role-and-goal aligner">
+                            <div class="fr-mate aligner">
+                                <h4>Rôle Principal :</h4>
+                                <p>{{ mate.firstRole }}</p>
+                            </div>
+                            <div class="sr-mate aligner">
+                                <h4>Rôle Secondaire :</h4>
+                                <p>{{ mate.secondRole }}</p>
+                            </div>
+                            <div class="goal-mate aligner">
+                                <h4>Objectif :</h4>
+                                <p>{{ mate.goal[0] }}</p>
+                            </div>
                         </div>
+
                         <div class="fh-champ">
-                        
-                        </div>
+                             <div class="content-table-champ">
+                            {% if mate.favoriteChampion is empty() %}
+
+                            {% else %}
+                            <div class="content-three-champ favorite">
+                                <div class="title-three-champ">
+                                    <h5>Champions apprécié</h5>
+                                </div>
+                                <div class="content-card-champ">
+                                    {% for loveChampMate in mate.favoriteChampion %}                                           
+                                        <div class="champ-card">
+                                        
+                                            <a href="{{ path('champion_show', {'name':loveChampMate}) }}">
+                                                <img src="/assets/images/champions/{{loveChampMate}}.png" alt="">
+                                            </a>
+                                        </div>
+                                    {% endfor %}    
+                                </div>                                            
+                            </div>
+                            {% endif %}  
+                            {% if mate.hatedChampion is empty() %}
+
+                            {% else %}
+                            <div class="content-three-champ hated">
+                                <div class="title-three-champ">
+                                    <h5>Champions non apprécié</h5>
+                                </div>
+                                <div class="content-card-champ">
+                                    {% for hatechamp in mate.hatedChampion %}                                           
+                                        <div class="champ-card">
+                                            <a href="{{ path('champion_show', {'name':hatechamp}) }}">
+                                                <img src="/assets/images/champions/{{hatechamp}}.png" alt="">
+                                            </a>
+                                        </div>
+                                    {% endfor %}    
+                                </div>                                            
+                            </div>
+                            {% endif %}  
+                        </div>                      
                     </div>               
-                </div>   
+                </div>  
+                </div> 
 
                 <div class="dispo-mate">
-                
+                    <div class="content-all-availability">
+                        <div class="title-availability">
+                            <h3>Disponibilités</h3>
+                        </div>
+                        <div class="content-all-day">
+                            {% if availabilityUser == NULL %}
+                            <div class="item-day">                        
+                                <p class="no-result-day">Aucune Disponibilités n'a été enregistré</p>
+                            </div>                        
+                            {% else %}
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Lundi</p>
+                                </div>
+                                <div class="result-day">
+                                    <p>{{ availabilityMate.monday }}</p>
+                                </div>
+                            </div>
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Mardi : </p>
+                                </div>
+                                <div class="result-day">
+                                    <p>{{ availabilityMate.tuesday }}</p>
+                                </div>
+                            </div>
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Mercredi : </p>
+                                </div>
+                                <div class="result-day">
+                                    <p>{{ availabilityMate.wednesday }}</p>
+                                </div>
+                            </div>
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Jeudi : </p>
+                                </div>
+                                <div class="result-day">
+                                    <p>{{ availabilityMate.thursday }}</p>
+                                </div>
+                            </div>
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Vendredi : </p>
+                                </div>
+                                <div class="result-day">
+                                    <p>{{ availabilityMate.friday }}</p>
+                                </div>
+                            </div>
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Samedi : </p>
+                                </div>
+                                <div class="result-day">
+                                    <p>{{ availabilityMate.saturday }}</p>
+                                </div>
+                            </div>
+                            <div class="item-day">
+                                <div class="label-day">
+                                    <p>Dimanche : </p>
+                                </div>
+                                <div class="result-day">
+                                    <p>{{ availabilityMate.sunday }}</p>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>                        
             </div>
         </section>

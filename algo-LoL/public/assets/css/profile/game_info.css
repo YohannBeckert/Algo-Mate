@@ -1,0 +1,183 @@
+                 /*           */
+                /* Game info */
+               /*           */
+
+
+    /* Background */
+
+    .bg-favorite-champ{
+        width: 100%;
+        height: 35%; 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; 
+        background-position-y: -175px;
+    } 
+    .all-game-info{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 65%;
+    }
+    
+            /* Left section */
+    
+    .all-game-info .left-game-section{
+        width: 25%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .content-all-rank{
+        width: 100%;
+        height: 75%;
+    }
+    .content-rank{
+        width: 150px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .solo img{
+        width: 100%;
+    }
+    .flex{
+        width: 80px;
+        height: 130px;
+    }
+    .flex img{
+        width: 90%;
+    }
+    
+    .content-table-champ{
+        width: 100%;
+        height: 25%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .content-three-champ{
+        width: 16rem;
+        height: 6rem;
+        padding-top: 6px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+    }
+    .favorite{
+        background-color: rgba(115,255,80,.5);
+    }
+    .hated{
+        background-color: rgba(255,80,80,.5);
+    }
+    .content-card-champ{
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+    }
+    .champ-card{
+        width: 30%;
+    }
+    .champ-card img{
+        width: 100%;
+    }
+    .content-info-description{
+        display: flex;
+        height: 80%;
+    }
+    .rank-and-champ, .write-description{
+        width: 50%;
+        height: 100%;
+    }
+    .rank-and-champ{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+            /* Right section */
+    
+    .all-game-info .right-game-section{
+        width: 75%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .username-game{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 20%;
+    }
+    .username-game h1{
+        font-size: 2.5rem;
+    }
+    .game-region{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        width: 8.5rem;
+    }
+    .flag{
+        display: flex;
+        align-items: center;
+    }
+    .-player{
+        margin-right: 6%;
+    }
+    .-game{
+        margin-left: 6%;
+    }
+    .flag img, .country-firstname img{
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+        margin-right: 3px;
+    }
+
+
+        /* Description */
+
+#form-description{
+    height: 100%;
+}
+
+.text-desc{
+    height: 86%;
+    background-color: #171717;
+    border: none;
+}
+
+    /* Navbar */
+
+#nav-desc{
+    height: 10%;
+    display: flex;
+    background-color: #2d3535;
+}
+.item-nav-desc{
+    width: 2.5rem;
+}
+.item-nav-desc:hover{
+    background-color: #414c4c;
+}
+
+#weight{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+#underline{
+    text-decoration: underline;
+    font-size: 1.3rem;
+}
+#italic{
+    font-style: italic;
+    font-size: 1.3rem;
+}

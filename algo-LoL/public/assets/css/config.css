@@ -17,11 +17,13 @@ a{
     color: white;
     font-weight: bold;
 }
+.b{
+    font-weight: bold;
+}
 li{
     list-style: none;
 }
 input{
-
     height: 2rem;
 }
 .width-50{width: 50%;}.width-60{width: 60%;}.width-80{width: 80%;}

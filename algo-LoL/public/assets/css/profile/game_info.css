@@ -152,7 +152,9 @@
 .text-desc{
     height: 86%;
     background-color: #171717;
+    color: white;
     border: none;
+    padding: 1%;
 }
 
     /* Navbar */
@@ -167,6 +169,10 @@
 }
 .item-nav-desc:hover{
     background-color: #414c4c;
+    cursor: pointer;
+}
+.btn-activate{
+    background-color: #414c4c;
 }
 
 #weight{
@@ -180,4 +186,7 @@
 #italic{
     font-style: italic;
     font-size: 1.3rem;
+}
+.ck.ck-editor__editable_inline>:last-child{
+    color: black;
 }

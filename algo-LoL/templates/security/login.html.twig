@@ -24,24 +24,20 @@
                         <div class="login-item">
                             <label for="inputEmail">E-mail</label>
                                 <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control input-form" required autofocus> 
-                            <p class="input-info">Votre e-mail doit contenir au moins 6 caractères</p>
+                            <p class="input-info">Veuillez saisir un e-mail valide.</p>
                         </div>
                         <div class="login-item">
                             <label for="inputPassword">Mot de passe</label>
                             <input type="password" name="password" id="inputPassword" class="form-control input-form" required>
-                            <p class="input-info">Votre mot de passe doit contenir au moins 6 caractères</p>
+                            <p class="input-info">Veuiller saisir un mot de passe valide.</p>
                         </div>
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                        {#
-                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                        See https://symfony.com/doc/current/security/remember_me.html
 
-                        <div class="checkbox mb-3">
-                            <label>
-                                <input type="checkbox" name="_remember_me"> Remember me
-                            </label>
+                        <div class="remember width-100 totaly-center">
+                            <input id="remember-me" type="checkbox" name="_remember_me">
+                            <label for="remember-me">Se souvenir de moi</label>
                         </div>
-                        #}
+
                         <button class="btn-submit" type="submit">Connexion</button>
                     </form>
                 <div>

@@ -88,6 +88,15 @@ body{
 .margin-b{
     margin-bottom: 1%;
 }
+table{
+    border-collapse: collapse;
+}
+td, th{
+    border: 1px solid black;
+}
+tr{
+    height: 3rem;
+}
 
                      /*        */
                     /* Footer */

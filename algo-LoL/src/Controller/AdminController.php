@@ -27,6 +27,18 @@ class AdminController extends AbstractController
     }
 
     /**
+     * @Route("/list/champion", name="admin_champ_list")
+     */
+    public function championList(ChampionRepository $championRepository): Response
+    {
+        $allChamps = $championRepository->findAll();
+
+        return $this->render('champion/admin/champ_list.html.twig',[
+            'allChamps' => $allChamps
+        ]);
+    }
+
+    /**
      * @Route("/add/champion", name="admin_add_champ", methods={"GET","POST"})
      */
     public function addChampion(Request $request): Response

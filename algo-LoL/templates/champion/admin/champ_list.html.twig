@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<main class="admin main">
+    <section class="searcher">
+            <div class="content-item-div">
+                <div class="title-champion">
+                    <h1>Rechercher un champion</h1>
+                </div>
+                <div class="content-search-bar">
+                    <div class="search-bar">
+                        <input id="search" class="search" type="text" placeholder="Search" name="search" size="40" value="">
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="table-champ-list width-60 j-center">
+        <table class="width-80">
+            <caption>Liste des champions</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Icon</th>
+                    <th>Nom</th>
+                    <th>Rôle principal</th>
+                    <th>Rôle secondaire</th>
+                    <th>Modifier / Supprimer</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for champion in allChamps %}
+                    <tr class="champ-info">
+                        <td>{{ champion.id }}</td>
+                        <td class="content-icon-champ">
+                            <div class="icon-champ j-center">
+                                <img src="/assets/images/champions/{{ champion.name }}.png" alt="">
+                            </div>
+                        </td>
+                        <td class="champ-name">{{ champion.name }}</td>
+                        <td>{{ champion.firstRole }}</td>
+                        {% if champion.secondRole is empty() %}
+                        <td>X</td>
+                        {% else %}
+                        <td>{{ champion.secondRole }}</td>
+                        {% endif %}
+                        <td class="param-box">
+                            <div class="content-box">
+                                <div class="modify-box"></div>
+                                <div class="delete-box"></div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</main>
+{% endblock %}

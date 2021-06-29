@@ -2,21 +2,21 @@ const app = {
     // On crée des propriétés à notre objet app. Ce sont des variables qui sont utilisables dans l'entièreté de l'objet app, donc dans init comme dans d'autres fonctions.
     fieldUsername: null,
     fieldPassword: null,
+
     init: function(){
         // On sélectionne notre champ username et on le stocke dans la propriété fieldUsername.
         app.fieldUsername = document.querySelector('#inputEmail');
         app.fieldPassword = document.querySelector('#inputPassword');
         
-        // Avec const, je peux déclarer une variable que je ne redéfinis jamais. 
         // Ici on sélectionne notre formulaire
         const form = document.querySelector('#login-form');
-
     
         // On place un écouteur d'événement sur le champ. Quand celui-ci détecte un "blur" (perte de focus), il exécute la méthode "app.handleBlur".
         app.fieldUsername.addEventListener('blur', app.handleBlur);
         app.fieldPassword.addEventListener('blur', app.handleBlur);
 
     },
+    
     handleBlur: function(event){
         
         // event.target contient l'élément qui a déclenché un événement. Donc il contiendra le champ username ou password selon le champ dans lequel on a écrit.
@@ -39,7 +39,7 @@ const app = {
 
     },
 
-    // Petite fonction utilitaire permettant de retourner "true" si la valeur passée est supérieure ou égale à 3, et "false" sinon. 
+    // Petite fonction utilitaire permettant de retourner "true" si la valeur passée est supérieure ou égale à 6, et "false" sinon. 
     checkValidField: function(fieldValue){
         if(fieldValue.length >= 6) {
             return true;

@@ -1,0 +1,181 @@
+                      /*       */
+                     /* ADMIN */
+                    /*       */
+
+
+.admin{
+    min-height: 85.1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Yantramanav;
+}
+.title-admin{
+    margin: 3% 0 3% 0;
+}
+.board{
+    width: 80%;
+    height: 100%;
+    display: flex;
+}
+.table-board{
+    width: 18rem;
+    height: 30%;
+    font-size: 18px;
+    color: white;
+    margin-left: 5%;
+    border-radius: 3px;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+.champ-board{
+    background-color: #719398;
+}
+.user-board{
+    background-color: #69584e;
+}
+
+.title-table{
+    width: 100%;
+    border-bottom: black 1px solid;
+    text-align: center;
+    padding: 2%;
+    margin-bottom: 5%;
+}
+.selection-table{
+    margin-left: 10%;    
+}
+.item-selection{
+    padding: 1.5%;
+}
+.title-admin .title-page{
+    margin-bottom: 0;
+}
+.add{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+                         /*      */
+                        /* Form */
+                       /*      */
+
+
+        /* ADMIN - Champion */
+
+.title-page{
+    margin-top: 4%;
+}
+.content-form{
+    height: 50vh;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+}
+.content-form form{
+    width: 100%;
+    height: 100%;
+}
+#champion{
+    width: 100%;
+    height: 90%;
+    margin: 10% 0;
+    box-shadow: 1px 1px 8px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#champion div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+div label{
+    margin-bottom: 2.5%;
+}
+#champion_name,#champion_image,#champion_first_role,#champion_second_role{
+    margin-bottom: 5%;
+    width: 80%;
+    height: 2.5rem;
+    padding: 0 3% 0 3%;
+    border: solid 1.5px gray;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color:#e8e8e8;
+    text-align: center;
+}
+.button{
+    display: flex;
+    justify-content: center;
+} 
+.btn-submit{
+    width: 8rem;
+    height: 3rem;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #333333;
+    cursor: pointer;
+}
+.return{
+    color:#0060f5;
+    font-size: 14px;
+}
+.return:hover{
+    color:#0060f5;
+    text-decoration :underline ;
+}
+
+/* EDIT */
+
+.searcher{
+    width: 100%;
+    margin: 3% 0;
+}
+.searcher .content-item-div{
+    color: black;
+    width: 100%;
+}
+
+.table-champ-list{
+    padding-bottom: 5%;
+}
+caption{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2%;
+    text-transform: uppercase;
+}
+thead{
+    background-color: #2d3535;
+    color: white;
+}
+tbody tr:hover{
+    background-color: #b1cfd6;;
+}
+td{
+    text-align: center;
+}
+
+.icon-champ img{
+    width: 2.2rem;
+}
+.champ-name{
+    text-transform: capitalize;
+    font-weight: bold;
+    color: rgb(0, 62, 140);
+}
+
+.content-box{
+    width: 100%;
+    height: 100%;
+}
